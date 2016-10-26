@@ -1,0 +1,8 @@
+Wed 26 OCT 16
+I attended the "Trigger for Physics" workshop in the morning and had lunch with all SMU people at CERN. Then I went to the Hbb meeting with Steve and Mattew at 1:30pm and went back to the afternon section of the workshop to listen the talk and the discussion for the trigger of 2017 run. I went to CERN building 55 to get my ID card. Then I attended the "b-jet trigger worshop" meeting. It is a service task workshop and I met some people I don't recognize there. After that, I had dinner with Steve and Matthew. We talked a lot about Mars, astronomy, space-time, universe fluctation. They talked about a movie - "Total Recall" 1990. I might watch it sometime. 
+
+I also heard from Jeff and Steve that the 2 lepton data for Hbb framework is not found yet.
+
+Service task waiting for Steve meeting with Argonne.
+
+I also added the logbook and PhD thesis git repository.
