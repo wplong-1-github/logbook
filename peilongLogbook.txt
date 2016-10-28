@@ -6,3 +6,16 @@ I also heard from Jeff and Steve that the 2 lepton data for Hbb framework is not
 Service task waiting for Steve meeting with Argonne.
 
 I also added the logbook and PhD thesis git repository.
+
+
+Thu 27 OCT 16
+eosLocation=root://eosatlas.cern.ch//eos/atlas/unpledged/group-tokyo/users/yenari/20160708/HIGG2D4_13TeV/CxAOD_00-24-07/ttbar/group.phys-higgs.mc15_13TeV.410000.PwPyEG_P2012_ttbar_hdamp172p5_nonallhad.s2608.HIGG2D4.24-7_CxAOD.root/
+
+cat filename.txt | xargs -i xrdcp ${eosLocation}{} /scratch/users/peilongw
+
+--------------
+xargs command is designed to construct argument lists and invoke other utility. xargs reads items from the standard input or pipes, delimited by blanks or newlines, and executes the command one or more times with any initial-arguments followed by items read from standard input. Blank lines on the standard input are ignored.
+
+
+Fri 28 OCT 16
+find . -name "*DiskListLocal.cxx"
