@@ -40,3 +40,9 @@ rpm -ivh package_name
 -h: installation progress
 
 
+
+Thu 3 Nov 16
+Eventloop: to speed compiling:
+
+rc find_packages --restrict=FrameworkExe
+rc compile
