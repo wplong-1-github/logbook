@@ -46,3 +46,27 @@ Eventloop: to speed compiling:
 
 rc find_packages --restrict=FrameworkExe
 rc compile
+
+
+Tue 8 Nov 16
+Emacs remote load files:
+/ssh:user@remotehost:/etc
+
+
+Use grep recursively
+
+You can search recursively i.e. read all files under each directory for a string “192.168.1.5”
+$ grep -r "192.168.1.5" /etc/
+OR
+$ grep -R "192.168.1.5" /etc/
+
+
+
+Nov 8, 16
+CSCOPE source browsing tool
+
+
+逆向工程：C++ source code to UML
+1. Rational Rose 2003
+2. Visual C++
+3. and so on.
