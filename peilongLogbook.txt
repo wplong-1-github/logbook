@@ -70,3 +70,23 @@ CSCOPE source browsing tool
 1. Rational Rose 2003
 2. Visual C++
 3. and so on.
+
+
+
+Nov 15, 16
+/users/peilongw/Project/CxAOD/CxAODReader/CxAODReader
+BookFillHist overload:
+	void BookFillHist(const string& name, int nbinsx, float xlow, float xup, float value, float weight=1);
+	void BookFillHist(const string& name, int nbinsx, float* xbins, float value, float weight=1);
+  	void BookFillHist(const string& name, int nbinsx, float xlow, float xup, int nbinsy, float ylow, float yup, float xvalue, float yvalue, float weigh\
+t=1);
+	void BookFillHist(const string& name, int nbinsx, float* xbins, int nbinsy, float* ybins, float xvalue,  float yvalue, float weight=1);
+
+/users/peilongw/Project/CxAOD/CxAODReader_VHbb/Root
+AnalysisReader_VHbb2Lep.cxx:
+
+Vector name: HVec_gsc.M()
+HVec_gsc=mergedH.vec_gsc;
+HVec_gsc=resolvedH.vec_gsc;
+   
+The name of the Pt(j1) vs Mbb plot: GSCMbbVSPtJ1
