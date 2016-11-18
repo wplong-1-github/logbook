@@ -109,3 +109,11 @@ To explain a little further, tar collected all the files into one package, commu
     x: tar can collect files or extract them. x does the latter.
     v: makes tar talk a lot. Verbose output shows you all the files being extracted.
 
+eosLocation=root://eosatlas.cern.ch//eos/atlas/unpledged/group-tokyo/users/yenari/20160708/HIGG2D4_13TeV/CxAOD_00-24-07/ZHll125/group.phys-higgs.mc15_13TeV.341102.Py8EG_A14NNPDF23LO_ZllH125_bb.s2608.HIGG2D4.24-7_CxAOD.root/
+
+cat filename_ZHll125.txt | xargs -i xrdcp ${eosLocation}{} /scratch/users/peilongw
+
+
+linux check folder size
+du -sh *
+
