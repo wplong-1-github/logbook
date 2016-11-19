@@ -117,3 +117,111 @@ cat filename_ZHll125.txt | xargs -i xrdcp ${eosLocation}{} /scratch/users/peilon
 linux check folder size
 du -sh *
 
+
+prepare to install local ROOT tomorrow
+
+
+
+Nov 18, 16
+Emacs jump to the end of the file:
+M->: Go the end of the file
+M-x package-list-...
+
+Type i before the package name for mark
+Tyep x for install
+
+emacs iedit mode:
+move on the variables
+type C-c ; to start
+tyrpe C-x ; to exit
+
+
+Working on GitLab:
+Command line instructions
+Git global setup # non global -> just remove --global
+
+git config --global user.name "Peilong Wang"
+git config --global user.email "peilong.wang@cern.ch"
+
+Create a new repository
+
+git clone https://gitlab.cern.ch/pewang/HbbAnalysis.git
+cd HbbAnalysis
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+
+Existing folder or Git repository
+
+cd existing_folder
+git init
+git remote add origin https://gitlab.cern.ch/pewang/HbbAnalysis.git
+git add .
+git commit
+git push -u origin master
+
+
+ROOT file:
+How to read histgram from ROOT file
+  TFile *f1 = new TFile("./submitDir/hist-mc15_13TeV.342619.aMcAtNloHerwigppEvtGen_UEEE5_CTEQ6L1_CT10ME_
+hh_4b.merge.DAOD_EXOT8.e4419_s2608_r6869_r6282_p2438.root");
+  /*
+  f1->ls();
+
+  TH1F *bPT = (TH1F*)f1->Get("h4_bEnergy");
+
+
+C++ code naming convention:
+file name must be lower case, underline is used to seperate words, such as my_useful_class.cc
+class name must capitalize the First word, no underline included, such as MyExcitingClass
+variable name must be lower case, underline is used to seperate words, such as string table_name, -- class data member follow the same naming rule
+constant variable name: adding a "c" in front of the variables, such as const int cDaysInAWeek = 7;
+function name: common function -> no underline, capitialize the first word, such as AddTableEntry() DeleteUrl() OpenFileOrDie()
+	       set function & get function in the class -> the name should be corresponed to the variable name, such as:
+	       	   class MyClass {
+  		     public:
+			...
+			int num_entries() const { return num_entries_; }
+        		void set_num_entries(int num_entries) { num_entries_ = num_entries; }
+
+    		     private:
+			int num_entries_;
+		  };
+
+
+Linux file naming convention:
+. is used to separate a filetype extension, e.g. foo.txt.
+
+- or _ is used to separate logical words, e.g. my-big-file.txt or sometimes my_big_file.txt. - is better because you don't have to press the Shift key, others prefer _ because it looks more like a space.
+
+So if I understand your example, backup-part2-random or backup_part2_random would be closest to the normal Unix convention.
+
+
+ROOT CERN interactive mode:
+how to filter needed file?
+TFile *f1 = new TFile("/home/peilong/Downloads/ttbar/hist-ttbar.root")
+f1->ls()
+
+ROOT plot two histogram together:
+  ttbar_2tag2pjet_0_500ptv_SR_GSCMbbVSPtJ1->Draw();
+  ttbar_2tag2pjet_0_500ptv_mBBcr_GSCMbbVSPtJ1->Draw("same");
+
+
+TCanvas::TCanvas(const char *name, const char *title, Int_t form) : TPad(), fDoubleBuffer(0)
+  222 {
+  223    fPainter = 0;
+  224    fUseGL = gStyle->GetCanvasPreferGL();
+  225 
+  226    Constructor(name, title, form);
+  227 }
+  228 
+  229 ////////////////////////////////////////////////////////////////////////////////
+  230 /// Create a new canvas with a predefined size form.
+  231 /// If form < 0  the menubar is not shown.
+  232 ///
+  233 /// - form = 1    700x500 at 10,10 (set by TStyle::SetCanvasDefH,W,X,Y)
+  234 /// - form = 2    500x500 at 20,20
+  235 /// - form = 3    500x500 at 30,30
+  236 /// - form = 4    500x500 at 40,40
+  237 /// - form = 5    500x500 at 50,50
