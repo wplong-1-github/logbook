@@ -82,8 +82,7 @@ BookFillHist overload:
 t=1);
 	void BookFillHist(const string& name, int nbinsx, float* xbins, int nbinsy, float* ybins, float xvalue,  float yvalue, float weight=1);
 
-/users/peilongw/Project/CxAOD/CxAODReader_VHbb/Root
-AnalysisReader_VHbb2Lep.cxx:
+/users/peilongw/Project/CxAOD/CxAODReader_VHbb/Root/AnalysisReader_VHbb2Lep.cxx:
 
 Vector name: HVec_gsc.M()
 HVec_gsc=mergedH.vec_gsc;
@@ -230,3 +229,47 @@ TCanvas::TCanvas(const char *name, const char *title, Int_t form) : TPad(), fDou
 yum repoinfo
 
 yum repolist 
+
+Install the EPEL repository on CentOS and Red Hat
+
+You install the EPEL repository by downloading the appropriate RPM package for your system and installing it. The following instructions use the 64-bit packages that work with Rackspace Cloud Servers instances.
+
+
+
+Nov 19, 16
+
+latex newlog.tex
+xdvi newlog.dvi
+
+or 
+pdflatex newlog.tex
+
+Taken from China
+kinds of tea and souvenir
+tea and snacker for talking
+
+
+/users/peilongw/Project/CxAOD/CxAODReader_VHbb/Root/AnalysisReader_VHbb2Lep.cxx:
+What does Mbb mean: m_etree->get<float>("GSCMbb")
+m_etree->SetBranchAndValue<float>("GSCMbb", HVec_gsc.M(), -99);
+
+if ( m_physicsMeta.regime == PhysicsMetadata::Regime::resolved ) {
+HVec_gsc=resolvedH.vec_gsc;
+} else if ( m_physicsMeta.regime == PhysicsMetadata::Regime::merged ){
+HVec_gsc=mergedH.vec_gsc;
+}
+
+TLorentzVector HVec_gsc;
+
+
+
+What does pT(j1) mean: m_etree->get<float>("GSCMbbJ1Pt")
+
+
+
+Nov 20, 16
+Display full date in task bar -- CentOS
+gnome-tweak-tool used to have settings for that in previous versions.
+
+Title of the figure: Y vs. X
+A vs. B = "A when B is ..." implying that A is on the vertical and B is on the horizontal if vertical is dependent 
