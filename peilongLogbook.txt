@@ -196,6 +196,16 @@ Linux file naming convention:
 
 So if I understand your example, backup-part2-random or backup_part2_random would be closest to the normal Unix convention.
 
+---> added on Nov 20, 16
+- Directory => uppercase
+- file => lowercase
+- space => '_' --Peilong's comment--|| "_" used to connect/seperate two close meaning words, such as "x86_64"  || version treated as 1 word, seperated by "."
+- manually version control file => '-' as separator --Peilong's comment--|| "-" used to seperate words, such as kernel version 3.10.0-327.36.3.el7.x86_64 || directory generally follows the same rule as the file, but directory can use Uppercase if necessary.
+\u@\h> ls -1
+ANOTHER_FOLDER
+WORKS
+---> end of added on Nov 20, 16
+
 
 ROOT CERN interactive mode:
 how to filter needed file?
@@ -233,6 +243,12 @@ yum repolist
 Install the EPEL repository on CentOS and Red Hat
 
 You install the EPEL repository by downloading the appropriate RPM package for your system and installing it. The following instructions use the 64-bit packages that work with Rackspace Cloud Servers instances.
+
+CentOS Extras repository
+
+The CentOS Extras repository includes a package to install EPEL, and is enabled by default. To install the EPEL package, run the following command:
+
+sudo yum install epel-release
 
 
 
@@ -273,3 +289,53 @@ gnome-tweak-tool used to have settings for that in previous versions.
 
 Title of the figure: Y vs. X
 A vs. B = "A when B is ..." implying that A is on the vertical and B is on the horizontal if vertical is dependent 
+
+
+I git push my work to a remote Git repository.
+Every push will prompt me to input username and password. I would like to avoid it for every push, but how to configure to avoid it?
+
+1. Generate an SSH key
+
+Linux/Mac
+Open terminal to create ssh keys:
+
+cd ~                 #Your home directory
+ssh-keygen -t rsa    #Press enter for all values
+
+2. Associate the SSH key with the remote repository
+
+This step varies, depending on how your remote is set up.
+
+If it is a GitHub repository and you have administrative privileges, go to settings and click 'add SSH key'. Copy the contents of your ~/.ssh/id_rsa.pub into the field labeled 'Key'.
+If your repository is administered by somebody else, give the administrator your id_rsa.pub.
+
+3. Set your remote URL to a form that supports SSH 1
+
+If you have done the steps above and are still getting the password prompt, make sure your repo URL is in the form
+
+git+ssh://git@github.com/username/reponame.git
+
+as opposed to
+
+https://github.com/username/reponame.git
+
+To see your repo URL, run:
+
+git remote show origin
+
+You can change the URL with:
+
+git remote set-url origin git@github.com/username/reponame.git
+
+or 
+
+emacs -nw .git/config
+then edit the file:
+
+[remote "origin"]
+        url = git@github.com:wplongpub/language.git
+
+
+Adjusting the position and size of the figure of LibreOffice Impress:
+Directly input the number of the position and size.
+
