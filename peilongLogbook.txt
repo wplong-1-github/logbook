@@ -339,3 +339,54 @@ then edit the file:
 Adjusting the position and size of the figure of LibreOffice Impress:
 Directly input the number of the position and size.
 
+
+
+Nov 30, 16
+
+SVN FLIC repository:
+@CERN: svn+ssh://jwebster@svn.cern.ch/reps/atlastdaq/FTK/flic/trunk
+@Argonne: https://svn.inside.anl.gov/repos/hep_elecdesign/FTK/
+
+svn checkout svn+ssh://pewang@svn.cern.ch/reps/atlastdaq/FTK/flic/trunk
+
+compiling the standalone testing tools...
+cd flic/standalone
+make
+
+server: atlas1.hep.anl.gov
+server: ssh nathan
+
+The goal now is to
+1) let both FLIK 1 and FLIK 2 (???) conenct to USTB, then we can log into USTB10 to setup FLIK
+
+2) ATCA blade can be accessed through nathan<-atlas1
+
+3) communication between ATCA blade and FLIC is realized through wireshark
+
+
+
+Current plan:
+1) let FLIC send data to ATCA blade
+2) see whether ATCA blade is able to receive it.
+   Question: how could ATCA blade receive the data
+   by wireshark?
+
+
+2.6.1. Installing from RPM’s under Red Hat and alike
+
+Building RPMs from Wireshark’s source code results in several packages (most distributions follow the same system):
+
+    The wireshark package contains the core Wireshark libraries and command-line tools.
+    The wireshark-qt package contains the Qt-based GUI.
+    The wireshark-gtk (formerly wireshark-gnome) package contains the legacy Gtk+ based GUI. 
+
+Many distributions use yum or a similar package management tool to make installation of software (including its dependencies) easier. If your distribution uses yum, use the following command to install Wireshark together with the Qt GUI:
+
+yum install wireshark wireshark-qt
+
+If you’ve built your own RPMs from the Wireshark sources you can install them by running, for example:
+
+rpm -ivh wireshark-2.0.0-1.x86_64.rpm wireshark-qt-2.0.0-1.x86_64.rpm
+
+If the above command fails because of missing dependencies, install the dependencies first, and then retry the step above.
+
