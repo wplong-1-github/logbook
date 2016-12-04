@@ -494,3 +494,46 @@ Dec 2, 16
 steps to 7
 90
 
+running wireshark on blade
+nothing got captured
+back to check FLIC control code
+
+
+
+Dec 3, 16
+
+LHC luminosity upgrade is planned in threes stages:
+Phase 0 (2015-2018): LHC energy 8→13-14 TeV with full current, and L~1-2x10^34, and ⟨μ⟩ up to ~80, to integrate 150 fb-1 until LS2.
+Phase 1 (2021-2023): 14 TeV. Integrate to 300 fb-1 until LS3.
+Phase 2 (2026-2030): HL-LHC upgrade with luminosity levelling 5-7x1034, ⟨μ⟩ up to ~200, to integrate 3000 fb-1.
+
+The high instantaneous luminosity(???) expected for Phase 1 upgrade to LHC will pose challenges to achieving these goals for the trigger system. The existing ATLAS trigger system, consisting of a hardware-based Level 1 and a CPU-base High Level Trigger with its Level 2 and Event Filter, was designed to work well at the LHC design luminosity. _However_ after the planned luminosity upgrade, the detector environment will be complicated by the increase in detector activity arising from many simultaneous interactions. Additionally, the proposed upgrades to the hardware level 1 Trigger will allow an increased rate into the HLT.
+
+The Fast TracKer or FTK, which will do global track reconstruction after each level-1 trigger to have enable the level-2 trigger to have early access to tracking information.
+
+ 
+linux check running process command:
+# ps aux | less
+
+
+linux kill process command
+# kill process number#
+
+
+My lscpu says there are 96 cores. Are those physical cores? What is the maximum and optimal thread that I can run on this machine?
+
+This is what you want to know
+
+Thread(s) per core:    2
+Core(s) per socket:    12
+Socket(s):             4
+
+You have 4 CPU sockets, each CPU can have, up to, 12 cores and each core can have two threads.
+
+Your max thread count is, 4 CPU x 12 cores x 2 threads per core, so 12 x 4 x 2 is 96. Therefore the max thread count is 96 and max core count is 48.
+
+What is better ?
+
+That depends on what you want to do, more threads means less frequency (ie a 3ghz becomes split in two) but better multi-tasking (more threads) and using full cores (no hyper-threading) is better for high CPU usage tasks (ie games).
+
+Hope this helps you.
