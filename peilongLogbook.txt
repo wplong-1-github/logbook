@@ -339,3 +339,158 @@ then edit the file:
 Adjusting the position and size of the figure of LibreOffice Impress:
 Directly input the number of the position and size.
 
+
+
+Nov 30, 16
+
+SVN FLIC repository:
+@CERN: svn+ssh://jwebster@svn.cern.ch/reps/atlastdaq/FTK/flic/trunk
+@Argonne: https://svn.inside.anl.gov/repos/hep_elecdesign/FTK/
+
+svn checkout svn+ssh://pewang@svn.cern.ch/reps/atlastdaq/FTK/flic/trunk
+
+compiling the standalone testing tools...
+cd flic/standalone
+make
+
+server: atlas1.hep.anl.gov
+server: ssh nathan
+
+The goal now is to
+1) let both FLIK 1 and FLIK 2 conenct to USTB, then we can log into USTB10 to setup FLIK
+
+2) ATCA blade can be accessed through nathan<-atlas1
+
+3) communication between ATCA blade and FLIC is realized through wireshark
+
+
+Current plan:
+1) let FLIC send data to ATCA blade
+2) see whether ATCA blade is able to receive it.
+   Question: how could ATCA blade receive the data
+   by wireshark?
+
+
+2.6.1. Installing from RPM’s under Red Hat and alike
+
+Building RPMs from Wireshark’s source code results in several packages (most distributions follow the same system):
+
+    The wireshark package contains the core Wireshark libraries and command-line tools.
+    The wireshark-qt package contains the Qt-based GUI.
+    The wireshark-gtk (formerly wireshark-gnome) package contains the legacy Gtk+ based GUI. 
+
+Many distributions use yum or a similar package management tool to make installation of software (including its dependencies) easier. If your distribution uses yum, use the following command to install Wireshark together with the Qt GUI:
+
+yum install wireshark wireshark-qt
+
+If you’ve built your own RPMs from the Wireshark sources you can install them by running, for example:
+
+rpm -ivh wireshark-2.0.0-1.x86_64.rpm wireshark-qt-2.0.0-1.x86_64.rpm
+
+If the above command fails because of missing dependencies, install the dependencies first, and then retry the step above.
+
+
+Dec 1, 16
+
+enp0s20u6: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet6 fe80::7ec3:a1ff:fe89:18d2  prefixlen 64  scopeid 0x20<link>
+        ether 7c:c3:a1:89:18:d2  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 3256 (3.1 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+-> bottom board
+10.193.32.17
+
+---    6 Without IPMC    ( 10.193.32.18 , 50000 , 10.193.32.17 )
+
+
+black eth2 -- bottom board
+white eth3 -- top board 
+on USTB 14
+
+
+svn ci -m "xXXX" 
+svn commit
+
+svn up
+-- git pull
+
+ssh ustb10
+
+
+enp0s20u6: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.193.32.17  netmask 255.255.255.0  broadcast 10.193.32.255
+        inet6 fe80::8eae:4cff:fefe:cb7e  prefixlen 64  scopeid 0x20<link>
+        ether 8c:ae:4c:fe:cb:7e  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 1658 (1.6 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+iptables -F
+
+
+flicscope_8x8 both boards
+
+10.153.37.15
+processor
+
+1. power on
+
+2 Program All FPGAs
+
+
+
+svn up 
+-- update
+
+        COUNTER      COUNT   EXPECTED (±2 MHz)
+         SRAM_REFCLK         79                   80
+          DDR_REFCLK        199                  200
+       GTX112_REFCLK        124                  125
+        GTX112_TXCLK         99                  100
+        GTX112_RXCLK         99                  100
+       GTX116_REFCLK        124                  125
+        GTX116_TXCLK         99                  100
+        GTX116_RXCLK         99                  100
+             COUNTER      COUNT   EXPECTED (±2 MHz)
+         SRAM_REFCLK         79                   80
+          DDR_REFCLK        199                  200
+       GTX112_REFCLK        124                  125
+        GTX112_TXCLK         99                  100
+        GTX112_RXCLK         99                  100
+       GTX116_REFCLK        124                  125
+        GTX116_TXCLK         99                  100
+        GTX116_RXCLK         99                  100
+
+ 225 Change to "dump data on the floor" mode
+
+
+
+  90 Initialize counters
+  76 Send single event
+  91 Dump counters
+  77 Start SSBe data
+
+< 100 number of tracks
+5-10
+
+Enter fixed delay between events [1-4095] : 
+1000
+
+first 4 channels
+
+second 4 channels
+
+data from flic to blade through eth6 or 7 ( through the back of ATCA crate)
+
+
+
+Dec 2, 16
+
+steps to 7
+90
+
