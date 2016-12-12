@@ -537,3 +537,10 @@ What is better ?
 That depends on what you want to do, more threads means less frequency (ie a 3ghz becomes split in two) but better multi-tasking (more threads) and using full cores (no hyper-threading) is better for high CPU usage tasks (ie games).
 
 Hope this helps you.
+
+
+
+Dec 11, 2016
+
+Linux convert pdf to png
+pdftoppm -png Trigger_Flowchart.pdf Trigger_Flowchart
