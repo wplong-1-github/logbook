@@ -530,7 +530,7 @@ Socket(s):             4
 
 You have 4 CPU sockets, each CPU can have, up to, 12 cores and each core can have two threads.
 
-Your max thread count is, 4 CPU x 12 cores x 2 threads per core, so 12 x 4 x 2 is 96. Therefore the max thread count is 96 and max core count is 48.
+PixelClustersYour max thread count is, 4 CPU x 12 cores x 2 threads per core, so 12 x 4 x 2 is 96. Therefore the max thread count is 96 and max core count is 48.
 
 What is better ?
 
@@ -544,3 +544,28 @@ Dec 11, 2016
 
 Linux convert pdf to png
 pdftoppm -png Trigger_Flowchart.pdf Trigger_Flowchart
+
+rucio list-dids mc15_13TeV:mc15_13TeV*341577*EVNT*
+
+rucio download mc15_13TeV:mc15_13TeV.341577.PowhegPy8EG_AZNLOCTEQ6L1_WplusenuH_H125_a20a20_bbbb.evgen.EVNT.e4118
+
+
+Dec 13, 2016
+
+root [5] .ls
+
+root [5] CollectionTree->Print()
+
+root [5] CollectionTree->Print("*Truth*")
+
+
+
+Dec 14, 16
+
+Slurm's srun command will interactively request a batch job, returning a compute-node name as a prompt, usually scheduled within a short period of time. Issue the srun command only from a login node. Command syntax is:
+
+srun --pty -A projectnumber -p queue -t hh:mm:ss -n tasks -N nodes /bin/bash -l
+
+pixel cluster
+
+
