@@ -566,6 +566,42 @@ Slurm's srun command will interactively request a batch job, returning a compute
 
 srun --pty -A projectnumber -p queue -t hh:mm:ss -n tasks -N nodes /bin/bash -l
 
-pixel cluster
 
+Pixel hits container:
+pixel cluster -- maybe
+then problem: what content are in that container?
+How do I find the right container 
+
+
+
+list all directories under current directory
+ls -d */
+
+
+
+antikt4emtopo ghost
+which jet is b-jet energy
+
+translation from eta-phi module ID to eta-phi physics ID
+
+
+root [7] CollectionTree->Scan("PixelClustersAuxDyn.layer")
+
+
+1. b-hadron pT cut
+2. deltaR = 0.4  find the directions covering the pixel module
+3. all the hits in the modules eta-phi -> physics eta-phi
+
+starting from
+ Skeleton for analyzing Tracking DxAOD 
+
+root [2] CollectionTree->Scan("PixelClustersAuxDyn.bec")
+
+
+
+Dec 15, 16
+
+ROOT installation
+1. Download and unpack the ROOT's sources from the download area or using directly the Git repository. Follow the instructions for getting the ROOT sources
+2. To use the location independent installation requires to set environment variables PATH and LD_LIBRARY_PATH. This is done by sourcing the script (depending on the shell family) source bin/thisroot.sh. While to use the fix location installation you do not need to set any environment to run root.
 
