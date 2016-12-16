@@ -605,3 +605,50 @@ ROOT installation
 1. Download and unpack the ROOT's sources from the download area or using directly the Git repository. Follow the instructions for getting the ROOT sources
 2. To use the location independent installation requires to set environment variables PATH and LD_LIBRARY_PATH. This is done by sourcing the script (depending on the shell family) source bin/thisroot.sh. While to use the fix location installation you do not need to set any environment to run root.
 
+Switch to next workspace:
+Ctrl+Alt+ Down
+
+Send windown to next workspace:
+Shift+Ctrl+Alt + Down
+
+Output the standard output and standard error to the file
+runPixelClusterAnalysis submitDir > output.txt 2>&1
+			standard output -> file standard error -> standard outp
+
+tsos-> track state of surface
+msos-> mearsurement state of surface
+
+[pewang@lxplus135 Btagging_without_tracking]$ runPixelClusterAnalysis submitDir > output_1event.txt 2>&1
+
+emacs switch back to read-only mode
+M-x read-only-mode
+
+Hi everyone, totally unrelated to this talk, but I've just produced some derivations that have all of the ID information (including pixels, SCT hits, etc.) for boosted W's and Z's.  In particular, Z decays to bb about 50% of the time so if you want some high pT b-hadrons, some of them should be in there...
+
+Here are the files: /eos/atlas/user/b/bnachman/public/HFSF16/IDTIDE_BoostedW_Wprime5TeV/ (20k events)
+
+show versions of the availible software versions:
+# showVersions
+
+show the availalbe ROOTCORE versions
+# ls $ROOTCOREDIR/../../
+
+Never use the rootcore verison with X.X.0
+Never use the something with XXXwindowsXXX
+
+[pewang@lxplus135 Btagging_without_tracking]$ rcsetup Base,2.4.24
+
+xAODTracking-00-13-31
+
+svn co $SVNPERF/CombPerf/Tracking/xAOD/TrackAnalysis/tags/xAODTracking-00-13-31 ./TrackAnalysis
+
+You can use C-x k to kill current buffer. See Emacs Manual .
+
+
+rc build 
+= rc find-packages
+= rc compile
+
+
+The source files of sample handler and Eventloop
+grep -i optmax $ROOTCOREDIR/../EventLoop/*
