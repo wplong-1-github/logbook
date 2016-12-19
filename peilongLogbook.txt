@@ -652,3 +652,8 @@ rc build
 
 The source files of sample handler and Eventloop
 grep -i optmax $ROOTCOREDIR/../EventLoop/*
+
+
+Dec 16th, 16
+Problem: how to find the b hadron?
+how do you know it is a b before we even tag it ?
