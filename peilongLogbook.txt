@@ -657,3 +657,25 @@ grep -i optmax $ROOTCOREDIR/../EventLoop/*
 Dec 16th, 16
 Problem: how to find the b hadron?
 how do you know it is a b before we even tag it ?
+
+
+
+Dec 26th , 16
+pdg ID 5 -> b
+
+
+//If you don't about the track properties at all you can loop over the \
+the pixel clusters    
+
+
+adding pixel barrel layer counter
+how to access to bec layer
+
+
+
+Dec. 27th, 16
+
+Pixels	   1 removable barrel layer 0.2 Rφ = 12, z = 66 16 ±2.5
+	   2 barrel layers 1.4 Rφ = 12, z = 66 81 ±1.7
+	   4 end-cap disks
+	   on each side 0.7 Rφ = 12, R = 77 43 1.7-2.5
