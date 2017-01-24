@@ -679,3 +679,12 @@ Pixels	   1 removable barrel layer 0.2 Rφ = 12, z = 66 16 ±2.5
 	   2 barrel layers 1.4 Rφ = 12, z = 66 81 ±1.7
 	   4 end-cap disks
 	   on each side 0.7 Rφ = 12, R = 77 43 1.7-2.5
+
+Jan. 24th, 16
+FLIC:
+  bytes+=flictalk->singlewrite(FLIC::targetNone,FLIC::cmdRead,0x0,data,0);
+  n = write(sfd,&tx,txLength);
+  n = recv(sockfd,&rx,sizeof rx, 0);
+
+
+
