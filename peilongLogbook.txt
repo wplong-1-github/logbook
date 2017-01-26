@@ -686,5 +686,21 @@ FLIC:
   n = write(sfd,&tx,txLength);
   n = recv(sockfd,&rx,sizeof rx, 0);
 
+Jan. 25th, 16
+under ~/.ssh
+touch authorized_keys
 
+cat ~/.ssh/id_rsa.pub
 
+ustb14:
+== U4 Eth2 ==
+Source MAC   02:41:4e:4c:01:42
+Source IP    192.168.2.2
+Source Port  50000
+Dest MAC     00:30:64:0a:ec:ca
+Dest IP      192.168.2.1
+Dest Port    50000
+
+ustb10:
+eth7      Link encap:Ethernet  HWaddr 00:30:64:0A:EC:CB  
+          inet addr:192.168.2.1  Bcast:192.168.2.255  Mask:255.255.255.0
