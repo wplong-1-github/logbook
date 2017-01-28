@@ -680,13 +680,13 @@ Pixels	   1 removable barrel layer 0.2 Rφ = 12, z = 66 16 ±2.5
 	   4 end-cap disks
 	   on each side 0.7 Rφ = 12, R = 77 43 1.7-2.5
 
-Jan. 24th, 16
+Jan. 24th, 17
 FLIC:
   bytes+=flictalk->singlewrite(FLIC::targetNone,FLIC::cmdRead,0x0,data,0);
   n = write(sfd,&tx,txLength);
   n = recv(sockfd,&rx,sizeof rx, 0);
 
-Jan. 25th, 16
+Jan. 25th, 17
 under ~/.ssh
 touch authorized_keys
 
@@ -704,3 +704,13 @@ Dest Port    50000
 ustb10:
 eth7      Link encap:Ethernet  HWaddr 00:30:64:0A:EC:CB  
           inet addr:192.168.2.1  Bcast:192.168.2.255  Mask:255.255.255.0
+
+
+Jan. 26th, 17
+each register can store 16 bits and for "abcd", each character has 4 bits
+
+
+Jan. 27th, 17
+running wireshark on ustb10
+xauth extract - `xauth list |tail -1|sed 's?MIT-MAG.*$??'`|sudo /usr/bin/xauth merge -
+sudo /usr/bin/wireshark -i eth6
