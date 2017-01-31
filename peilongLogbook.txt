@@ -714,3 +714,20 @@ Jan. 27th, 17
 running wireshark on ustb10
 xauth extract - `xauth list |tail -1|sed 's?MIT-MAG.*$??'`|sudo /usr/bin/xauth merge -
 sudo /usr/bin/wireshark -i eth6
+
+
+Jan. 30th, 17
+fatal: Authentication failed for 'https://:pewang@gitlab.cern.ch:8443/pewang/FLICControl.git/'
+
+What I did to solve it:
+1) create README.md on gitlab.cern.ch web
+2) pull it to the local using ssh (make sure the ssh key is deployed on your local computer)
+
+
+If you run flic_udp or ping_flic to send a message from the blade (ustb10, 192.168.2.1) to the flic (192.168.2.2)
+
+1  0.000000000	  192.168.2.1 192.168.2.2    UDP 56  Source port: 43588  Destination port: 50000
+2  0.000075304	  192.168.2.2 192.168.2.1    UDP 60  Source port: 50000  Destination port: 50000
+3  4.999727244	  AdlinkTe_0a:ec:cb	     Microchi_b1:07:aa	  ARP	 42	     Who has 192.168.2.2?  Tell 192.168.2.1
+4  4.999807538	  Microchi_b1:07:aa	     AdlinkTe_0a:ec:cb	  ARP	 60	     192.168.2.2 is at 00:04:a3:b1:07:aa
+
