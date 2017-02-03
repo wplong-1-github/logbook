@@ -1,0 +1,733 @@
+Wed 26 OCT 16
+I attended the "Trigger for Physics" workshop in the morning and had lunch with all SMU people at CERN. Then I went to the Hbb meeting with Steve and Mattew at 1:30pm and went back to the afternon section of the workshop to listen the talk and the discussion for the trigger of 2017 run. I went to CERN building 55 to get my ID card. Then I attended the "b-jet trigger worshop" meeting. It is a service task workshop and I met some people I don't recognize there. After that, I had dinner with Steve and Matthew. We talked a lot about Mars, astronomy, space-time, universe fluctation. They talked about a movie - "Total Recall" 1990. I might watch it sometime. 
+
+I also heard from Jeff and Steve that the 2 lepton data for Hbb framework is not found yet.
+
+Service task waiting for Steve meeting with Argonne.
+
+I also added the logbook and PhD thesis git repository.
+
+
+Thu 27 OCT 16
+eosLocation=root://eosatlas.cern.ch//eos/atlas/unpledged/group-tokyo/users/yenari/20160708/HIGG2D4_13TeV/CxAOD_00-24-07/ttbar/group.phys-higgs.mc15_13TeV.410000.PwPyEG_P2012_ttbar_hdamp172p5_nonallhad.s2608.HIGG2D4.24-7_CxAOD.root/
+
+cat filename.txt | xargs -i xrdcp ${eosLocation}{} /scratch/users/peilongw
+
+--------------
+xargs command is designed to construct argument lists and invoke other utility. xargs reads items from the standard input or pipes, delimited by blanks or newlines, and executes the command one or more times with any initial-arguments followed by items read from standard input. Blank lines on the standard input are ignored.
+
+
+Fri 28 OCT 16
+find . -name "*DiskListLocal.cxx"
+
+
+Wed 2 Nov 16
+yum check-update
+    This command allows you to determine whether any updates are available for your installed packages. yum returns a list of all package updates from all repositories if any are available. 
+
+yum update package_name
+    Used to update the specified packages to the latest available version. If no packages are specified, then yum will attempt to update all installed packages.
+    If the --obsoletes option is used (i.e. yum --obsoletes package_name), yum will process obsolete packages. As such, packages that are obsoleted across updates will be removed and replaced accordingly. 
+
+It makes no difference whether double or single quotes are used when creating an alias.
+    alias ll='ls -al'
+
+RPM package install:
+rpm -ivh package_name 
+
+-i: install
+-v: installation details
+-h: installation progress
+
+
+
+Thu 3 Nov 16
+Eventloop: to speed compiling:
+
+rc find_packages --restrict=FrameworkExe
+rc compile
+
+
+Tue 8 Nov 16
+Emacs remote load files:
+/ssh:user@remotehost:/etc
+
+
+Use grep recursively
+
+You can search recursively i.e. read all files under each directory for a string “192.168.1.5”
+$ grep -r "192.168.1.5" /etc/
+OR
+$ grep -R "192.168.1.5" /etc/
+
+
+
+Nov 8, 16
+CSCOPE source browsing tool
+
+
+逆向工程：C++ source code to UML
+1. Rational Rose 2003
+2. Visual C++
+3. and so on.
+
+
+
+Nov 15, 16
+/users/peilongw/Project/CxAOD/CxAODReader/CxAODReader
+BookFillHist overload:
+	void BookFillHist(const string& name, int nbinsx, float xlow, float xup, float value, float weight=1);
+	void BookFillHist(const string& name, int nbinsx, float* xbins, float value, float weight=1);
+  	void BookFillHist(const string& name, int nbinsx, float xlow, float xup, int nbinsy, float ylow, float yup, float xvalue, float yvalue, float weigh\
+t=1);
+	void BookFillHist(const string& name, int nbinsx, float* xbins, int nbinsy, float* ybins, float xvalue,  float yvalue, float weight=1);
+
+/users/peilongw/Project/CxAOD/CxAODReader_VHbb/Root/AnalysisReader_VHbb2Lep.cxx:
+
+Vector name: HVec_gsc.M()
+HVec_gsc=mergedH.vec_gsc;
+HVec_gsc=resolvedH.vec_gsc;
+   
+The name of the Pt(j1) vs Mbb plot: GSCMbbVSPtJ1
+
+
+Nov 17, 16
+
+yum how to check installed package:
+
+yum list installed
+    Lists all packages installed on your system. The rightmost column in the output lists the repository from which the package was retrieved. 
+
+
+How to unpack .tar.gz
+tar -xvzf community_images.tar.gz
+To explain a little further, tar collected all the files into one package, community_images.tar. The gzip program applied compression, hence the gz extension. So the command does a couple things:
+
+    f: this must be the last flag of the command, and the tar file must be immediately after. It tells tar the name and path of the compressed file.
+    z: tells tar to decompress the archive using gzip
+    x: tar can collect files or extract them. x does the latter.
+    v: makes tar talk a lot. Verbose output shows you all the files being extracted.
+
+eosLocation=root://eosatlas.cern.ch//eos/atlas/unpledged/group-tokyo/users/yenari/20160708/HIGG2D4_13TeV/CxAOD_00-24-07/ZHll125/group.phys-higgs.mc15_13TeV.341102.Py8EG_A14NNPDF23LO_ZllH125_bb.s2608.HIGG2D4.24-7_CxAOD.root/
+
+cat filename_ZHll125.txt | xargs -i xrdcp ${eosLocation}{} /scratch/users/peilongw
+
+
+linux check folder size
+du -sh *
+
+
+prepare to install local ROOT tomorrow
+
+
+
+Nov 18, 16
+Emacs jump to the end of the file:
+M->: Go the end of the file
+M-x package-list-...
+
+Type i before the package name for mark
+Tyep x for install
+
+emacs iedit mode:
+move on the variables
+type C-c ; to start
+tyrpe C-x ; to exit
+
+
+Working on GitLab:
+Command line instructions
+Git global setup # non global -> just remove --global
+
+git config --global user.name "Peilong Wang"
+git config --global user.email "peilong.wang@cern.ch"
+
+Create a new repository
+
+git clone https://gitlab.cern.ch/pewang/HbbAnalysis.git
+cd HbbAnalysis
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+
+Existing folder or Git repository
+
+cd existing_folder
+git init
+git remote add origin https://gitlab.cern.ch/pewang/HbbAnalysis.git
+git add .
+git commit
+git push -u origin master
+
+
+ROOT file:
+How to read histgram from ROOT file
+  TFile *f1 = new TFile("./submitDir/hist-mc15_13TeV.342619.aMcAtNloHerwigppEvtGen_UEEE5_CTEQ6L1_CT10ME_
+hh_4b.merge.DAOD_EXOT8.e4419_s2608_r6869_r6282_p2438.root");
+  /*
+  f1->ls();
+
+  TH1F *bPT = (TH1F*)f1->Get("h4_bEnergy");
+
+
+C++ code naming convention:
+file name must be lower case, underline is used to seperate words, such as my_useful_class.cc
+class name must capitalize the First word, no underline included, such as MyExcitingClass
+variable name must be lower case, underline is used to seperate words, such as string table_name, -- class data member follow the same naming rule
+constant variable name: adding a "c" in front of the variables, such as const int cDaysInAWeek = 7;
+function name: common function -> no underline, capitialize the first word, such as AddTableEntry() DeleteUrl() OpenFileOrDie()
+	       set function & get function in the class -> the name should be corresponed to the variable name, such as:
+	       	   class MyClass {
+  		     public:
+			...
+			int num_entries() const { return num_entries_; }
+        		void set_num_entries(int num_entries) { num_entries_ = num_entries; }
+
+    		     private:
+			int num_entries_;
+		  };
+
+
+Linux file naming convention:
+. is used to separate a filetype extension, e.g. foo.txt.
+
+- or _ is used to separate logical words, e.g. my-big-file.txt or sometimes my_big_file.txt. - is better because you don't have to press the Shift key, others prefer _ because it looks more like a space.
+
+So if I understand your example, backup-part2-random or backup_part2_random would be closest to the normal Unix convention.
+
+---> added on Nov 20, 16
+- Directory => uppercase
+- file => lowercase
+- space => '_' --Peilong's comment--|| "_" used to connect/seperate two close meaning words, such as "x86_64"  || version treated as 1 word, seperated by "."
+- manually version control file => '-' as separator --Peilong's comment--|| "-" used to seperate words, such as kernel version 3.10.0-327.36.3.el7.x86_64 || directory generally follows the same rule as the file, but directory can use Uppercase if necessary.
+\u@\h> ls -1
+ANOTHER_FOLDER
+WORKS
+---> end of added on Nov 20, 16
+
+
+ROOT CERN interactive mode:
+how to filter needed file?
+TFile *f1 = new TFile("/home/peilong/Downloads/ttbar/hist-ttbar.root")
+f1->ls()
+
+ROOT plot two histogram together:
+  ttbar_2tag2pjet_0_500ptv_SR_GSCMbbVSPtJ1->Draw();
+  ttbar_2tag2pjet_0_500ptv_mBBcr_GSCMbbVSPtJ1->Draw("same");
+
+
+TCanvas::TCanvas(const char *name, const char *title, Int_t form) : TPad(), fDoubleBuffer(0)
+  222 {
+  223    fPainter = 0;
+  224    fUseGL = gStyle->GetCanvasPreferGL();
+  225 
+  226    Constructor(name, title, form);
+  227 }
+  228 
+  229 ////////////////////////////////////////////////////////////////////////////////
+  230 /// Create a new canvas with a predefined size form.
+  231 /// If form < 0  the menubar is not shown.
+  232 ///
+  233 /// - form = 1    700x500 at 10,10 (set by TStyle::SetCanvasDefH,W,X,Y)
+  234 /// - form = 2    500x500 at 20,20
+  235 /// - form = 3    500x500 at 30,30
+  236 /// - form = 4    500x500 at 40,40
+  237 /// - form = 5    500x500 at 50,50
+
+
+yum repoinfo
+
+yum repolist 
+
+Install the EPEL repository on CentOS and Red Hat
+
+You install the EPEL repository by downloading the appropriate RPM package for your system and installing it. The following instructions use the 64-bit packages that work with Rackspace Cloud Servers instances.
+
+CentOS Extras repository
+
+The CentOS Extras repository includes a package to install EPEL, and is enabled by default. To install the EPEL package, run the following command:
+
+sudo yum install epel-release
+
+
+
+Nov 19, 16
+
+latex newlog.tex
+xdvi newlog.dvi
+
+or 
+pdflatex newlog.tex
+
+Taken from China
+kinds of tea and souvenir
+tea and snacker for talking
+
+
+/users/peilongw/Project/CxAOD/CxAODReader_VHbb/Root/AnalysisReader_VHbb2Lep.cxx:
+What does Mbb mean: m_etree->get<float>("GSCMbb")
+m_etree->SetBranchAndValue<float>("GSCMbb", HVec_gsc.M(), -99);
+
+if ( m_physicsMeta.regime == PhysicsMetadata::Regime::resolved ) {
+HVec_gsc=resolvedH.vec_gsc;
+} else if ( m_physicsMeta.regime == PhysicsMetadata::Regime::merged ){
+HVec_gsc=mergedH.vec_gsc;
+}
+
+TLorentzVector HVec_gsc;
+
+
+
+What does pT(j1) mean: m_etree->get<float>("GSCMbbJ1Pt")
+
+
+
+Nov 20, 16
+Display full date in task bar -- CentOS
+gnome-tweak-tool used to have settings for that in previous versions.
+
+Title of the figure: Y vs. X
+A vs. B = "A when B is ..." implying that A is on the vertical and B is on the horizontal if vertical is dependent 
+
+
+I git push my work to a remote Git repository.
+Every push will prompt me to input username and password. I would like to avoid it for every push, but how to configure to avoid it?
+
+1. Generate an SSH key
+
+Linux/Mac
+Open terminal to create ssh keys:
+
+cd ~                 #Your home directory
+ssh-keygen -t rsa    #Press enter for all values
+
+2. Associate the SSH key with the remote repository
+
+This step varies, depending on how your remote is set up.
+
+If it is a GitHub repository and you have administrative privileges, go to settings and click 'add SSH key'. Copy the contents of your ~/.ssh/id_rsa.pub into the field labeled 'Key'.
+If your repository is administered by somebody else, give the administrator your id_rsa.pub.
+
+3. Set your remote URL to a form that supports SSH 1
+
+If you have done the steps above and are still getting the password prompt, make sure your repo URL is in the form
+
+git+ssh://git@github.com/username/reponame.git
+
+as opposed to
+
+https://github.com/username/reponame.git
+
+To see your repo URL, run:
+
+git remote show origin
+
+You can change the URL with:
+
+git remote set-url origin git@github.com/username/reponame.git
+
+or 
+
+emacs -nw .git/config
+then edit the file:
+
+[remote "origin"]
+        url = git@github.com:wplongpub/language.git
+
+
+Adjusting the position and size of the figure of LibreOffice Impress:
+Directly input the number of the position and size.
+
+
+
+Nov 30, 16
+
+SVN FLIC repository:
+@CERN: svn+ssh://jwebster@svn.cern.ch/reps/atlastdaq/FTK/flic/trunk
+@Argonne: https://svn.inside.anl.gov/repos/hep_elecdesign/FTK/
+
+svn checkout svn+ssh://pewang@svn.cern.ch/reps/atlastdaq/FTK/flic/trunk
+
+compiling the standalone testing tools...
+cd flic/standalone
+make
+
+server: atlas1.hep.anl.gov
+server: ssh nathan
+
+The goal now is to
+1) let both FLIK 1 and FLIK 2 conenct to USTB, then we can log into USTB10 to setup FLIK
+
+2) ATCA blade can be accessed through nathan<-atlas1
+
+3) communication between ATCA blade and FLIC is realized through wireshark
+
+
+Current plan:
+1) let FLIC send data to ATCA blade
+2) see whether ATCA blade is able to receive it.
+   Question: how could ATCA blade receive the data
+   by wireshark?
+
+
+2.6.1. Installing from RPM’s under Red Hat and alike
+
+Building RPMs from Wireshark’s source code results in several packages (most distributions follow the same system):
+
+    The wireshark package contains the core Wireshark libraries and command-line tools.
+    The wireshark-qt package contains the Qt-based GUI.
+    The wireshark-gtk (formerly wireshark-gnome) package contains the legacy Gtk+ based GUI. 
+
+Many distributions use yum or a similar package management tool to make installation of software (including its dependencies) easier. If your distribution uses yum, use the following command to install Wireshark together with the Qt GUI:
+
+yum install wireshark wireshark-qt
+
+If you’ve built your own RPMs from the Wireshark sources you can install them by running, for example:
+
+rpm -ivh wireshark-2.0.0-1.x86_64.rpm wireshark-qt-2.0.0-1.x86_64.rpm
+
+If the above command fails because of missing dependencies, install the dependencies first, and then retry the step above.
+
+
+Dec 1, 16
+
+enp0s20u6: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet6 fe80::7ec3:a1ff:fe89:18d2  prefixlen 64  scopeid 0x20<link>
+        ether 7c:c3:a1:89:18:d2  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 3256 (3.1 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+-> bottom board
+10.193.32.17
+
+---    6 Without IPMC    ( 10.193.32.18 , 50000 , 10.193.32.17 )
+
+
+black eth2 -- bottom board
+white eth3 -- top board 
+on USTB 14
+
+
+svn ci -m "xXXX" 
+svn commit
+
+svn up
+-- git pull
+
+ssh ustb10
+
+
+enp0s20u6: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.193.32.17  netmask 255.255.255.0  broadcast 10.193.32.255
+        inet6 fe80::8eae:4cff:fefe:cb7e  prefixlen 64  scopeid 0x20<link>
+        ether 8c:ae:4c:fe:cb:7e  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 1658 (1.6 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+iptables -F
+
+
+flicscope_8x8 both boards
+
+10.153.37.15
+processor
+
+1. power on
+
+2 Program All FPGAs
+
+
+
+svn up 
+-- update
+
+        COUNTER      COUNT   EXPECTED (±2 MHz)
+         SRAM_REFCLK         79                   80
+          DDR_REFCLK        199                  200
+       GTX112_REFCLK        124                  125
+        GTX112_TXCLK         99                  100
+        GTX112_RXCLK         99                  100
+       GTX116_REFCLK        124                  125
+        GTX116_TXCLK         99                  100
+        GTX116_RXCLK         99                  100
+             COUNTER      COUNT   EXPECTED (±2 MHz)
+         SRAM_REFCLK         79                   80
+          DDR_REFCLK        199                  200
+       GTX112_REFCLK        124                  125
+        GTX112_TXCLK         99                  100
+        GTX112_RXCLK         99                  100
+       GTX116_REFCLK        124                  125
+        GTX116_TXCLK         99                  100
+        GTX116_RXCLK         99                  100
+
+ 225 Change to "dump data on the floor" mode
+
+
+
+  90 Initialize counters
+  76 Send single event
+  91 Dump counters
+  77 Start SSBe data
+
+< 100 number of tracks
+5-10
+
+Enter fixed delay between events [1-4095] : 
+1000
+
+first 4 channels
+
+second 4 channels
+
+data from flic to blade through eth6 or 7 ( through the back of ATCA crate)
+
+
+
+Dec 2, 16
+
+steps to 7
+90
+
+running wireshark on blade
+nothing got captured
+back to check FLIC control code
+
+
+
+Dec 3, 16
+
+LHC luminosity upgrade is planned in threes stages:
+Phase 0 (2015-2018): LHC energy 8→13-14 TeV with full current, and L~1-2x10^34, and ⟨μ⟩ up to ~80, to integrate 150 fb-1 until LS2.
+Phase 1 (2021-2023): 14 TeV. Integrate to 300 fb-1 until LS3.
+Phase 2 (2026-2030): HL-LHC upgrade with luminosity levelling 5-7x1034, ⟨μ⟩ up to ~200, to integrate 3000 fb-1.
+
+The high instantaneous luminosity(???) expected for Phase 1 upgrade to LHC will pose challenges to achieving these goals for the trigger system. The existing ATLAS trigger system, consisting of a hardware-based Level 1 and a CPU-base High Level Trigger with its Level 2 and Event Filter, was designed to work well at the LHC design luminosity. _However_ after the planned luminosity upgrade, the detector environment will be complicated by the increase in detector activity arising from many simultaneous interactions. Additionally, the proposed upgrades to the hardware level 1 Trigger will allow an increased rate into the HLT.
+
+The Fast TracKer or FTK, which will do global track reconstruction after each level-1 trigger to have enable the level-2 trigger to have early access to tracking information.
+
+ 
+linux check running process command:
+# ps aux | less
+
+
+linux kill process command
+# kill process number#
+
+
+My lscpu says there are 96 cores. Are those physical cores? What is the maximum and optimal thread that I can run on this machine?
+
+This is what you want to know
+
+Thread(s) per core:    2
+Core(s) per socket:    12
+Socket(s):             4
+
+You have 4 CPU sockets, each CPU can have, up to, 12 cores and each core can have two threads.
+
+PixelClustersYour max thread count is, 4 CPU x 12 cores x 2 threads per core, so 12 x 4 x 2 is 96. Therefore the max thread count is 96 and max core count is 48.
+
+What is better ?
+
+That depends on what you want to do, more threads means less frequency (ie a 3ghz becomes split in two) but better multi-tasking (more threads) and using full cores (no hyper-threading) is better for high CPU usage tasks (ie games).
+
+Hope this helps you.
+
+
+
+Dec 11, 2016
+
+Linux convert pdf to png
+pdftoppm -png Trigger_Flowchart.pdf Trigger_Flowchart
+
+rucio list-dids mc15_13TeV:mc15_13TeV*341577*EVNT*
+
+rucio download mc15_13TeV:mc15_13TeV.341577.PowhegPy8EG_AZNLOCTEQ6L1_WplusenuH_H125_a20a20_bbbb.evgen.EVNT.e4118
+
+
+Dec 13, 2016
+
+root [5] .ls
+
+root [5] CollectionTree->Print()
+
+root [5] CollectionTree->Print("*Truth*")
+
+
+
+Dec 14, 16
+
+Slurm's srun command will interactively request a batch job, returning a compute-node name as a prompt, usually scheduled within a short period of time. Issue the srun command only from a login node. Command syntax is:
+
+srun --pty -A projectnumber -p queue -t hh:mm:ss -n tasks -N nodes /bin/bash -l
+
+
+Pixel hits container:
+pixel cluster -- maybe
+then problem: what content are in that container?
+How do I find the right container 
+
+
+
+list all directories under current directory
+ls -d */
+
+
+
+antikt4emtopo ghost
+which jet is b-jet energy
+
+translation from eta-phi module ID to eta-phi physics ID
+
+
+root [7] CollectionTree->Scan("PixelClustersAuxDyn.layer")
+
+
+1. b-hadron pT cut
+2. deltaR = 0.4  find the directions covering the pixel module
+3. all the hits in the modules eta-phi -> physics eta-phi
+
+starting from
+ Skeleton for analyzing Tracking DxAOD 
+
+root [2] CollectionTree->Scan("PixelClustersAuxDyn.bec")
+
+
+
+Dec 15, 16
+
+ROOT installation
+1. Download and unpack the ROOT's sources from the download area or using directly the Git repository. Follow the instructions for getting the ROOT sources
+2. To use the location independent installation requires to set environment variables PATH and LD_LIBRARY_PATH. This is done by sourcing the script (depending on the shell family) source bin/thisroot.sh. While to use the fix location installation you do not need to set any environment to run root.
+
+Switch to next workspace:
+Ctrl+Alt+ Down
+
+Send windown to next workspace:
+Shift+Ctrl+Alt + Down
+
+Output the standard output and standard error to the file
+runPixelClusterAnalysis submitDir > output.txt 2>&1
+			standard output -> file standard error -> standard outp
+
+tsos-> track state of surface
+msos-> mearsurement state of surface
+
+[pewang@lxplus135 Btagging_without_tracking]$ runPixelClusterAnalysis submitDir > output_1event.txt 2>&1
+
+emacs switch back to read-only mode
+M-x read-only-mode
+
+Hi everyone, totally unrelated to this talk, but I've just produced some derivations that have all of the ID information (including pixels, SCT hits, etc.) for boosted W's and Z's.  In particular, Z decays to bb about 50% of the time so if you want some high pT b-hadrons, some of them should be in there...
+
+Here are the files: /eos/atlas/user/b/bnachman/public/HFSF16/IDTIDE_BoostedW_Wprime5TeV/ (20k events)
+
+show versions of the availible software versions:
+# showVersions
+
+show the availalbe ROOTCORE versions
+# ls $ROOTCOREDIR/../../
+
+Never use the rootcore verison with X.X.0
+Never use the something with XXXwindowsXXX
+
+[pewang@lxplus135 Btagging_without_tracking]$ rcsetup Base,2.4.24
+
+xAODTracking-00-13-31
+
+svn co $SVNPERF/CombPerf/Tracking/xAOD/TrackAnalysis/tags/xAODTracking-00-13-31 ./TrackAnalysis
+
+You can use C-x k to kill current buffer. See Emacs Manual .
+
+
+rc build 
+= rc find-packages
+= rc compile
+
+
+The source files of sample handler and Eventloop
+grep -i optmax $ROOTCOREDIR/../EventLoop/*
+
+
+Dec 16th, 16
+Problem: how to find the b hadron?
+how do you know it is a b before we even tag it ?
+
+
+
+Dec 26th , 16
+pdg ID 5 -> b
+
+
+//If you don't about the track properties at all you can loop over the \
+the pixel clusters    
+
+
+adding pixel barrel layer counter
+how to access to bec layer
+
+
+
+Dec. 27th, 16
+
+Pixels	   1 removable barrel layer 0.2 Rφ = 12, z = 66 16 ±2.5
+	   2 barrel layers 1.4 Rφ = 12, z = 66 81 ±1.7
+	   4 end-cap disks
+	   on each side 0.7 Rφ = 12, R = 77 43 1.7-2.5
+
+Jan. 24th, 17
+FLIC:
+  bytes+=flictalk->singlewrite(FLIC::targetNone,FLIC::cmdRead,0x0,data,0);
+  n = write(sfd,&tx,txLength);
+  n = recv(sockfd,&rx,sizeof rx, 0);
+
+Jan. 25th, 17
+under ~/.ssh
+touch authorized_keys
+
+cat ~/.ssh/id_rsa.pub
+
+ustb14:
+== U4 Eth2 ==
+Source MAC   02:41:4e:4c:01:42
+Source IP    192.168.2.2
+Source Port  50000
+Dest MAC     00:30:64:0a:ec:ca
+Dest IP      192.168.2.1
+Dest Port    50000
+
+ustb10:
+eth7      Link encap:Ethernet  HWaddr 00:30:64:0A:EC:CB  
+          inet addr:192.168.2.1  Bcast:192.168.2.255  Mask:255.255.255.0
+
+
+Jan. 26th, 17
+each register can store 16 bits and for "abcd", each character has 4 bits
+
+
+Jan. 27th, 17
+running wireshark on ustb10
+xauth extract - `xauth list |tail -1|sed 's?MIT-MAG.*$??'`|sudo /usr/bin/xauth merge -
+sudo /usr/bin/wireshark -i eth6
+
+
+Jan. 30th, 17
+fatal: Authentication failed for 'https://:pewang@gitlab.cern.ch:8443/pewang/FLICControl.git/'
+
+What I did to solve it:
+1) create README.md on gitlab.cern.ch web
+2) pull it to the local using ssh (make sure the ssh key is deployed on your local computer)
+
+
+If you run flic_udp or ping_flic to send a message from the blade (ustb10, 192.168.2.1) to the flic (192.168.2.2)
+
+1  0.000000000	  192.168.2.1 192.168.2.2    UDP 56  Source port: 43588  Destination port: 50000
+2  0.000075304	  192.168.2.2 192.168.2.1    UDP 60  Source port: 50000  Destination port: 50000
+3  4.999727244	  AdlinkTe_0a:ec:cb	     Microchi_b1:07:aa	  ARP	 42	     Who has 192.168.2.2?  Tell 192.168.2.1
+4  4.999807538	  Microchi_b1:07:aa	     AdlinkTe_0a:ec:cb	  ARP	 60	     192.168.2.2 is at 00:04:a3:b1:07:aa
+
