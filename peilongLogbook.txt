@@ -731,3 +731,96 @@ If you run flic_udp or ping_flic to send a message from the blade (ustb10, 192.1
 3  4.999727244	  AdlinkTe_0a:ec:cb	     Microchi_b1:07:aa	  ARP	 42	     Who has 192.168.2.2?  Tell 192.168.2.1
 4  4.999807538	  Microchi_b1:07:aa	     AdlinkTe_0a:ec:cb	  ARP	 60	     192.168.2.2 is at 00:04:a3:b1:07:aa
 
+
+
+Jan 31th, 17
+How to install sdcv (dictionary):
+download sdcv rpm package 
+install it using Centos rpm
+
+The location where the dictionaries should be put is at “man sdcv”
+
+
+RPM package management – how to remove an installed package 
+rpm -qa | grep -i webmin
+You should then find the exact package name. Then run
+rpm -e <package name>
+to uninstall it. 
+
+
+Display or list all directories in Unix
+Type the following command:
+$ ls -l | grep `^d'
+ls -l | egrep `^d'
+Or better try the following ls command only to list directories for the current directory:
+$ ls -d */
+
+
+How to install sdcv on linux:
+We all need to look for word definition. Online dictionaries and wikipedia are great but we are not always connected to the net. sdcv is a console version of StarDict dictionary. Using sdcv you can search for definitions while still offline. So here are the step to install and make use of this great program.
+Step 1. Installation
+On Ubuntu
+Open Up terminal and type:
+$ sudo apt-get install sdcv
+On CentOs 7
+http://dushistov.github.io/sdcv/ ->Download package, latest version recommended, The follow the README file to use Cmake to install the software.
+On Fedora
+$ su -c “yum install sdcv”
+On Mac OS X
+Mac OS comes with a great GUI based dictionary, but cli enthusiasts will enjoy sdcv.
+Please install Macports and then open Finder, Go to Application Folder > Utilities Folder and launch terminal and type
+$sudo port install sdcv
+Step 2. Download Dictionary Files
+Now that we have installed sdcv, we need to download dictionary files from the net. 
+http://download.huzheng.org/
+Step 3. Install downloaded Dictionary Files
+Now that you have downloaded the dictionary files we need to put them in the folder where sdcv looks for dictionary files when invoked.
+On Linux based systems do the following
+$sudo mkdir /usr/share/stardict/dic/
+$sudo tar -xvjf downloaded.tar.bz2 -C /usr/share/stardict/dic or
+$sudo tar -xvzf downlaoded.tar.gz -C /usr/share/stardict/dic
+Note: Make sure the user who will be invoking the sdcv command has read and execute permissions on /usr/share/stardict/dic/ and its subfolders.
+On Mac OS X
+$mkdir -p $HOME/.stardict/dic
+$sudo tar -xvjf downloaded.tar.bz2 -C $HOME/.stardict/dic
+Note: Unfortunately you need to repeat this process for every user that needs access to these dictionary files.
+Step 4. Enjoy sdcv
+Searching for definition
+$ sdcv Linux                         (looks for linux in the dictionary.)
+$ sdcv                                  (invoes sdcv in the interactive mode, press Control-D to quit).
+In earlier article we covered how to use espeak, now you can combine sdcv and espeak together. Sdcv to look for definition and espeak for pronunciation.
+$ sdcv Linux && espeak Linux
+Here is a picture.
+
+Note: Sometimes due to the long definition of a particular word text scrolls down too fast for you to read, advanced users can set SDCV_PAGER environment variable to /usr/bin/less. Now, less will be used to display to the dictionary’s article. You may consider adding this to your .bashrc file. Check out manpage for sdcv for more information.
+
+Feb 9st, 17
+O
+LibreO	ffice: jump to the end of the file – short cut:
+Ctrl + End
+
+Git branch:
+$ git branch iss53
+$ git checkout iss53
+$ git commit -a -m 'added a new footer [issue 53]'
+$ git checkout master
+Switched to branch 'master'
+$ git branch -vv
+$ git push oirgin iss53
+
+
+linux check hard drive storage:
+df -h <directory>
+
+
+Feb. 10th, 2017
+Firefox open new tab shortcut:
+Ctrl + t(tab)
+
+Close a tab:
+Ctrl+ w
+htons function in socket programming:
+htons is host-to-network short
+
+
+Feb. 13th, 2017
