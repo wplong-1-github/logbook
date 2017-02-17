@@ -824,3 +824,59 @@ htons is host-to-network short
 
 
 Feb. 13th, 2017
+Linux check distribution:
+$ cat /etc/*-release
+
+Feb. 15th, 2017
+Git pull branches:
+git pull origin treeDevelopment 
+
+
+Feb. 17th, 2017
+
+Emacs indent with comment:
+    After typing /*, hit M-j, the default binding for indent-new-comment-line (and the default binding for c-indent-new-comment-line in c-mode). If it is the first comment line the closing closing characters */ will be auto-inserted.
+    Hitting M-j more times with insert more comment lines with the * prefix. This is the in-built behavior of c-indent-new-comment-line/indent-new-comment-line functions. Check out the Multiple lines of comments documentation.
+    An extra nugget in the below code ensures that there is at least one space between the * on each comment line and the comment.
+
+
+//***************Bashscript -- passing argument: *********************/
+$> cat ./deploymLog.sh 
+#!/bin/bash
+
+name=$1
+log_file="Logone.txt"
+
+if [[ -n "$name" ]]; then
+    echo "$1=$( date +%s )" >> ${log_file}
+else
+    echo "argument error"
+fi
+
+First argument from a command line could be founded with $1. date +%s returns current timestamp in unix time. >> is an operator to append writing to file.
+
+$> ./deploymLog.sh tt
+
+$> cat Logone.txt 
+tt=1329810941
+
+$> ./deploymLog.sh rr
+
+$> cat Logone.txt 
+tt=1329810941
+rr=1329810953
+
+For more readable timestamp you could play with date arguments.
+// ***********************End of Bashscript -- passing argument: *********************/
+
+
+Emacs adding comment to the beginning of each line:
+M-x replace-regexp
+then type ^ (which meaning the beginning of each line)
+then type # or // (which are the comment character)
+
+You could use replace-regexp for this purpose, with the $ regexp metacharacter that matches end-of-line. Go to the start of the buffer, and then do M-x replace-regexp, and answer $ and (your text) to the two prompts.
+
+Or, in emacs-speak, for your specific example of adding a:
+
+M-< M-x replace-regexp RET $ RET a RET
