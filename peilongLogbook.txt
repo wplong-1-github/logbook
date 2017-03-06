@@ -956,3 +956,36 @@ $ svn checkout svn+ssh://pewang@svn.cern.ch/reps/atlasoff/Trigger/TrigFTK/TrigFT
 
 Feb. 27th, 2017
 FLIC test vecor generating:
+
+
+Mar. 3rd, 2017
+
+[peilong@charon flic]$ ls ~/Project/FLICControl_svn/trunk/flic/
+firmware  flic_comm.h  FLICController.h  FLIC.h  FLIC_Mon_App.h  FlicMonitoringFIFO.h  FLICSetupTool.h  LUTs  ReadoutModuleFlic.h  StandaloneTools.h
+
+[peilong@charon flic]$ ls ~/Project/FLICControl_svn/trunk/src/
+flic_comm.cxx  FLICController.cxx  FLIC_Mon_App.cxx  FlicMonitoringFIFO.cxx  GTX116_REFCLK[i]  ReadoutModuleFlic.cxx
+
+
+C linux header file location:
+The system headers are in /usr/include and the headers for user-installed packages are in /usr/local/include.
+
+
+Mar 4th, 2017
+svn add all changes:
+svn add --force . will add all the files and directories below your current working directory that aren't added yet (and aren't ignored) to your working copy.
+
+A svn ci -m "" will then handle the commit.
+
+
+Mar 6th, 2017
+ReadoutModule_blade -> raw data to EMON
+ReadoutModule_FLIC -> monitoring fifo -> EMON
+
+ReadoutModule_blade/FLIC -> histograms -> OH
+			 -> monitoring numbers -> IS
+
+publish function inside ReadoutModule publish to EMON, OH and IS every 10 seconds.
+
+
+
