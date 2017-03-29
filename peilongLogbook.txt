@@ -988,4 +988,41 @@ ReadoutModule_blade/FLIC -> histograms -> OH
 publish function inside ReadoutModule publish to EMON, OH and IS every 10 seconds.
 
 
+DijetResonanceAlgo:
+since the xAODAnaHelper is taking the default set-up, there is no need to change the config file now. So I can modify the ResonanceAlgorithm.cxx first 
+
+
+Mar 7th, 2017
+The further JTAG connector on FLIC monitors FPGA1
+The closer JTAG connector on FLIC minitors management FPGA
+
+
+Mar 10th, 2017
+ResonanceAlgoithm.cxx : m_eventDetailStr ?   miniTree->AddEvent( m_eventDetailStr );
+##%%%%%%%%%%%%%%%%%%%%%%%%%% DijetResonanceAlgo %%%%%%%%%%%%%%%%%%%%%%%%%%#                                                                       
+    "m_eventDetailStr"            :   "truth pileup shapeEM",
+
+
+ResonanceAlgoithm.cxx : m_MET_testStr ? miniTree->AddMET(m_MET_testStr);
+
+working point -> cuts
+
+
+
+Mar 20th, 2017 Monday
+C-a emacs: move to the home of the line
+C-e emacs: move to the end of the line
+
+emacs macro:
+to start: type C-x C-(
+then type the command you'd like to repeat
+to end: type C-x C-)
+
+to do the macro: type C-x e e e e 
+
+
+Mar 21th, 2017 Tuesday
+/usr/include/sys/types.h
+
+recvfrom returns the number of words received.
 
