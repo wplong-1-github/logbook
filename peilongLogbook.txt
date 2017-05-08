@@ -1060,4 +1060,9 @@ for filename in os.listdir("."):
 
 
 
-Apr. 21th, 2017 Friday
+May 5th, 2017 Friday
+
+This will show all directories in /home that contain more than 1000MB. If your version of du doesn't support -m, you can use du -sk and adjust the awk bit to look for more than 1,000,000KB instead...
+
+cd /home
+du -sm * | awk '$1 > 1000'
