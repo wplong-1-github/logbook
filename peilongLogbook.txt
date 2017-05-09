@@ -1066,3 +1066,17 @@ This will show all directories in /home that contain more than 1000MB. If your v
 
 cd /home
 du -sm * | awk '$1 > 1000'
+
+
+May 9th, 2017
+Emacs org mode
+      how to add new line:
+      	  type "|" then type "Tab"
+      how to calculate formular:
+      	  type "C-c C-c"
+
+Emacs show line nubmer:
+M-x linum-mode (or global-linum-mode), and put (global-linum-mode t) in your ~/.emacs (or ~/.emacs.d/init.el) to enable it at startup.
+
+Emacs how to exit shell-mode:
+      type "exit"
