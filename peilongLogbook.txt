@@ -33,7 +33,7 @@ It makes no difference whether double or single quotes are used when creating an
     alias ll='ls -al'
 
 RPM package install:
-rpm -ivh package_name 
+rpm -ivh package_name.rpm
 
 -i: install
 -v: installation details
@@ -1080,3 +1080,16 @@ M-x linum-mode (or global-linum-mode), and put (global-linum-mode t) in your ~/.
 
 Emacs how to exit shell-mode:
       type "exit"
+
+
+
+May 10th, 2017
+Dijetlepton MET:
+metFinalClus is reconstructed from cluster
+metFinalTrk is reconstructed only from tracks
+
+metSoftTrk is MET reconstructed from tracks like neutrino + tracks undetected
+
+src/Loop.cxx Line 550
+run A_RUN_ALL_SIGNAL_test
+output file in inputs file *.log
