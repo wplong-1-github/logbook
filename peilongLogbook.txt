@@ -1095,4 +1095,235 @@ run A_RUN_ALL_SIGNAL_test
 output file in inputs file *.log
 
 
-June 5th, 2017
+June 6th, 2017
+Two directories, same file list, compare all the file in both directories:
+diff -bur folder1/ folder2/
+This will output a recursive diff that ignore spaces, with a unified context:
+
+    b flag means ignoring whitespace
+    u flag means a unified context (3 lines before and after)
+    r flag means recursive
+
+
+June 7th, 2017
+U3/U4 ETH setup for Blade in step "4 Setup Proc board":
+
+== U3 Eth1 ==
+Source MAC   00:04:a3:b1:07:aa
+Source IP    192.168.2.2
+Source Port  50000
+Dest MAC     00:30:64:0a:ec:cb
+Dest IP      192.168.2.1
+Dest Port    50001
+
+get U1 -> U3 channel 2, 3, 4 work:
+2
+3
+4
+5
+6
+7
+225
+11
+write 1101 to 6a on U3
+76
+76
+write 110f to 6a on U3
+77
+sent 2 tracks per data, interval 2000 to blade
+
+
+June 30th, 2017
+
+$T \cdot m$
+This should be used in the notes.
+To get upright Roman text in math mode: $\mathrm{pb}$: $\ifb$
+
+Latex:
+If it is already in the the math mode, like inside \begin{equation*}, then there is no need to type $ \formular $. Otherwise, there will be error.
+
+
+July 11th, 2017
+git commit -m ""
+git commit --amend; then type "enter"
+to add bullet in the commit, type "-"
+
+
+August 9th, 2017
+
+Clone the repository as normal:
+
+git clone git://github.com/rspec/rspec-tmbundle.git RSpec.tmbundle
+
+Then checkout the tag you want like so:
+
+git checkout tags/1.1.4
+
+This will checkout out the tag in a 'detached HEAD' state. In this state, "you can look around, make experimental changes and commit them, and [discard those commits] without impacting any branches by performing another checkout".
+
+To retain any changes made, move them to a new branch:
+
+git checkout -b 1.1.4-jspooner
+
+
+August 22, 2017
+
+EVNT-> AOD -> DAOD
+by asking an official request and being produced centrally by ATLAS
+
+EVNT->HITS->AOD->DAOD
+by using Athena
+
+mc15_13TeV.410501.PowhegPythia8EvtGen_A14_ttbar_hdamp258p75_nonallhad.merge.DAOD_HIGG5D1.e5458_s2726_r7772_r7676_p2949
+
+410501	
+
+
+August 24, 2017
+/users/peilongw/Project/MCFilterRun/RootCoreBin/data/FrameworkSub/yields.1lep.13TeV_mc15c.txt
+
+410501		1		1		1		PwPyEG_A14_ttbar_hdamp172p5_nonallhad
+
+
+~/Project/MCFilterRun/FrameworkSub/data/XSections_13TeV.txt
+# added by Peilong for test
+410501   831.76             1.0            0.5            ttbar_flavtag            PowhegPythia8EvtGen_A14_ttbar_hdamp172p5_nonallhad
+
+
+August 25, 2017
+sbatch -a 1-N ./launch_slurm_array.py  
+
+sbatch -a 1-5 ./send2_sim_s2726.py
+
+sbatch -a 1-2000 ../send4_re_s2726.py
+
+
+August 29 2017
+
+2 or 3 jobs for sim
+1-2000 X 1
+1865-2000  X 1 or 2 (the later one)
+
+17734748_85 parallel-  for reco jobs
+
+git restore a file:
+under the git local major repo:
+git checkout 01494bf961474fa7472dc7db8c2730f6949f9f77 Derivation/setup.sh
+
+git log 
+can help you find the file
+
+Steve vidyo room: https://vidyoportal.cern.ch/join/CsyejuDMVYmi
+
+
+
+August 30 2017
+
+here are the instructions I had from Amit some time ago
+Sent on:
+
+Mon
+From:
+francesco
+
+If you want a directory under your home directory to be readable by others then you need to ensure that every parent directory in the path leading up to your public directory has executable persmission 
+
+So if you look at your home directory now, this is how it looks:
+
+[root@mfadmin01 home]# ls -ld flosterzo
+drwx------ 9 flosterzo physics 4096 Jul  3 08:08 flosterzo
+
+drwx------ here is how you have to read it
+|___first character "d" here indicates this is a directory
+
+Then there are 3 groups of 3 characters: {group 1 is for Owner, that is youself} followed by the {group 2 is for the groups you are associated with} followed by {group 3 is for world, that all other users}
+
+Above you see that for group1: permissions are set to "rwx" (r means read access, w means write access, x means execute access)
+For group2: permissions are set to "---" (3 dashes)
+For group3: permissions are set to "---" (3 dashes)
+
+Hence you have to make sure users have the ability to execute commands like cd on your home directory, hence be able to get to the public directory. 
+Here is what I did:
+[root@mfadmin01 home]# chmod 711 flosterzo
+[root@mfadmin01 home]# ls -ld  flosterzo
+drwx--x--x 9 flosterzo physics 4096 Jul  3 08:08 flosterzo
+
+Hope this fixes it.
+
+Thank you,
+Amit
+From:
+francesco
+
+
+Sep 1. 2017
+
+sbatch -a 1-200 ./send4_reco_r7772_medium-mem-1-m.py
+201667
+sbatch -a 201-400 send4_reco_r7772_medium-mem-1-s.py
+202645 good
+sbatch -a 401-600 ./send4_reco_r7772_medium-mem-1-l.py
+201674
+sbatch -a 601-800 ./send4_reco_r7772_medium-mem-1-s.py
+203356 fails
+sbatch -a 801-899 ./send4_reco_r7772_medium-mem-2.py
+202338
+sbatch -a 900-1200 ./send4_reco_r7772_medium-mem-1-s.py
+20284 100 jobs left
+sbatch -a 1201-1400 ./send4_reco_r7772_high-mem-1.py
+201686
+sbatch -a 1401-1600 ./send4_reco_r7772_medium-mem-1-s.py
+203147 100 jobs left
+sbatch -a 1601-1850 ./send4_reco_r7772_high-mem-2.py
+201694
+sbatch -a 1851-2000 ./send4_reco_r7772_medium-mem-1-s.py
+203560 ~100 jobs left
+
+
+./send4_reco_r7772_htc.py
+
+
+scancel 201681_[877-1200]
+
+Sep. 3 2017
+
+1851-2000 medium-1-m
+
+1401-1600 medium-mem-1-l.py 
+Submitted batch job 204229
+
+900-1200 high-mem-2.py
+Submitted batch job 204234
+
+601-800 high-\
+mem-1.py 
+Submitted batch job 204242
+
+
+201-400 mediu\
+m-mem-2.py 
+Submitted batch job 204249
+
+
+Sep. 14th 2017
+ll ./*
+recursively list all the files under the directory 
+
+ATLAS - Run Control & Trigger shift test:
+You are asked which HLT items contribute to the CosmicCalo stream. Where do you look up this information?
+trigger tool
+What information is given in a Bunch Group Key?
+Bunch informaiton that may be used in trigger
+The luminosity has dropped to a point that requires a prescale key change.
+Ask run control to change the prescale key
+
+Vidyo room connection guide:
+1. Display button on
+2. LCD2 button on
+3. Video conf on
+4. go to indico page
+5. click the Video sign buttong instead of the "join" button
+6. adjust the volume if needed.
+7. wait until the scheduled time for booked conference room
+
+trigger for VH 1-lepton
