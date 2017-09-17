@@ -1310,12 +1310,12 @@ ll ./*
 recursively list all the files under the directory 
 
 ATLAS - Run Control & Trigger shift test:
-You are asked which HLT items contribute to the CosmicCalo stream. Where do you look up this information?
-trigger tool
-What information is given in a Bunch Group Key?
-Bunch informaiton that may be used in trigger
-The luminosity has dropped to a point that requires a prescale key change.
-Ask run control to change the prescale key
+- You are asked which HLT items contribute to the CosmicCalo stream. Where do you look up this information?
+  trigger tool
+- What information is given in a Bunch Group Key?
+  Bunch informaiton that may be used in trigger
+- The luminosity has dropped to a point that requires a prescale key change.
+  Ask run control to change the prescale key
 
 Vidyo room connection guide:
 1. Display button on
@@ -1326,4 +1326,69 @@ Vidyo room connection guide:
 6. adjust the volume if needed.
 7. wait until the scheduled time for booked conference room
 
-trigger for VH 1-lepton
+trigger for VHbb 1-lepton;
+lepton -> lepton trigger
+bb     -> Muon + MET trigger
+
+CxAODReader:
+1. trunk version, not sure to work
+2. turn on the debugging from the framework-readCxAOD.cfg to set debug=true, and then you get more printout statements. 
+   - we can run on CxAOD official sample, where is the official sample?
+   - a test see whether Reader works
+
+
+Sep. 15 2017
+list size of a file:
+ll -h DAOD_HIGG5D2.test_1k_142.pool.root
+
+
+Sep. 17 2017
+
+Duties of Run Control Shifter:
+1. Prepare for a run
+   - change configuration - enable/disable segments: Run control GUI -> "Segments and Resources" panel -> Right button (changes are only in the NON state in the FSM.
+   - change trigger keys: Run control GUI -> Trigger -> Click "Change" under 
+   - Reload Configuration: Run control GUI -> Trigger -> Change "Trigger menu" -> Click "Commit & Reload"
+   
+   - "Stand by", "Physics", "Bunch Group Key" can be changed on the fly
+   - "Bunch Group Key" is requested by the trigger shifter to change
+2. Start a run, follow the FSM, reach Running state
+   - click "INITIALIZE", "CONFIG", "START", "STOP", "UNCONFIG", "SHUTDOWN" in sequential
+   - check run parameters before starting the run
+   - mandatory checks before starting
+     1) Run type - usually Physics
+     2) Beam type - protons, ions
+     3) Recording - if set to Disabled no data will be recorded
+     4) Tier0 Project Name - crucial for data reconstruction at T0
+3. During a run: monitor the data flow, message, BUSY state, L1, HLT and recording rates
+   - put the data flow into the TXT file opened on the desktop, there are templates for naming the file and how to write status into the file
+   - Busy, no more than 5%
+   - When the beam goes from injection to stable and the ATLAS detector goes from "stand-by" to "physics", there are several things to check
+     1) On reaching stable beams, check that:
+     	Pixel HV ramps and Pixel pre-amps turn on (automatic)
+	Pixel READY in DCS -> Automatic warm-start (physics mode)
+     2) After warm-start
+     	Check IGUI is in PHYSICS mode
+	Check muons and SCT get to READY as well
+
+4. Monitor stopless removal and recovery actions
+
+5. Monitor the infrastructure of few partitions: OLC, initialL1CT, PixelInfr
+
+6. Keep run ongoing; react on error message and try to minimize dead time
+
+7. Record your actions into the logbook during the shift: insert a shift summary at the end and insert an entry each time you have a problem for faster feedback
+
+Use the shift summary template: CRD -> TDAQ menu-> RC ShiftSummaryTemplate
+
+
+logout of the tools.
+
+
+
+8. First thing to do after starting the shift:
+   1) Open elog, login to Shift Assistant 
+   
+
+
+
