@@ -1392,3 +1392,32 @@ logout of the tools.
 
 
 
+Sep. 18, 2017
+Difference between "source *.sh" and "bash *.sh":
+When you call source (or its alias .), you insert the script in the current bash process. So you could read variables set by the script.
+
+When you call sh, you initiate a fork (sub-process) that runs a new session of /bin/sh, which is usually a symbolic link to bash. In this case, environment variables set by the sub-script would be dropped when the sub-script finishes.
+
+
+
+FrameworkExe:
+	modified:   data/framework-read.cfg
+	modified:   data/framework-run.cfg
+FrameworkSub:
+	modified:   data/XSections_13TeV.txt
+	# added by Peilong for test
+	410501   831.76             1.0            0.5            ttbar_flavtag            PowhegPythia8EvtGen_A14_ttbar_hdamp172p5_nonallhad
+	
+	modified:   data/yields.1lep.13TeV_mc15c.txt
+	# added by Peilong
+	410501          1               1               1               PwPyEG_A14_ttbar_hdamp172p5_nonallhad
+
+
+
+VHbb analysis:
+     require at least 2taged b-jet to reduce the background
+     1-lepton channel, 2tag2jet + 2tag3jet = Signal region
+     
+
+ask sub-group convener what version is used for the paper
+
