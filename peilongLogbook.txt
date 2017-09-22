@@ -1419,5 +1419,51 @@ VHbb analysis:
      1-lepton channel, 2tag2jet + 2tag3jet = Signal region
      
 
+
+Sep. 19, 2017
 ask sub-group convener what version is used for the paper
 
+
+
+Sep. 20, 2017
+Post-install: setting PATH - Texlive
+PATH=/usr/local/texlive/2017/bin/x86_64-linux:$PATH
+Where to put it
+
+Note that ~/.bash_rc is not read by any program, and ~/.bashrc is the configuration file of interactive instances of bash. You should not define environment variables in ~/.bashrc. The right place to define environment variables such as PATH is ~/.profile (or ~/.bash_profile if you don't care about shells other than bash). See What's the difference between them and which one should I use?
+https://superuser.com/questions/183870/difference-between-bashrc-and-bash-profile/183980#183980
+
+boxes whale
+default whale
+
+Status update draft:
+       MC Filter
+       	  1. Status
+	  2. Problem met
+	  3. Next
+       FLIC Monitoring Software
+	  1. Status
+	  2. Problem met
+	  3. Next
+       Other activity
+       	  ACR shift
+
+Convert png to eps
+convert MC_filter_two_legs.png eps3:MC_filter_two_legs.eps
+
+What is AMB checksum?
+How is the bank loaded? OKS? loadModule=0,1?
+FTK loadmode?
+
+
+Run control shift
+Enable Pixel in "Segments and Resources"
+Then click "Commit & Reload"
+Check "run information & settings"
+Click "Initialize"
+
+
+As Run Control shifter you will be asked to acknowledge the stop-less removal procedure (pop-up window appearing) Read the message carefully and ASK the Shift Leader to decide what action to take in collaboration with the relevant detector shifter!
+
+
+Sep. 22, 2017
