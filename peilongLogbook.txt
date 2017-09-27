@@ -1467,3 +1467,145 @@ As Run Control shifter you will be asked to acknowledge the stop-less removal pr
 
 
 Sep. 22, 2017
+Slides for meeting with Steve:
+       Brief summary of work done
+       Problem met:
+       Next Step
+       Activity coming up
+
+LS2 and LS3 -> hardware upgrade project
+    	       ATLAS mostly readout system
+	       CMS detector
+
+That's a plan for 10 years.
+
+Long Shutdown, how to survive
+
+
+Get the event list first -> 
+
+Get the people to see the result and discuss the result.
+
+Physics first
+
+Software second
+
+How to do fast simulation?
+
+no body... yes or no?
+
+The group is using to generate ttbar
+
+Event number list ->
+
+ptv cut 150ptv may get lower after several month, set some buffer region.
+
+Open lab/Intel TBB
+
+Graduation the end of next year
+
+
+Sep. 25, 2017
+Fast simulation: Preshower
+
+go through FTK twiki from Carlo
+
+twiki, how to run the partition
+
+Lab4 computer, run FTK partition
+
+[pewang@lxplus036 ~]$ ssh pewang@pc-tbed-pub.cern.ch
+[pewang@pc-tbed-pub-01 ~]$ source /afs/cern.ch/user/f/ftk/bin/setup_ftk.sh FTK-02-00-07
+
+stable data flow prescale -> on cal report Sep. 25 2017
+
+
+
+Sep. 26, 2017
+
+Production script
+CxAODReader_VHbb version ->  tag on Readme / no instruction on readme
+CxAODMaker version -> same
+Failed jobs -> update the list
+
+Slides this afternoon.
+
+in slides - lxplus / maneframe
+
+slides to share to Hbb meeting
+
+2t2j: event number
+2t3j: event number
+
+WhfSR
+
+1tag2jet -> maybe used in control region / check internal note
+
+script for making new slides 
+
+Beamer itemize/ subitemize:
+
+\documentclass{beamer}
+\begin{document}
+\begin{frame}
+\begin{itemize}[<+->]
+\item ONE
+    \begin{itemize}[<.->]
+     \item B
+     \item C
+     \end{itemize}
+\item two
+\end{itemize}
+\end{frame}
+\end{document}
+
+
+beamer right arrow
+\begin{itemize}
+    \item This $\rightarrow$ that
+\end{itemize}
+
+
+afs avaible
+eos not availabe
+
+
+printf "\n### kinit ${SITE_USER}@CERN.CH\n" kinit ${SITE_USER}@CERN.CH printf "\n### aklog -c cern.ch -k CERN.CH\n" aklog -c cern.ch -k CERN.CH printf "\n### klist\n" klist
+
+kerberal
+token
+
+
+ask for official production
+
+TRUTH1 available?
+EVNT, CxAOD available
+
+EVNT not change with release r21 or 20.7
+     change with generator
+
+release 21 affects hits->aod->daod->cxaod
+
+vhbb peilong thesis
+
+steve -> framework
+
+
+UX15 open to visit:
+Jan 8 - Feb 28
+
+Subscribe for General Fitness Classes:
+
+    Come to a FREE trial class (in bdg 216) to ensure you enjoy the activity at the times indicated here.
+    Decide how many classes/week and which days you want to come to general fitness classes
+    Early Bird - every morning
+    HIIT - Monday, Tuesday, Wednesday lunchtimes & Thursday evenings
+    Zumba - Wednesday & Thursday evenings, Friday  lunchtime
+    and complete the following on-line form.
+    Check the price for the number of classes you wish to do/week on the Prices page and transfer your funds to the Fitness Club bank account:
+    Account: 279-287931.01J
+    IBAN: CH33 0027 9279 2879 3101 J
+    BIC UBSWCHZH80A 
+    Send Fitness.club@cern.ch an email to confirm.
+    Sign up to the mailing list (General Fitness) or  HIIT mailing list
+
