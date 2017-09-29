@@ -1609,3 +1609,98 @@ Subscribe for General Fitness Classes:
     Send Fitness.club@cern.ch an email to confirm.
     Sign up to the mailing list (General Fitness) or  HIIT mailing list
 
+
+Sep 27, 2017
+
+OKS
+FTKMaker
+isloadmode
+
+FTK on-call twiki Tova's software
+
+Everything update on FLIC monitoring software will be at https://gitlab.cern.ch/ATLAS-FTK-FLIC/flic/tree/develop
+
+Ask Michael whether unicast works or not in front panel
+Update the communication firmware on both front panel and back panel
+
+FLIC monitoring:
+     0. merge flic repo development to svn repo master
+     1. move from unicast to broad cast (backplane)
+     2. test at Argonne
+
+Why pTV region is split into to regions 150-200 and 200+?
+orthogonal 
+- why do you split 1-lep channel from 0 lep channel? same reason
+75-150: Signal/Background = 20/100
+150-infinity: Signal/Background = 5/10
+75-infinity: 25/110
+
+sqrt( ( 20/sqrt(100) )^2 + ( 5/sqrt(10) )^2 ) > 25/sqrt(110)
+
+What is tao veto?
+
+Release 21: for Athena
+AnalysisBase: a collection of ATLAS software tag
+
+CxAODFramework now 
+1. Update CP tools to release 21 with release 21 - AOD
+2. Update CxAODFramework structure to a more easily-use one
+
+$ svn delete myfile
+D         myfile
+
+$ svn commit -m "Deleted file 'myfile'."
+Deleting       myfile
+Transmitting file data .
+Committed revision 14.
+
+
+LHC bunches: 8 filled and 4 empty
+when the particle is not in the center of the pipeline, it has an image charge traveling which generates a magnetic field. The magnetic field affects the next particle.
+
+Remember to be polite when asking and answering questions.
+
+
+Sep. 28, 2017
+
+ftkcommon: compiling, get it working
+
+CMake Package development:
+      1. Create a working directory and a CMakeLists.txt file: it specifies the tdaq and ftk releases
+      	 shell> cat CMakeLists.txt 
+	 cmake_minimum_required(VERSION 3.6.0)
+	 find_package(TDAQ)
+	 include(CTest)
+	 set(TDAQ_DB_PROJECT ftk)
+	 tdaq_work_area(FTK x.y.z)
+	 Example: x.y.z for release FTK-02-00-02 are 2.0.2
+
+      2. source the cmake configuration script for the given tdaq release 
+      	 source /afs/cern.ch/user/f/ftk/bin/setup_ftk.sh [ftk-release] 
+
+      3. Check out a package 
+      	 /afs/cern.ch/user/f/ftk/bin/getpkg.svn FTK/flic
+
+      4. Modify, compile and test the code 
+      	 shell> cd working_directory
+	 shell> cmake_config
+	 shell> cd x86_64-slc6-gcc62-opt
+	 shell> gmake install  
+
+	 or 
+	 make (-j 8)
+	 make install
+
+      4-half. Adding the local PATH (where the executalbe is) to PATH
+      	 export PATH=${PWD}/installed/x86_64-slc6-gcc62-opt/bin:$PATH
+
+      5. Commit the changes in svn and add new svn tag whenever appropriate (~always) 
+      	 svn ls $SVNROOT/FTK/ambslp/tags | tail
+	 /afs/cern.ch/user/a/anegri/public/_l/svntag  FTK/ambslp ambslp-00-00-03 "Set tag ambslp-00-00-03"
+      
+FLIC connection with USTB17 failed reason:
+     1. computere is sending package but flic doesn't reply
+     	reason: wrong IP address for flic in flicscope, flic IP is in the right subnet but it has the IP not same with the one in flicscope
+     2. computer sends packet to flic and flic replys but not received by flicscope
+     	reason: iptable problem. The firewall has to be enabled to support 
+     
