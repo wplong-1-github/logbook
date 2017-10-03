@@ -385,7 +385,9 @@ yum install wireshark wireshark-qt
 
 If you’ve built your own RPMs from the Wireshark sources you can install them by running, for example:
 
-rpm -ivh wireshark-2.0.0-1.x86_64.rpm wireshark-qt-2.0.0-1.x86_64.rpm
+// abandon this way: rpm -ivh wireshark-2.0.0-1.x86_64.rpm wireshark-qt-2.0.0-1.x86_64.rpm
+use this way: yum --nogpgcheck localinstall packagename.arch.rpm 
+link-> https://wiki.centos.org/TipsAndTricks/YumAndRPM#head-3c061f4a180e5bc90b7f599c4e0aebdb2d5fc7f6
 
 If the above command fails because of missing dependencies, install the dependencies first, and then retry the step above.
 
@@ -1704,3 +1706,81 @@ FLIC connection with USTB17 failed reason:
      2. computer sends packet to flic and flic replys but not received by flicscope
      	reason: iptable problem. The firewall has to be enabled to support 
      
+prescale sedo data two ways
+Run FTK partition at Lab4
+ftk_solo -> FTK on call twiki
+
+purose: check how many bugs we have in this release.
+
+checksum on SBC AMB then writing
+force writing 
+
+FLIC syncrayzation with SSB, how?
+
+be honest with answer:
+following the marching order
+if they ask why not test at P1, honest ask, required to work at Argonne fist before power on the blade.
+
+attached the form for expense
+
+sending me to Argonne is needed.
+
+a few things to do in the truth level
+
+b + b + l -> inverse missing ET
+
+chat with Francesco about what variables 
+variables for the filters
+
+change electron handlere in the branch
+
+CxAODMaker_Vhbb mimic the funcition
+
+object handerler basis -> object handler -> electon handler (electon CP recommendation)
++ attached EventHypothesis: physics
+
+reproduce physics 
+
+CxAODTools: configuration
+
+Analysis: properties triggers
+
+CxAODMaker core package
++ CP = analysis
+
+
+create electron handler and work on it
+cut flow object in each handler
+
+scale run 2 in Steve's slides
+
+FLIC at Lab4 computer pc-tbed-ftk-01
+
+
+Oct 2 2017
+
+truth1 path
+
+adrian -> object handler
+
+CxAODMaker Tools Reader -> Framework 2.0
+
+ww
+wlwh -> 3/9 * 6/9
+whwl 6/9 * 3/9 
+wlwl 3/9 * 3/9
+
+9 36 
+
+reco level lepton spectrum
+ask Francesco tau, lepton
+
+jet
+met
+
+18 months of construction
+
+
+print how many leptons we have in that four events and all the events in the SR region
+
+maybe some flags in the CxAODReader can affect
