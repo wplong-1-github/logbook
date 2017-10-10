@@ -877,6 +877,11 @@ M-x replace-regexp
 then type ^ (which meaning the beginning of each line)
 then type # or // (which are the comment character)
 
+M-x replace-regexp
+then type $ (which meaning the end of each line)
+then type XXX (which are the comment character)
+
+
 You could use replace-regexp for this purpose, with the $ regexp metacharacter that matches end-of-line. Go to the start of the buffer, and then do M-x replace-regexp, and answer $ and (your text) to the two prompts.
 
 Or, in emacs-speak, for your specific example of adding a:
@@ -1757,7 +1762,7 @@ scale run 2 in Steve's slides
 FLIC at Lab4 computer pc-tbed-ftk-01
 
 
-Oct 2 2017
+Oct 3 2017
 
 truth1 path
 
@@ -1784,3 +1789,70 @@ met
 print how many leptons we have in that four events and all the events in the SR region
 
 maybe some flags in the CxAODReader can affect
+
+
+FLIC monitoring software:
+1. broadcast UDP in the backplane communication, flic_comm
+2. blade software C block, reading from FLIC.h
+
+FLIC control -> FLIC 
+
+
+Oct 4 2017
+
+The setup in the FLICControl -> works
+
+Recommendation letter: Steve, Valerio, FTK someone (Jinglong or Jeremy)
+
+
+
+Oct 5 2017
+git go back to a commit
+git checkout [revision] .
+where [revision] is the commit hash (for example: 12345678901234567890123456789012345678ab).
+
+Don't forget the . at the end, very important. This will apply changes to the whole tree. Then commit and you should be good.
+
+on maneframe 2:
+all package 28-00
+replace framework-read-SMVH-1lep.cfg
+replace CxAODReader_VHbb
+MCFilter4 -> r28-00 -> Maker
+MCFilter5 -> master -> Reader
+
+
+CxAODrun_r_28_00/ on lxplus:
+nothing changed bug framework-run.cfg
+
+
+
+Oct 6 2017
+
+CERN phone: call 0 first
+
+/eos/atlas/unpledged/group-tokyo/users/yenari/20170214/HIGG5D2_13TeV/CxAOD_00-28-01/ttbar_PwPy8EG
+r7772_p2949
+
+FrameworkSub -> script production
+
+
+
+Oct 9 2017
+
+bqueues <name of the queue>
+where <name of the queue> could be:
+1nh - time limit 1 hour
+8nh - time limit 8 hours
+1nd - time limit 1 day
+2nd - time limit 2 days
+
+
+
+Oct 10 2017
+
+1nh has higher priority
+
+LSF user guide IBM
+https://batchconf.web.cern.ch/batchconf/doc/lsf/print/lsf_users_guide.pdf
+
+CERN OpenStack
