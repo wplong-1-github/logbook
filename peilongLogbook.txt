@@ -1856,3 +1856,64 @@ LSF user guide IBM
 https://batchconf.web.cern.ch/batchconf/doc/lsf/print/lsf_users_guide.pdf
 
 CERN OpenStack
+
+How to set permission for a user on lxplus -> twiki bookmark
+
+
+Oct. 11 2017
+
+Hbb meeting:
+
+full derivation reprocessing at the end of Oct.
+
+CMS rule, a public talk can not show the details not pubished in the paper
+
+what's the difference between EVNT and TRUTH1?
+
+EVNT not ATLAS friendly
+TRUTH1 reformat the truth information into AOD container, which is ATLAS framework friendly.
+
+XROOTD -> recommended
+rsync -> not know
+
+25 yeays
+
+
+Oct 13, 2017
+
+Meeting with Steve:
+1. FLIC:
+   flic_mon_standalone 
+     1. receiving data (unicast UDP) works with CMake
+     2. extracting parameter works with CMake
+     3. making histograms: it compiles but "undefined reference to "
+      	   CMakeFiles/flic_mon_standalone.dir/standalone/flic_mon_standalone.cxx.o: In function `main':
+      	   /users/ac.peilongw/flic_cmake/flic/standalone/flic_mon_standalone.cxx:56: undefined reference to `TCanvas::TCanvas(char const*, char const*, int, int)'
+
+        Reason: linking needs to know where the library is
+
+        Example in FTK svn repo:
+      	      LINK_LIBRARIES ROOT::Core
+	      https://svnweb.cern.ch/trac/atlastdaq/browser/FTK/flic/trunk/CMakeLists.txt#L94
+
+        To do:
+       	   delete build and reconfig and recompile
+           ask CMake experts
+	   mkdir build for flic to compile      
+
+2. MC Filter:
+     1. double-checked on our CxAOD sample
+     2. dumped list on official CxAOD
+  	  number of event: 90246 -> 2t2j and 2t3j (13617558 in total in CxAOD)
+   	  
+3. EletronHandler (a couple of days later)
+	Implemented cuts on the CxAODMaker eletronhandler
+
+4. HFSF forum
+   	estimate the cheapest flight
+
+5. expense report from stony brook
+   	0 + Per diem + train = ~$400
+   	there is no per diem from Grant from Sep.4 - Sep. 11.
+	
+	overhead account (in the mattermost)
