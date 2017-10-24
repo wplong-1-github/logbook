@@ -1917,3 +1917,175 @@ Meeting with Steve:
    	there is no per diem from Grant from Sep.4 - Sep. 11.
 	
 	overhead account (in the mattermost)
+
+
+TDAQ is can not depend on offline release of ROOT. so that's why it hsa
+
+the standard set of root libs is -lCore -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -lMultiProc
+
+one can get it by running `root-config --libs`
+
+[7:46:20 PM] MishaLisovyi: so the commond function to parse the SB and extract a list of fragments is here: https://svnweb.cern.ch/trac/atlastdaq/browser/FTK/ftkcommon/trunk/ftkcommon/EventFragmentFTKPacket.h#L93
+[7:48:02 PM] MishaLisovyi: it returns a vector of objects of EventFragmentXXX type, that you hav to derive from EventFragment or in your case most likely from EventFragmentFTKPaket (https://svnweb.cern.ch/trac/atlastdaq/browser/FTK/ftkcommon/trunk/ftkcommon/EventFragmentFTKPacket.h)
+[7:49:00 PM] MishaLisovyi: an example of usage is here: https://svnweb.cern.ch/trac/atlastdaq/browser/FTK/DataFormatter/trunk/src/ReadoutModuleDataFormatter.cxx#L1406
+[7:59:34 PM] MishaLisovyi: there seem to be no ready function to parse the payload (the header and the trailer are parsed by EventfragmentFTKPacket). But one can copy functionality from https://svnweb.cern.ch/trac/atlastdaq/browser/FTK/ftkdqm/trunk/src/gnamFTKEventFragment.cxx#L36 strating from line 67 onwards
+
+
+Oct 17 2017
+flicscope_8x8
+/users/ac.peilongw/flic_repo/FLICControlTesting/standalone/run
+
+1. flic spybuffer control
+2. load test vector
+3. dump monitoring fifo
+
+emacs: compare two files side by side, similar to vim's vimdiff?
+Ediff works similarly: M-x ediff
+
+
+Oct 18 2017
+
+Please select an option (0 to Exit):
+   1 Power On                      100 Power Off
+ 200 Power control from IPMC (not yet working at ANL)
+==================================================================
+ Basic initialization controls...
+   2 Program All FPGAs               3 Idle Board
+   4 Setup One Channel Proc.         5 Send sync word to SSB
+ 300 FLICWare setup
+   6 Reset SSBe                     20 Send single event from SSBe on all channels
+==================================================================
+  77 Start SSBe data with new configuration
+  78 Stop SSBe data but leave configuration unchanged
+==================================================================
+ Restart SSBe data on channel X using latest SSBe configuration...
+  21 Channel 1                      22 Channel 2
+  21 Channel 3                      22 Channel 4
+  25 All Channels                   26 Use your own channel mask
+==================================================================
+   7 Read a register                 8 Write a register
+   9 Download Firmware
+==================================================================
+  11 Pulse flow control to SSB      12 Reset S-Link
+  13 Change Emulation Parameters
+==================================================================
+ Test Vector controls...
+  70 Fill TV FIFOs, 4 channels      71 Send TVs from FIFOs, 4 channels
+  72 Reset & arm flowcontrol FIFOs  73 Read flowcontrol FIFOs
+  74 Reset & arm monitoring FIFOs   75 Read monitoring FIFOs
+  76 Fancy TV test
+==================================================================
+ Lookup table controls...
+  80 Write lookup table to FLASH    81 Read lookup table from FLASH to validate
+  82 Write ALL SRAM data to FLASH   83 Read & Validate ALL SRAM data in FLASH
+  84 Write lookup table to SRAM     85 Read lookup table from SRAM
+  86 Write ALL SRAM data            87 Read & Validate ALL SRAM data
+  88 Write U1 SRAM data
+==================================================================
+ Diagnostics...
+  90 Init counters to COUNT MODE    91 Init counters to RATE MODE
+  92 Dump counters
+  93 Dump global status
+  94 Dump SLINK status
+ 222 Check program status          223 Check U1 clock counters
+ 224 Check XOFF counters           225 Change to "dump data on the floor" mode
+ 226 Dump U3/U4 spybuffer IP settings
+ 227 Dump U3/U4 diagnostics
+ 228 Dump CURRENT_L1ID
+==================================================================
+
+
+
+
+Please select an option (0 to Exit):
+   1 Power On ALL
+ 100 Power Off ALL
+ 200 Power control from IPMC (not yet working at ANL)
+==================================================================
+ Basic initialization controls...
+   2 Program All FPGAs
+   3 Setup SSBe board
+   4 Setup Proc board
+   5 Send sync event from SSBe board to Proc board
+   6 Reset SSBe
+   7 Setup Spy buffers for all events on all channels
+==================================================================
+   8 Read register on SSBe board   9 Write register on SSBe board
+  10 Read register on Proc board  11 Write register on Proc board
+==================================================================
+  76 Send single event
+  77 Start SSBe data
+  78 Stop SSBe data
+==================================================================
+ Diagnostics...
+  84 Reset and arm monitoring FIFOs
+  85 Dump monitoring FIFOs on U1
+  86 Dump monitoring FIFOs on U2
+  87 Reset and arm flow control FIFOs
+  88 Dump flow control FIFOs on U1
+  89 Dump flow control FIFOs on U2
+  90 Initialize counters
+  91 Dump counters
+  92 Dump global status
+  93 Dump raw SLINK status
+ 222 Check program status
+ 223 Check clock counters
+ 224 Check XOFF counters
+ 225 Change to "dump data on the floor" mode
+ 226 Dump spybuffer IP configuration
+==================================================================
+
+
+
+Oct 19 2017
+
+The working copy is revision BASE. The latest copy from the repository is revision HEAD. This will compare your working copy against the HEAD revision:
+
+svn diff -r HEAD <file>
+
+flicscope spybuffer -> 1 FLIC for testing
+
+ Test Vector controls...
+  70 Fill TV FIFOs, 4 channels -> works      71 Send TVs from FIFOs, 4 channels -> not working
+  72 Reset & arm flowcontrol FIFOs  73 Read flowcontrol FIFOs
+  74 Reset & arm monitoring FIFOs   75 Read monitoring FIFOs
+  76 Fancy TV test
+
+
+flic_udp_spybuffer -> two FLICs for testing -> sending -> works
+
+
+
+Oct 20 2017
+meeting with Steve
+
+1. MC filter
+   1. ptV reco level
+   2. truth 
+   3. present things you 85% confident
+   4. have a draft presentation on Tuesday
+   5. why the shape is like this
+   6. what is this object - pTV
+   
+2. Framework development
+   1. Analysis Base
+      1. set handler -> handler
+      2. initilize selection -> eventhypotheis
+      3. Other 
+      4. compiled
+      5. 
+
+tth analysis ATLAS seminar
+
+11am CERN Tuesday
+
+
+emacs save as: C-x C-w 
+
+
+Oct 24 2017
+
+only track parameter left for decoding check
+
+0x69f5 <-- Track chi2
+
