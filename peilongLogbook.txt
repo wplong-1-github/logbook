@@ -2083,9 +2083,84 @@ tth analysis ATLAS seminar
 emacs save as: C-x C-w 
 
 
+
 Oct 24 2017
 
 only track parameter left for decoding check
 
 0x69f5 <-- Track chi2
 
+
+
+Oct 27 2017
+
+Meeting with Steve:
+
+1. FLIC:
+   1. flic_mon_standalone:
+	1) decoded track parameters
+	2) able to loop the event received and find all the track record
+	3) able to print out simple error message for debugging
+	
+2. MC filter:
+   1. working on dump pTV, lepton flavor, lepton charge, etc. parameters at reco level
+   2. using these variables to see which parameter affect the events in truth level falling in SR in reco level
+
+3. Muon handler in Framework 2.0
+
+
+
+----
+
+============start of an assembly header===========
+Number of word following this word:          340
++++++++++++++start of a record header++++++++++++
+Checksum:                                    passed
+Mystery number:                              668
+RunNumber:                                   305419896
+ExtendedLevel1ID:                            4
+Bunch Crossing ID:                           4
+L1TriggerType:                               162
+Detector Event Type:                         68
+TIM:                                         8
++++++++++++++++end of a record header++++++++++++
+--------------start of a track header------------
+Link ID:                                     0
+Sector Number :                              44
+Tower Number:                                5
+Track Fitter Number:                         0
+Layermap[11:0] :                  
+  11SCT 10SCT 09SCT 08SCT 07SCT 06SCT 05SCT 04SCT 03PIX 02PIX 01PIX 00IBL
+      0     1     0     0     0     1     0     0     0     0     1     0
+RoadID:                                      8704265
+chi sq :                                     -0.011864
+track d0:                                    4.152344
+track z0:                                    -0.000131
+track cotth:                                 0.000563
+track phi:                                   0.010208
+track curv:                                  3.226562
+---------------end of a track header-------------
++++++++++++++start of a record trailer+++++++++++
+Begin trailer debug block :                  e0da
+Length of debug block | Indeterminate[3:0] : 0
+End debug block :                            e0df
+Length of debug block | Indeterminate[3:0] : 0
+L1ID:                                        4
+ErrorFlag :                                  -286335523
+Module data word count (checksum):           329
+End of fragment word:
+                                             e0f0
+                                             a5a5
+                                             5a5a
+                                             0e0f
+++++++++++++++end of a record trailer++++++++++++
+===========start of an assembly trailer==========
+Assembly trailer word: 
+                                             e0a3
+                                             e0a2
+                                             e0a1
+Three words after Assembly trailer word: 
+(if they are not 0s, error in received data)
+                                             0000
+                                             0000
+                                             0000
