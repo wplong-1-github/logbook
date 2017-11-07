@@ -2109,6 +2109,23 @@ Meeting with Steve:
 3. Muon handler in Framework 2.0
 
 
+Oct 27 2017
+
+Meeting with Steve:
+
+1. FLIC:
+   1. flic_mon_standalone:
+   1) decoded track parameters
+   2) able to loop the event received and find all the track record
+   3) able to print out simple error message for debugging
+   
+2. MC filter:
+   1. working on dump pTV, lepton flavor, lepton charge, etc. parameters at reco level
+   2. using these variables to see which parameter affect the events in truth level falling in SR in reco level
+
+3. Muon handler in Framework 2.0
+
+
 
 ----
 
@@ -2163,4 +2180,342 @@ Three words after Assembly trailer word:
 (if they are not 0s, error in received data)
                                              0000
                                              0000
-                                             0000
+					     0000
+
+
+
+Oct. 30 2017
+
+emacs view mode:
+      M-x view-mode
+
+
+FTK on-call:
+
+1. Weekly report
+
+   1. Lab4 tests
+      1. test setup 
+      	 boards
+	 release
+      	 tower
+      	 pseduo data from TYPE XXX
+      2. test goal
+      	 Result of test
+      3. Monitoring tools and bugs found
+         Results of follow ups
+      4. Summary of tests - what was learned
+
+      5. Link to e-log, JIRA
+
+
+   2. P1 tests
+      1. test setup 
+      	 boards
+      	 release
+      	 tower
+      	 pseduo data from TYPE XXX
+      2. test goal
+      	 Result of test
+      3. Monitoring tools and bugs found
+         Results of follow ups
+      4. Summary of tests - what was learned
+
+      5. Link to e-log, JIRA
+
+   3. DCS Summary
+      1. DCS issues and actions this week
+
+   4. Other issues
+
+
+
+what's SSB extraplator
+       
+       slice 2 : IM + DF + AUX -> ROS
+       slice A:  All -> ROS (test this week)
+
+       VME DCS text message -> normal
+
+running at P1:
+
+[pewang@pc-atlas-pub-01 ~]$ source  /det/ftk/setup_SliceA_08.sh
+[pewang@pc-atlas-pub-01 ~]$ ipc_ls -P -l -> who's running which partition
+matter most take slice A
+change prescale on IM 
+
+ /det/ftk/repo/oks/FTK-02-00-08/ftk/segments/FTK-RCD-DataFormatter.data.xml -> DF slice RCD 0x3f one of every 64
+ <attr name="IM_PrescaleL1IDMask" type="u32">0x3f</attr>
+
+[pewang@pc-atlas-pub-01 ~]$ setup_daq -P FTK_SliceA -> run slice A
+
+double check the segment
+
+go through INIT -> Config
+
+before start the run
+
+mattermost "reference" -> source
+
+Run number 339500
+
+L1 out Trigger rate: 72263.1172
+
+Hit "run" but cancel the information notification
+
+ /det/ftk/tools/FTK_Solo_run/FTK_Solo.sh -> monitor dataflow
+
+[pewang@pc-atlas-pub-01 ~]$ cd /atlas-home/1/pewang/StatusOutput/2017-10-30/14h07m16s/
+[pewang@pc-atlas-pub-01 14h07m16s]$ ls
+
+
+cd /atlas-home/1/pewang/StatusOutput/2017-10-30/14h07m16s/DF-IM/crtShelf-2/slot-4
+
+============ Firmware Versions =============
+Firmware Version=98361   (0X00018039)
+firmware version of FPGA=0 is 0Xc0fb
+firmware version of FPGA=1 is 0Xc0fa
+firmware version of FPGA=2 is 0X40fa
+firmware version of FPGA=3 is 0X40fa
+firmware version of FPGA=4 is 0Xc0fb
+firmware version of FPGA=5 is 0Xc0fa
+firmware version of FPGA=6 is 0X40fa
+firmware version of FPGA=7 is 0X40fa
+
+
+/atlas-home/1/pewang/StatusOutput/2017-10-30/14h07m16s/DF-IM/crtShelf-2/slot-4
+
+
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_0_2.ch0] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_0_2.ch1] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_0_2.ch2] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_3_5.ch3] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_3_5.ch4] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_3_5.ch5] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_6_8.ch6] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_6_8.ch7] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_6_8.ch8] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_9_11.ch9] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_9_11.ch10] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_9_11.ch11] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_12_14.ch12] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_12_14.ch13] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_12_14.ch14] read :0X00000000
+[Device:DF-2-04-slice Node:reg.input_link_reenabled_count_15.ch15] read :0X00000000
+
+make sure every channel is zero
+
+
+do this every ~15 minutes
+bash /det/ftk/tools/SaveAllSpyISEMon_IMDF_v0.sh FTK_SliceA 2 4 DF-2-04-slice FTK-RCD-DF
+
+catch the DF error "E  X"
+
+only run partiction from  pub machine
+only talk to DF and IM form pc-ftk-tdq-01 -> DF and IM tests
+bash /det/ftk/tools/SaveAllSpyISEMon_IMDF_v0.sh FTK_SliceA 2 4 DF-2-04 FTK-RCD-DF
+
+[pewang@pc-ftk-tdq-01 ~]$ source /det/ftk/setup_SliceA_08.sh
+
+look at both "E " and link_reenabled_count
+
+"File" -> exit but click "no" to keep the partition running
+
+figure out why stops
+
+
+18:35 stop partition
+
+
+
+
+Oct 31 2017
+
+Latex variable -> thesis
+
+FTK test this afternoon -> SSB is able to reconstruct tracks
+
+
+Test SSB:
+whether it's able to reconstruct tracks
+
+Run number: 339507
+L1 trigger rate: 73080.4609
+
+SSB:
+   	    13888 events out
+
+
+Data flow stops with prescale: extrapolator
+
+
+
+ <attr name="usePseudoData" type="bool">1</attr>
+ <attr name="IM_PrescaleL1IDMask" type="u32">0x0</attr>
+
+17:27:29 ERROR RCD-VME-Y.07-07.A2-crate4 ftk::VmeError Found error when accessing the vme library: error: 0x205      => major: Error   5 in package   2 => VMEbus driver/library for the RCC: VMEbus bus error received
+ 
+
+Summary of commands used in test at P1:
+1. To run RC GUI at P1:
+   1. login_to lxplus
+   2. ssh -CY atlasgw
+      1. wait for authorization from shift leader
+      2. pc-atlas-pub-01
+      2. source  /det/ftk/setup_SliceA_08.sh
+      3. setup_daq -P FTK_SliceA 
+
+2. To run Solorun at P1:
+   1. login_to lxplus
+   2. ssh -CY atlasgw
+      1. wait for authorization from shift leader
+      2. pc-ftk-tdq-01
+      3. source  /det/ftk/setup_SliceA_08.sh
+      4. /det/ftk/tools/FTK_Solo_run/FTK_Solo.sh
+
+3. Change prescale at IM:
+   1. /det/ftk/repo/oks/FTK-02-00-08/ftk/segments/FTK-RCD-DataFormatter.data.xml 
+   DF-02-04-slice -> slice A
+   df-2-04 -> shelf test
+   2. <attr name="IM_PrescaleL1IDMask" type="u32">0x3f</attr>
+
+4. Use pseudodata on slice A:
+   1.  <attr name="usePseudoData" type="bool">1</attr>
+
+
+Nov. 1 2017
+
+software transition test:
+init -> shutdown good
+
+init -> config : good
+
+
+11:08:54 ERROR FTK-RCD-DF-Slice2 config::Generic failed to init 'DF-2-09-slice@ReadoutModule_DataFormatter':
+	 was caused by: 2017-Nov-01 11:08:54,150 ERROR [virtual void RdbConfigObject::get(...) at /afs/cern.ch/atlas/project/tdaq/cmake/projects/tdaq/tdaq-07-01-00/rdbconfig/src/RdbConfigObject.cpp:335] failed to get value of attribute 'IM_isDupliRemove' for object 'DF-2-09-slice@ReadoutModule_DataFormatter'
+	 was caused by: 2017-Nov-01 11:08:54,150 ERROR [rdb::DataUnion& RdbConfigObject::get_attribute_value(...) at /afs/cern.ch/atlas/project/tdaq/cmake/projects/tdaq/tdaq-07-01-00/rdbconfig/src/RdbConfigObject.cpp:214] cannot find single-value attribute 'IM_isDupliRemove' for object 'DF-2-09-slice@ReadoutModule_DataFormatter'
+ 
+
+how to check FTK is running
+
+
+--------------------------
+solorun on slice 2 - errors
+
+
+Description >DF mon start (~3 sec)2017-Nov-01 11:28:52,534 WARNING [virtual void daq::ftk::StatusRegisterISVector::readout(...) at /afs/cern.ch/user/f/ftk/inst/releases/FTK-02-00-08.patches/ftkcommon/src/StatusRegisterISVector.cxx:43] Generic FTK Issue: Failed to read out a status register vector from IS: check if object DF.FTK.DF-2-04-slice with attribute DF_wcount_sr_v exists!
+	    was caused by: 2017-Nov-01 11:28:52,534 ERROR [is::repository_var is::server::resolve(...) at /data/atdsoft/build-patches/is/src/server.cc:31] IS repository 'DF' does not exist
+	    was caused by: 2017-Nov-01 11:28:52,534 ERROR [ipc::_objref_partition* ipc::util::getPartition(...) at /data/atdsoft/build/ipc/src/util.cc:252] Partition "FTK_SliceA" does not exist
+	    was caused by: 2017-Nov-01 11:28:52,534 ERROR [CORBA::Object* ipc::util::resolvePartition(...) at /data/atdsoft/build/ipc/src/util.cc:299] Partition "FTK_SliceA" does not exist
+	    was caused by: 2017-Nov-01 11:28:52,534 ERROR [CORBA::Object* ipc::util::resolvePartition(...) at /data/atdsoft/build/ipc/src/util.cc:300] CORBA user exception "NotFound" has been raised
+2017-Nov-01 11:28:52,536 WARNING [virtual void daq::ftk::StatusRegisterISVector::readout(...) at /afs/cern.ch/user/f/ftk/inst/releases/FTK-02-00-08.patches/ftkcommon/src/StatusRegisterISVector.cxx:43] Generic FTK Issue: Failed to read out a status register vector from IS: check if object DF.FTK.DF-2-04-slice with attribute DF_cwcount_sr_v exists!
+	    was caused by: 2017-Nov-01 11:28:52,536 ERROR [is::repository_var is::server::resolve(...) at /data/atdsoft/build-patches/is/src/server.cc:31] IS repository 'DF' does not exist
+	    was caused by: 2017-Nov-01 11:28:52,536 ERROR [ipc::_objref_partition* ipc::util::getPartition(...) at /data/atdsoft/build/ipc/src/util.cc:252] Partition "FTK_SliceA" does not exist
+	    was caused by: 2017-Nov-01 11:28:52,536 ERROR [CORBA::Object* ipc::util::resolvePartition(...) at /data/atdsoft/build/ipc/src/util.cc:299] Partition "FTK_SliceA" does not exist
+	    was caused by: 2017-Nov-01 11:28:52,536 ERROR [CORBA::Object* ipc::util::resolvePartition(...) at /data/atdsoft/build/ipc/src/util.cc:300] CORBA user exception "NotFound" has been raised
+2017-Nov-01 11:28:52,538 WARNING [virtual void daq::ftk::StatusRegisterISVector::readout(...) at /afs/cern.ch/user/f/ftk/inst/releases/FTK-02-00-08.patches/ftkcommon/src/StatusRegisterISVector.cxx:43] Generic FTK Issue: Failed to read out a status register vector from IS: check if object DF.FTK.DF-2-04-slice with attribute DF_xoffcount_sr_v exists!
+
+
+
+
+
+
+ <attr name="usePseudoData" type="bool">1</attr>
+
+
+
+after click "STOP"
+
+12:04:58 ERROR rc-is2cool is::InfoNotFound IS infomation 'DF.HLTSV.Events' does not exist 
+12:04:58 ERROR rc-is2cool is::InfoNotFound IS infomation 'DF.HLTSV.Events' does not exist 
+12:04:58 ERROR rc-is2cool is::InfoNotFound IS infomation 'DF.SFO-1' does not exist 
+
+
+[pewang@pc-ftk-tdq-01 ~]$ emacs -nw /det/ftk/repo/oks/FTK-02-00-08/ftk/segments/FTK-segment_Slice2.data.xml 
+config RCD linked in this file
+  "RCD" "FTK-RCD-DF-Slice2"
+
+ <file path="ftk/segments/FTK-RCD_DF_Slice2.data.xml"/>
+
+
+screen shot -> slice 2
+
+ <attr name="IPBus_TCF" type="string">"DF-2-09-slice/tx_configuration_noAuxSSB.txt"</attr>
+tx_configuration_noSSB.txt
+
+ <attr name="IPBus_TCF" type="string">"DF-2-09-slice/tx_configuration_noSSB.txt"</attr>
+
+ssh sbc-ftk-rcc-03.cern.ch
+
+source environment
+[pewang@sbc-ftk-rcc-03 ftk]$ ps -ef | grep RCD
+PID number 30573
+
+
+[pewang@sbc-ftk-rcc-03 tools]$ ./transition.py -p FTK_Slice2 -P 30573 -n 5
+
+when the transition gets disconnected, the segments are left at a state can't be controled by RC software, Another tool has to be used to change the state of segments so that 
+
+
+[pewang@sbc-ftk-rcc-03 tools]$ rc_sender -p FTK_Slice2 -
+
+
+
+
+Test 2: on slice A
+
+constants in VME segment -> no problem
+
+ <attr name="usePseudoData" type="bool">1</attr>
+ <attr name="IM_PrescaleL1IDMask" type="u32">0x0</attr>
+
+[pewang@pc-atlas-pub-08 ~]$ setup_daq -P FTK_SliceA_Config
+
+
+
+[pewang@pc-atlas-pub-08 ~]$ emacs -nw /det/ftk/repo/oks/FTK-02-00-08/ftk/partitions/FTK_SliceA_config.data.xml
+
+ <file path="ftk/segments/FTK-segment.data.xml"/>
+
+
+
+Nov 2. 2017
+
+first test the release at Lab4 and then test at P1:
+/DC=org/DC=cilogon/C=US/O=Southern Methodist University/CN=Peilong Wang A44121
+
+nightly release:
+	setup script change to nightly release
+	tag collector
+	/afs/cern.ch/user/f/ftk/public/inst/tagCollector/FTK-nightly.csv
+
+
+/tbed/oks/tdaq-07-01-00/FTK/FTK-02-00-08/
+1. source the release
+[pewang@pc-tbed-pub-06 ftk]$ setup_daq -p IM-DF-AUX-AMB-SSB-FLIC
+
+
+
+Nov. 3 2017
+     Run control desk shift:
+     	 1. after change the "Segments and Resources", commit and reload to change in the database
+	 2. if there are some new *.data.xml files appear when you commit and reload, ask shifter leader whether we should reload these new changed files
+	 3. you can only change segments and resources when you are at "NONE" state
+	 4. "data17_13TeV" is only used when there are collisions, otherwise "data_test" is used.
+
+	 5. Bunch group key is provide by trigger after the beam injection
+
+
+emacs word count command:
+      1. Select a region.
+      2. Run M-=, or M-| wc for older versions of emacs.
+      3. See the count of lines, words, and characters, in the mode-line.
+
+
+test SSB with empty packet with data
+
+
+
+Nov. 4 2017
+
+Slides for FTK meeting: ~ 10 pages
