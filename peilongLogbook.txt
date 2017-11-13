@@ -2526,3 +2526,4 @@ Nov. 8 2017
 
 Give the finger = flip somebody off
 
+unzip file.zip -d destination_folder
