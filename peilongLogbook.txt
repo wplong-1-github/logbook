@@ -2527,3 +2527,34 @@ Nov. 8 2017
 Give the finger = flip somebody off
 
 unzip file.zip -d destination_folder
+
+
+
+Nov. 14 2017
+
+Flyspell enables on-the-fly spell checking in Emacs:
+M-x flyspell-mode
+
+
+./atlasbiblatex.sty:\ProvidesPackage{latex/atlasbiblatex}[2017/11/08 v.05-00-01 ATLAS biblatex style]
+./atlascontribute.sty:\ProvidesPackage{latex/atlascontribute}[2017/11/08 v.05-00-01 ATLAS analysis contributions]
+./atlascover.sty:\ProvidesPackage{latex/atlascover}[2017/11/08 v.05-00-01 ATLAS cover pages]
+./atlascover1.sty:\ProvidesPackage{latex/atlascover}[2017/11/08 v.05-00-00 ATLAS deprecated cover pages]
+./atlaspackage.sty:\ProvidesPackage{latex/atlaspackage}[2017/11/08 v.05-00-01 ATLAS LaTeX packages]
+./atlasphysics.sty:\ProvidesPackage{latex/atlasphysics}[2017/11/08 v.05-00-01 ATLAS physics macros]
+./other/authblk.sty:\ProvidesPackage{authblk}
+./other/lineno.sty:\ProvidesPackage{lineno} 
+
+
+Nov. 15 2017
+
+1. Thesis topic, committee member
+2. Motivation: VHbb not yet observed - higgs production and decay
+
+
+
+Nov. 21 2017
+Jean-Christophe -> reading list
+
+show absolute path:
+$ pwd -P
