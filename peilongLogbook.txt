@@ -2552,9 +2552,25 @@ Nov. 15 2017
 2. Motivation: VHbb not yet observed - higgs production and decay
 
 
-
 Nov. 21 2017
 Jean-Christophe -> reading list
 
+
+Nov. 28 2017
 show absolute path:
 $ pwd -P
+
+
+Nov. 29 2017
+under MPI (processes created), creat multi-threads.
+
+2 sockets, each socket has a CPU and a memeory, each CPU has several cores. Between two CPUs, there are connections.
+
+sheng ming de yi yi shi shen me?
+
+
+Nov. 30 2017
+
+What are you interested in?
+
+what is M-week?
