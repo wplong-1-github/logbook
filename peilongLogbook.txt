@@ -2574,3 +2574,12 @@ Nov. 30 2017
 What are you interested in?
 
 what is M-week?
+
+
+
+Dec. 1 2017
+lxplus add permissiono to any one recursively in one directory:
+ recursively for anyone : find . -type d -print -exec fs setacl {} system:anyuser rl \; 
+
+hist_0Lep_ttbar_2tag2jet_0ptv_SR_mBB_Nominal
+
