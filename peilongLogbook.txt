@@ -2612,6 +2612,45 @@ NtupleToHist:
 MET:
     float MET = MET_Vec.Pt();
     MET_Vec.SetPtEtaPhiM(readNtuple->MET,0.0,readNtuple->MET_Phi,0.0);
+
 lepton:
     LeptonVec.SetPtEtaPhiM(readNtuple->Lepton_Pt->at(0),readNtuple->Lepton_Eta->at(0),readNtuple->Lepton_Phi->at(0),readNtuple->Lepton_Mass->at(0));
     LeptonTransVec.SetPtEtaPhiM(readNtuple->Lepton_Pt->at(0),0.0,readNtuple->Lepton_Phi->at(0),readNtuple->Lepton_Mass->at(0));
+
+
+Dec. 8 2017
+
+     TLorentzVector MET_Vec
+     MET_Vec.SetPtEtaPhiM(readNtuple->MET,0.0,readNtuple->MET_Phi,0.0);
+     float dPhiLepMET =fabs( MET_Vec.DeltaPhi(LeptonTransVec) );	
+
+     456 inline Double_t TLorentzVector::DeltaPhi(const TLorentzVector & v) const {
+     457    return TVector2::Phi_mpi_pi(Phi()-v.Phi());
+     458 }
+
+     Make the plots on page 4:
+     https://indico.cern.ch/event/680699/contributions/2789718/attachments/1559824/2455123/1lep_ttbar.pdf
+
+
+
+Dec. 12 2017
+
+jet - ECAL:
+1. setup RootCore
+   source setup.sh : /afs/cern.ch/user/p/pewang/public/Project/jet_prj
+
+2. [pewang@lxplus031 jet_prj]$ rc make_skeleton MyPackage
+
+3. Asg_FastJet -> Makefile.RootCore
+
+4. copy the Algorithm from gitlab HFSF2017
+
+
+
+
+Dec. 13 2017
+
+/afs/cern.ch/user/p/pewang/public/Project/jet_prj/MyPackage/Root/CaloTowerPerformanceAnalysis.cxx: In member function ‘virtual EL::StatusCode CaloTowerPerformanceAnalysis::execute()’:
+/afs/cern.ch/user/p/pewang/public/Project/jet_prj/MyPackage/Root/CaloTowerPerformanceAnalysis.cxx:95:34: error: ‘antikt_algorithm’ was not declared in this scope
+   fastjet::JetDefinition jet_def(antikt_algorithm, R);
+                                  ^
