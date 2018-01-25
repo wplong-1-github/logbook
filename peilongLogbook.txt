@@ -1040,6 +1040,11 @@ Mar 29th, 2017 Wednesday
 Creat soft link to work space:
 ln -s /home/peilong/Project/FLICControl_svn/trunk/standalone/FLICMonitoringSoftware ./link_to_work
 
+-s means to make a symbolic link. To update a link, either delete the link and create it as above, or use the -f option to ln as well. If you are linking to a folder, also include the -n option:
+
+ln -sfn /a/new/path files
+
+
 emacs ShowParenMode
 M-x show-paren-mode RET
 
@@ -1858,6 +1863,7 @@ https://batchconf.web.cern.ch/batchconf/doc/lsf/print/lsf_users_guide.pdf
 CERN OpenStack
 
 How to set permission for a user on lxplus -> twiki bookmark
+https://twiki.cern.ch/twiki/bin/view/Main/LxplusProblem#Change_the_right_of_AFS_director
 
 
 Oct. 11 2017
@@ -2654,3 +2660,132 @@ Dec. 13 2017
 /afs/cern.ch/user/p/pewang/public/Project/jet_prj/MyPackage/Root/CaloTowerPerformanceAnalysis.cxx:95:34: error: ‘antikt_algorithm’ was not declared in this scope
    fastjet::JetDefinition jet_def(antikt_algorithm, R);
                                   ^
+
+
+Jan 16. 2017
+
+
+January 22th, 2017
+
+
+ MVATree.cxx			:
+ ReadTruthTree.cxx		:
+ btagTool.cxx			:
+ generateHistogram.cxx		:
+ generateHistogram_0lep.cxx	:
+ generateHistogram_1lep.cxx	:
+ histSvc.cxx			:
+ makeHistograms.cxx		: Where the input path is
+
+
+HistToSyst : where the code make sys from the .root generated from NtupleToHist
+
+
+List of ntuples at /eos/user/a/abell/TruthTuples_BETA_02/:
+user.abell.mc15_13TeV.410501.PowhegPythia8EvtGen_A14_ttbar_hdamp258p75_nonallhad.evgen.EVNT.e5458.VHbb.BETA_v01.04_EXT0	: nominal, done 900000
+user.abell.mc15_13TeV.410511.PowhegPythia8EvtGen_ttbar_hdamp517p5_nonallhad.evgen.EVNT.e5556.VHbb.BETA_v01.04_EXT0	: done 100000
+user.abell.mc15_13TeV.410512.PowhegPythia8EvtGen_ttbar_hdamp258p75_nonallhad.evgen.EVNT.e5556.VHbb.BETA_v01.04_EXT0	: done 100000
+user.abell.mc15_13TeV.410225.aMcAtNloPythia8EvtGen_A14N23LO_ttbar_nonallhad.evgen.EVNT.e5465.VHbb.BETA_v01.04_EXT0	: done 800000
+user.abell.mc15_13TeV.410525.PowhegHerwig7EvtGen_H7UE_tt_hdamp258p75_nonallhad.evgen.EVNT.e5903.VHbb.BETA_v01.04_EXT0	: done 900000
+
+
+
+January 23, 2017
+
+void TH1::Sumw2
+
+Create structure to store sum of squares of weights.
+if histogram is already filled, the sum of squares of weights is filled with the existing bin contents
+The error per bin will be computed as sqrt(sum of squares of weight) for each bin.
+
+emacs - comment out lines command:
+      select the region and then type the command "M - ;"
+
+Removing the Stats Box from a Histogram in ROOT (and PyROOT):
+    gStyle->SetOptStat(0)
+    myhist->SetStats(kFALSE);
+    another reference: https://gitlab.cern.ch/atlas-phys-exotics-dijetisr/Signal-Bias-Study/blob/master/python/fitter.py	
+
+
+emacs - bulk indent for Python (link - https://stackoverflow.com/questions/2585091/emacs-bulk-indent-for-python):
+      C-c > or C-c C-l shifts the region 4 spaces to the right
+      C-c < or C-c C-r shifts the region 4 spaces to the left
+      C-u 8 C-c > shifts the region 8 spaces to the right
+      C-u 8 C-c < shifts the region 8 spaces to the left
+      C-u 8 C-x TAB shifts the region 8 spaces to the right
+      C-u -8 C-x TAB shifts the region 8 spaces to the left
+Also useful are the rectangle commands that operate on rectangles of text instead of lines of text. 
+     C-x r o inserts blank space to fill the rectangular region (effectively shifting code to the right)
+     C-x r k kills the rectangular region (effectively shifting code to the left)
+     C-x r t prompts for a string to replace the rectangle with. Entering C-u 8 <space> will then enter 8 spaces.
+
+
+- 20170124
+
+what is DR, DS schema
+
+
+emacs - how to select a line or highlight a block:
+      https://stackoverflow.com/questions/657672/how-to-select-or-highlight-a-block-in-emacs
+      If I understand the question correctly, it is not about rectangular regions originally.
+
+      C-Spc puts a mark at the current position.
+
+      Wherever your cursor is afterwards, the text between the last mark and the current position is "selected" (you can highlight this by activating transient-mark-mode, but this will also mean that marks have to be deleted when you don't want highlight).
+
+      You can operate on that region with commands like:
+
+      C-w . . Kill region. This deletes and puts the region into the kill ring.
+      C-y . . Yank. This inserts the last snippet from the kill ring.
+      M-y . . Cycle kill ring. Immediately after C-y, this replaces the yanked part by the other snippets in the kill ring.
+      M-w . . Save region into kill ring. Like C-w, but doesn't delete.
+
+      This is just the basic usage. Marks have other uses, too. I recommend the tutorial (C-h t).
+
+
+Python _Main_:
+       some code will be run when imported. If this code is put in the _main_, then it won't be run when imported but only when the whole python code is running 
+
+       https://stackoverflow.com/questions/4041238/why-use-def-main
+       Without the main sentinel, the code would be executed even if the script were imported as a module.
+       
+
+Python - How to make a local variable (inside a function) global [duplicate]:
+       Using parameters and return (recommended)
+
+       def other_function(parameter):
+           return parameter + 5
+
+       def main_function():
+       	   x = 10
+	   print x    
+       	   x = other_function(x)
+       	   print x
+
+Python - where to define function:
+       def happyBirthdayEmily():
+       	   print("Happy Birthday to you!")
+       	   print("Happy Birthday to you!")
+       	   print("Happy Birthday, dear Emily.")
+       	   print("Happy Birthday to you!")
+
+       happyBirthdayEmily()
+       happyBirthdayEmily()
+
+
+Python - Loop through multiple Lists:
+       print "List comprehension:"
+       for x, y in [(x,y) for x in a for y in b]:
+           print x, y
+
+Configure ssh for Password-less Login to lxplus or Other Linux Boxen
+  http://information-technology.web.cern.ch/services/fe/mac-support/howto/configure-ssh-password-less-login-lxplus-or-other-linux-boxen
+  in /etc/ssh/sshd_config file
+SSH FAQ for CERN - kerbero
+  https://twiki.cern.ch/twiki/bin/view/LinuxSupport/SSHatCERNFAQ
+CentOS start sshd service command
+  # service sshd start
+Exercise2 : enable Kerberos logins to a host
+  https://nsrc.org/workshops/ws-files/2011/sanog17/exercises/ex2-kerberos-host.html
+Obtaining Tickets with kinit
+  http://web.mit.edu/kerberos/krb5-1.4/krb5-1.4.3/doc/krb5-user/Obtaining-Tickets-with-kinit.html
