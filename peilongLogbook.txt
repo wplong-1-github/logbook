@@ -2789,3 +2789,65 @@ Exercise2 : enable Kerberos logins to a host
   https://nsrc.org/workshops/ws-files/2011/sanog17/exercises/ex2-kerberos-host.html
 Obtaining Tickets with kinit
   http://web.mit.edu/kerberos/krb5-1.4/krb5-1.4.3/doc/krb5-user/Obtaining-Tickets-with-kinit.html
+
+
+Jan. 29, 2017
+
+kill a process by name:
+     pkill firefox
+
+ROOT - delete histogram title:
+ myhist->SetTitle("") or set the position of the TPaveText title to be outside the canvas.
+
+
+merge all the eps file into one pdf file:
+      gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -sOutputFile=alloutput.pdf *.eps
+
+
+Jan. 30, 2017
+
+seaborn - python plot package
+
+
+Feb. 1, 2017
+
+=========================================================================
+svn branch:
+    create branch:
+
+1. Create a new branch using svn copy. I suggest something descriptive like "SVN_to_GIT_branch_kavulich"
+
+svn copy -m 'Creating branch for Git transition' https://svn-wrf-model.cgd.ucar.edu/trunk https://svn-wrf-model.cgd.ucar.edu/branches/SVN_to_GIT_branch_kavulich
+
+NOTE: If your changes are based on a much older version of the trunk, you may want to create your branch from the same revision number as your current revision. You can find your revision number with "svn info".
+
+svn copy -r8350 -m 'Creating branch for Git transition based off revision number 8350 of the trunk' https://svn-wrf-model.cgd.ucar.edu/trunk https://svn-wrf-model.cgd.ucar.edu/branches/SVN_to_GIT_branch_kavulich
+
+2. Enter the directory which is your local copy of the SVN trunk with the changes you wish to save. 
+
+cd /Users/kavulich/my_changes/trunk
+
+svn status
+
+M Registry/registry.var
+M inc/version_decl
+
+3. Use the "svn switch" command to convert your local "trunk" copy into a copy of this new branch. Your local changes will be preserved. If you receive any alerts about conflicts, be sure to select "mine-conflict" to keep your changes.
+
+svn switch https://svn-wrf-model.cgd.ucar.edu/branches/SVN_to_GIT_branch_kavulich
+
+svn status
+
+M Registry/registry.var
+M inc/version_decl
+ 
+
+4. Use "svn commit" to commit your changes to this branch
+
+svn commit -m 'Committing changes to my branch for the Git transition'
+=========================================================================
+
+how to resolve “local edit, incoming delete upon update” message:
+    one general rule for solving this kind of technical problem -> copy and paste the error message to google and search it.
+
+    
