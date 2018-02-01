@@ -2854,56 +2854,31 @@ how to resolve “local edit, incoming delete upon update” message:
 
 
 =========================================================================
-Place your shell script in /etc/init.d with executable permission and symlink name should start with K##. If you want to execute your script at first place immediately after shut down then name it with K00scriptname. Script started will K will be executed first based on ascending order then script with S.
+I've created this service /etc/systemd/system/shutdown_screen.service
 
-ln -s /etc/init.d/script /etc/rc0.d/K00scriptname
+[Unit]
+Description=runs only upon shutdown
+Conflicts=reboot.target
+After=network.target
 
-Shutdown command will send the stop signal to script, your script (K00scriptname) should have stop function like example
+[Service]
+Type=oneshot
+ExecStart=/bin/true
+ExecStop=/bin/bash /usr/local/bin/shutdown_screen
+RemainAfterExit=yes
 
-stop()
-{
-  echo "executing scriptname"
-  "Your script logic"
-}
-case "$1" in
-  stop)
-    stop
-    ;;
-esac
+[Install]
+WantedBy=multi-user.target
 
-Most important, K00scriptname will execute only if there would be lock file present in /var/lock/subsys folder, so do "touch /var/lock/subsys/scriptname" then check by doing shutdown.
----------------another example--------------
-So you have to get a little bit tricky and treat your script like a regular service. The script below gives an example:
+Which will be executed at shudown/reboot/halt/whatever. (don't forget to enable it)
 
-#!/bin/sh
-# chkconfig: 2345 20 80
-# description: An example init script to run a command at shutdown
+And in my script /usr/local/bin/shutdown_screen I put the following :
 
-# runmycommandatshutdown runs a command at shutdown. Very creative.
+#!/bin/bash
+# send a shutdown message only at shutdown (not at reboot)    
+/usr/bin/systemctl list-jobs | egrep -q 'reboot.target.*start' || echo "shutdown" | nc 192.168.0.180 4243 -w 1
 
-LOCKFILE=/var/lock/subsys/
-start(){
-    # Touch our lock file so that stopping will work correctly
-    touch ${LOCKFILE}
-}
-
-stop(){
-# Remove our lock file
-rm ${LOCKFILE}
-# Run that command that we wanted to run
-mycommand
-}
-
-case "$1" in
-    start) start;;
-    stop) stop;;
-    *)
-        echo $"Usage: $0 {start|stop}"
-        exit 1
-esac
-exit 0
-
-After putting that script in /etc/init.d/runmycommandatshutdown and enabling it with chkconfig on runmycommandatshutdown, your command will be run at shutdown.
+Which will send a shutdown message to my arduino, whom will shutdown my screen.
 
 =========================================================================
 C-u 73 =
