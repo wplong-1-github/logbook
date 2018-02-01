@@ -2854,32 +2854,51 @@ how to resolve “local edit, incoming delete upon update” message:
 
 
 =========================================================================
-I've created this service /etc/systemd/system/shutdown_screen.service
+How to create a service to run a script at shutdown and enable the service:
 
-[Unit]
-Description=runs only upon shutdown
-Conflicts=reboot.target
-After=network.target
 
-[Service]
-Type=oneshot
-ExecStart=/bin/true
-ExecStop=/bin/bash /usr/local/bin/shutdown_screen
-RemainAfterExit=yes
+1. creat /etc/systemd/system/logbookpushtogitlab.service with the following code:
 
-[Install]
-WantedBy=multi-user.target
+   [Unit]
+   Description=Run logbookpushtogitlab.service at shutdown
+   Requires=network.target
+   DefaultDependencies=no
+   Before=shutdown.target reboot.target
 
-Which will be executed at shudown/reboot/halt/whatever. (don't forget to enable it)
+   [Service]
+   Type=oneshot
+   RemainAfterExit=yes
+   ExecStart=/bin/true
+   ExecStop=/usr/local/bin/logbookpushtogitlab
 
-And in my script /usr/local/bin/shutdown_screen I put the following :
+   [Install]
+   WantedBy=multi-user.target
 
-#!/bin/bash
-# send a shutdown message only at shutdown (not at reboot)    
-/usr/bin/systemctl list-jobs | egrep -q 'reboot.target.*start' || echo "shutdown" | nc 192.168.0.180 4243 -w 1
+2. creat the script you wannna run, that is "/usr/local/bin/logbookpushtogitlab"
+    #!/bin/bash
+    # logbookpushtogitlab
+    # push the latest logbook to gitlab
+    # Peilong Wang 20180201
 
-Which will send a shutdown message to my arduino, whom will shutdown my screen.
+    echo "executing logbookpushtogitlab"
 
+    # Run that command that we wanted to run
+    mydir=${PWD}
+    cd /home/peilong/Project/logbook
+    git add -A
+    timestamp=$(date)
+    git commit -m "${timestamp}"
+    git push
+    cd $mydir
+
+3. check the service by "systemctl status logbookpushtogitlab.service"
+
+4. enable the service so that it auto run at bootup
+   "systemctl enable logbookpushtogitlab.service"
+
+refernce https://opensource.com/life/16/11/running-commands-shutdown-linux
+	 https://unix.stackexchange.com/questions/284598/systemd-how-to-execute-script-at-shutdown-only-not-at-reboot
 =========================================================================
-C-u 73 =
+C-u 73 =	add divider
+C-u 4 C-x TAB	indent a region
 =========================================================================
