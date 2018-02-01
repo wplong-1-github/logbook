@@ -2847,7 +2847,64 @@ M inc/version_decl
 svn commit -m 'Committing changes to my branch for the Git transition'
 =========================================================================
 
+
+
 how to resolve “local edit, incoming delete upon update” message:
     one general rule for solving this kind of technical problem -> copy and paste the error message to google and search it.
 
-    
+
+=========================================================================
+Place your shell script in /etc/init.d with executable permission and symlink name should start with K##. If you want to execute your script at first place immediately after shut down then name it with K00scriptname. Script started will K will be executed first based on ascending order then script with S.
+
+ln -s /etc/init.d/script /etc/rc0.d/K00scriptname
+
+Shutdown command will send the stop signal to script, your script (K00scriptname) should have stop function like example
+
+stop()
+{
+  echo "executing scriptname"
+  "Your script logic"
+}
+case "$1" in
+  stop)
+    stop
+    ;;
+esac
+
+Most important, K00scriptname will execute only if there would be lock file present in /var/lock/subsys folder, so do "touch /var/lock/subsys/scriptname" then check by doing shutdown.
+---------------another example--------------
+So you have to get a little bit tricky and treat your script like a regular service. The script below gives an example:
+
+#!/bin/sh
+# chkconfig: 2345 20 80
+# description: An example init script to run a command at shutdown
+
+# runmycommandatshutdown runs a command at shutdown. Very creative.
+
+LOCKFILE=/var/lock/subsys/
+start(){
+    # Touch our lock file so that stopping will work correctly
+    touch ${LOCKFILE}
+}
+
+stop(){
+# Remove our lock file
+rm ${LOCKFILE}
+# Run that command that we wanted to run
+mycommand
+}
+
+case "$1" in
+    start) start;;
+    stop) stop;;
+    *)
+        echo $"Usage: $0 {start|stop}"
+        exit 1
+esac
+exit 0
+
+After putting that script in /etc/init.d/runmycommandatshutdown and enabling it with chkconfig on runmycommandatshutdown, your command will be run at shutdown.
+
+=========================================================================
+C-u 73 =
+=========================================================================
