@@ -2662,10 +2662,10 @@ Dec. 13 2017
                                   ^
 
 
-Jan 16. 2017
+Jan 16. 2018
 
 
-January 22th, 2017
+January 22th, 2018
 
 
  MVATree.cxx			:
@@ -2690,7 +2690,7 @@ user.abell.mc15_13TeV.410525.PowhegHerwig7EvtGen_H7UE_tt_hdamp258p75_nonallhad.e
 
 
 
-January 23, 2017
+January 23, 2018
 
 void TH1::Sumw2
 
@@ -2720,7 +2720,7 @@ Also useful are the rectangle commands that operate on rectangles of text instea
      C-x r t prompts for a string to replace the rectangle with. Entering C-u 8 <space> will then enter 8 spaces.
 
 
-- 20170124
+- 20180124
 
 what is DR, DS schema
 
@@ -2791,7 +2791,7 @@ Obtaining Tickets with kinit
   http://web.mit.edu/kerberos/krb5-1.4/krb5-1.4.3/doc/krb5-user/Obtaining-Tickets-with-kinit.html
 
 
-Jan. 29, 2017
+Jan. 29, 2018
 
 kill a process by name:
      pkill firefox
@@ -2804,12 +2804,12 @@ merge all the eps file into one pdf file:
       gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -sOutputFile=alloutput.pdf *.eps
 
 
-Jan. 30, 2017
+Jan. 30, 2018
 
 seaborn - python plot package
 
 
-Feb. 1, 2017
+Feb. 1, 2018
 
 =========================================================================
 svn branch:
@@ -2902,3 +2902,10 @@ refernce https://opensource.com/life/16/11/running-commands-shutdown-linux
 C-u 73 =	add divider
 C-u 4 C-x TAB	indent a region
 =========================================================================
+
+
+
+Feb. 2 2018
+
+
+
