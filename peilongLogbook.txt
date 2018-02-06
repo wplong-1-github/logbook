@@ -2908,4 +2908,14 @@ C-u 4 C-x TAB	indent a region
 Feb. 2 2018
 
 
+20180205
+	
 
+20180206
+	feed ratio variation to limit settings
+	
+	Is it a counting experiment or shape comparison?
+	
+	event weight
+	
+	significance = ratio / uncertainty on ratio
