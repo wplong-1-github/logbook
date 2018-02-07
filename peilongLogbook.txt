@@ -1857,7 +1857,7 @@ Oct 10 2017
 
 1nh has higher priority
 
-LSF user guide IBM
+lxplus LSF user guide IBM
 https://batchconf.web.cern.ch/batchconf/doc/lsf/print/lsf_users_guide.pdf
 
 CERN OpenStack
@@ -2919,3 +2919,19 @@ Feb. 2 2018
 	event weight
 	
 	significance = ratio / uncertainty on ratio
+
+
+
+20180207
+	Tree_410501_1Lep
+	Error in <TChain::SetBranchAddress>: unknown branch -> Jet_HadronConeExclTruthLabelID
+	Error in <TChain::SetBranchAddress>: unknown branch -> MPT
+	Error in <TChain::SetBranchAddress>: unknown branch -> MPT_Phi
+	Error in <TTree::SetBranchStatus>: unknown branch -> Jet_HadronConeExclTruthLabelID
+	Error in <TTree::SetBranchStatus>: unknown branch -> MPT
+	Error in <TTree::SetBranchStatus>: unknown branch -> MPT_Phi
+
+
+	lxplus LSF -jobs:
+	https://twiki.cern.ch/twiki/bin/view/Main/HowtoUseLxplus
+	      
