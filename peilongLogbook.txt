@@ -2935,3 +2935,23 @@ Feb. 2 2018
 	lxplus LSF -jobs:
 	https://twiki.cern.ch/twiki/bin/view/Main/HowtoUseLxplus
 	      
+
+20180212
+
+job submitted:
+
+410501
+bsub -q 1nd NtupleToHist 1 /afs/cern.ch/user/p/pewang/public/Project/VHbbTruthAnalysis/VHbbTruthFramework/macros/NtupleToHist/410501 410501 /afs/cern.ch/user/p/pewang/public/Project/VHbbTruthAnalysis2/run
+Job <142698527> is submitted to queue <1nd>.
+410511
+bsub -q 1nd NtupleToHist 1 /afs/cern.ch/user/p/pewang/public/Project/VHbbTruthAnalysis/VHbbTruthFramework/macros/NtupleToHist/410511 410511 /afs/cern.ch/user/p/pewang/public/Project/VHbbTruthAnalysis2/run
+Job <142698530> is submitted to queue <1nd>.
+410512
+bsub -q 1nd NtupleToHist 1 /afs/cern.ch/user/p/pewang/public/Project/VHbbTruthAnalysis/VHbbTruthFramework/macros/NtupleToHist/410512 410512 /afs/cern.ch/user/p/pewang/public/Project/VHbbTruthAnalysis2/run
+Job <142698532> is submitted to queue <1nd>.
+410225
+bsub -q 1nd NtupleToHist 1 /afs/cern.ch/user/p/pewang/public/Project/VHbbTruthAnalysis/VHbbTruthFramework/macros/NtupleToHist/410225 410225 /afs/cern.ch/user/p/pewang/public/Project/VHbbTruthAnalysis2/run
+Job <142698533> is submitted to queue <1nd>.
+410525
+bsub -q 1nd NtupleToHist 1 /afs/cern.ch/user/p/pewang/public/Project/VHbbTruthAnalysis/VHbbTruthFramework/macros/NtupleToHist/410525 410525 /afs/cern.ch/user/p/pewang/public/Project/VHbbTruthAnalysis2/run
+Job <142698536> is submitted to queue <1nd>.
