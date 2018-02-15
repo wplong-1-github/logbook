@@ -2955,3 +2955,11 @@ Job <142698533> is submitted to queue <1nd>.
 410525
 bsub -q 1nd NtupleToHist 1 /afs/cern.ch/user/p/pewang/public/Project/VHbbTruthAnalysis/VHbbTruthFramework/macros/NtupleToHist/410525 410525 /afs/cern.ch/user/p/pewang/public/Project/VHbbTruthAnalysis2/run
 Job <142698536> is submitted to queue <1nd>.
+
+
+February 14, 2018
+
+how to rebin in ROOT TBrowser:
+    You can also rebin your histogram via the editor, from the canvas menu View->Editor, then click on the histogram and select the “Binning” tab.
+
+    
