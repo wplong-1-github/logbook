@@ -2963,3 +2963,6 @@ how to rebin in ROOT TBrowser:
     You can also rebin your histogram via the editor, from the canvas menu View->Editor, then click on the histogram and select the “Binning” tab.
 
     
+February 19, 2018
+How do I parse command line arguments in Bash?
+    https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash
