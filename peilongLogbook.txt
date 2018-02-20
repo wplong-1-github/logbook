@@ -2975,3 +2975,8 @@ Removing:
 Removing for dependencies:
  rhythmbox                                           x86_64                                           3.3.1-5.el7                                            @base                                            14 M
 
+
+Warning (emacs): Unable to activate package `python-environment'.
+Required package `deferred-0.3.1' is unavailable
+Warning (emacs): Unable to activate package `python-environment'.
+Required package `deferred-0.3.1' is unavailable
