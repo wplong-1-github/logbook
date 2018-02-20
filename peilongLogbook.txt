@@ -2967,3 +2967,11 @@ how to rebin in ROOT TBrowser:
 February 19, 2018
 How do I parse command line arguments in Bash?
     https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash
+
+
+Feb. 20, 2018
+Removing:
+ libgpod                                             x86_64                                           0.8.3-14.el7                                           @epel                                           898 k
+Removing for dependencies:
+ rhythmbox                                           x86_64                                           3.3.1-5.el7                                            @base                                            14 M
+
