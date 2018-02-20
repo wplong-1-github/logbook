@@ -36,6 +36,7 @@ RPM package install:
 rpm -ivh package_name.rpm
 
 -i: install
+-U: Upgrade
 -v: installation details
 -h: installation progress
 
