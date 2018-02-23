@@ -2990,3 +2990,16 @@ Feb. 22, 2018
      once a year travel for conference in SMU
 
 
+Feb. 23, 2018
+     
+1. source /cvmfs/atlas.cern.ch/repo/sw/tdaq/tdaq/tdaq-07-01-00/installed/setup.sh tdaq-07-01-00 x86_64-slc6-gcc62-opt
+
+2. pm_part_hlt.py -p dummy
+
+3. touch ipc_root.ref; TDAQ_IPC_INIT_REF=file:${PWD}/ipc_root.ref
+
+4. pm_farm.py --safe-hw-tags --add='ustb[10,11,12,13,14,15,17,20,21]' farm.data.xml
+
+5. create daq/hw and daq/segments and "mv farm.data.xml daq/hw/"
+
+6. setup_daq -p dummy -d dummy.data.xml 
