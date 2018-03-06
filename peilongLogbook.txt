@@ -3036,3 +3036,9 @@ FTK Lab4 test:
 [pewang@lxplus041 ~]$ ssh pc-tbed-pub.cern.ch -CY
 [pewang@pc-tbed-pub-23 ftk_test]$ source /afs/cern.ch/user/f/ftk/bin/setup_ftk.sh FTK-02-00-10
 export TDAQ_DB_DATA=/tbed/oks/tdaq-07-01-00/FTK/FTK-02-00-10/ftk/partitions/FTK.data.xml
+
+
+DF-IM settings -> Lab4
+
+      manual
+      on-call training slides
