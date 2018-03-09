@@ -3052,3 +3052,13 @@ Mar. 8, 2018
 >>> list2 = reversed(list1)
 >>> list2
 <listreverseiterator object at 0x857ad0>
+
+
+Mar. 9th, 2017
+Log into the testbed: ssh -YX pc-tbed-ftk-01.cern.ch
+you need to use this: /tbed/oks/tdaq-07-01-00/FTK/FTK-02-00-11/ftk/setup_partition_lab4_tdaq7_nightly.sh
+
+what's the difference among nightly, nightly-dev, and nightly-head?
+-head is the trunk of the packages
+-dev is the branches with the spybuffer publishing work
+-nightly, It's whatever the package managers put into tag collector.  In principle it should be ready to go into a release, but I wouldn't call it stable.
