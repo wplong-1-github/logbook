@@ -1,4 +1,4 @@
-# Wed 26 OCT 16
+Wed 26 OCT 16
 I attended the "Trigger for Physics" workshop in the morning and had lunch with all SMU people at CERN. Then I went to the Hbb meeting with Steve and Mattew at 1:30pm and went back to the afternon section of the workshop to listen the talk and the discussion for the trigger of 2017 run. I went to CERN building 55 to get my ID card. Then I attended the "b-jet trigger worshop" meeting. It is a service task workshop and I met some people I don't recognize there. After that, I had dinner with Steve and Matthew. We talked a lot about Mars, astronomy, space-time, universe fluctation. They talked about a movie - "Total Recall" 1990. I might watch it sometime. 
 
 I also heard from Jeff and Steve that the 2 lepton data for Hbb framework is not found yet.
@@ -8,7 +8,7 @@ Service task waiting for Steve meeting with Argonne.
 I also added the logbook and PhD thesis git repository.
 
 
-# Thu 27 OCT 16
+Thu 27 OCT 16
 eosLocation=root://eosatlas.cern.ch//eos/atlas/unpledged/group-tokyo/users/yenari/20160708/HIGG2D4_13TeV/CxAOD_00-24-07/ttbar/group.phys-higgs.mc15_13TeV.410000.PwPyEG_P2012_ttbar_hdamp172p5_nonallhad.s2608.HIGG2D4.24-7_CxAOD.root/
 
 cat filename.txt | xargs -i xrdcp ${eosLocation}{} /scratch/users/peilongw
@@ -17,11 +17,11 @@ cat filename.txt | xargs -i xrdcp ${eosLocation}{} /scratch/users/peilongw
 xargs command is designed to construct argument lists and invoke other utility. xargs reads items from the standard input or pipes, delimited by blanks or newlines, and executes the command one or more times with any initial-arguments followed by items read from standard input. Blank lines on the standard input are ignored.
 
 
-# Fri 28 OCT 16
+Fri 28 OCT 16
 find . -name "*DiskListLocal.cxx"
 
 
-# Wed 2 Nov 16
+Wed 2 Nov 16
 yum check-update
     This command allows you to determine whether any updates are available for your installed packages. yum returns a list of all package updates from all repositories if any are available. 
 
@@ -42,14 +42,14 @@ rpm -ivh package_name.rpm
 
 
 
-# Thu 3 Nov 16
+Thu 3 Nov 16
 Eventloop: to speed compiling:
 
 rc find_packages --restrict=FrameworkExe
 rc compile
 
 
-# Tue 8 Nov 16
+Tue 8 Nov 16
 Emacs remote load files:
 /ssh:user@remotehost:/etc
 
@@ -63,7 +63,7 @@ $ grep -R "192.168.1.5" /etc/
 
 
 
-# Nov 8, 16
+Nov 8, 16
 CSCOPE source browsing tool
 
 
@@ -74,7 +74,7 @@ CSCOPE source browsing tool
 
 
 
-# Nov 15, 16
+Nov 15, 16
 /users/peilongw/Project/CxAOD/CxAODReader/CxAODReader
 BookFillHist overload:
 	void BookFillHist(const string& name, int nbinsx, float xlow, float xup, float value, float weight=1);
@@ -92,7 +92,7 @@ HVec_gsc=resolvedH.vec_gsc;
 The name of the Pt(j1) vs Mbb plot: GSCMbbVSPtJ1
 
 
-# Nov 17, 16
+Nov 17, 16
 
 yum how to check installed package:
 
@@ -122,7 +122,7 @@ prepare to install local ROOT tomorrow
 
 
 
-# Nov 18, 16
+Nov 18, 16
 Emacs jump to the end of the file:
 M->: Go the end of the file
 M-x package-list-...
@@ -253,7 +253,7 @@ sudo yum install epel-release
 
 
 
-# Nov 19, 16
+Nov 19, 16
 
 latex newlog.tex
 xdvi newlog.dvi
@@ -284,7 +284,7 @@ What does pT(j1) mean: m_etree->get<float>("GSCMbbJ1Pt")
 
 
 
-# Nov 20, 16
+Nov 20, 16
 Display full date in task bar -- CentOS
 gnome-tweak-tool used to have settings for that in previous versions.
 
@@ -342,7 +342,7 @@ Directly input the number of the position and size.
 
 
 
-# Nov 30, 16
+Nov 30, 16
 
 SVN FLIC repository:
 @CERN: svn+ssh://jwebster@svn.cern.ch/reps/atlastdaq/FTK/flic/trunk
@@ -393,7 +393,7 @@ link-> https://wiki.centos.org/TipsAndTricks/YumAndRPM#head-3c061f4a180e5bc90b7f
 If the above command fails because of missing dependencies, install the dependencies first, and then retry the step above.
 
 
-# Dec 1, 16
+Dec 1, 16
 
 enp0s20u6: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet6 fe80::7ec3:a1ff:fe89:18d2  prefixlen 64  scopeid 0x20<link>
@@ -492,7 +492,7 @@ data from flic to blade through eth6 or 7 ( through the back of ATCA crate)
 
 
 
-# Dec 2, 16
+Dec 2, 16
 
 steps to 7
 90
@@ -503,7 +503,7 @@ back to check FLIC control code
 
 
 
-# Dec 3, 16
+Dec 3, 16
 
 LHC luminosity upgrade is planned in threes stages:
 Phase 0 (2015-2018): LHC energy 8→13-14 TeV with full current, and L~1-2x10^34, and ⟨μ⟩ up to ~80, to integrate 150 fb-1 until LS2.
@@ -543,7 +543,7 @@ Hope this helps you.
 
 
 
-# Dec 11, 2016
+Dec 11, 2016
 
 Linux convert pdf to png
 pdftoppm -png Trigger_Flowchart.pdf Trigger_Flowchart
@@ -553,7 +553,7 @@ rucio list-dids mc15_13TeV:mc15_13TeV*341577*EVNT*
 rucio download mc15_13TeV:mc15_13TeV.341577.PowhegPy8EG_AZNLOCTEQ6L1_WplusenuH_H125_a20a20_bbbb.evgen.EVNT.e4118
 
 
-# Dec 13, 2016
+Dec 13, 2016
 
 root [5] .ls
 
@@ -563,7 +563,7 @@ root [5] CollectionTree->Print("*Truth*")
 
 
 
-# Dec 14, 16
+Dec 14, 16
 
 Slurm's srun command will interactively request a batch job, returning a compute-node name as a prompt, usually scheduled within a short period of time. Issue the srun command only from a login node. Command syntax is:
 
@@ -602,7 +602,7 @@ root [2] CollectionTree->Scan("PixelClustersAuxDyn.bec")
 
 
 
-# Dec 15, 16
+Dec 15, 16
 
 ROOT installation
 1. Download and unpack the ROOT's sources from the download area or using directly the Git repository. Follow the instructions for getting the ROOT sources
@@ -657,13 +657,13 @@ The source files of sample handler and Eventloop
 grep -i optmax $ROOTCOREDIR/../EventLoop/*
 
 
-# Dec 16th, 16
+Dec 16th, 16
 Problem: how to find the b hadron?
 how do you know it is a b before we even tag it ?
 
 
 
-# Dec 26th , 16
+Dec 26th , 16
 pdg ID 5 -> b
 
 
@@ -676,14 +676,14 @@ how to access to bec layer
 
 
 
-# Dec. 27th, 16
+Dec. 27th, 16
 
 Pixels	   1 removable barrel layer 0.2 Rφ = 12, z = 66 16 ±2.5
 	   2 barrel layers 1.4 Rφ = 12, z = 66 81 ±1.7
 	   4 end-cap disks
 	   on each side 0.7 Rφ = 12, R = 77 43 1.7-2.5
 
-# Jan. 24th, 17
+Jan. 24th, 17
 FLIC:
   bytes+=flictalk->singlewrite(FLIC::targetNone,FLIC::cmdRead,0x0,data,0);
   n = write(sfd,&tx,txLength);
@@ -709,17 +709,17 @@ eth7      Link encap:Ethernet  HWaddr 00:30:64:0A:EC:CB
           inet addr:192.168.2.1  Bcast:192.168.2.255  Mask:255.255.255.0
 
 
-# Jan. 26th, 17
+Jan. 26th, 17
 each register can store 16 bits and for "abcd", each character has 4 bits
 
 
-# Jan. 27th, 17
+Jan. 27th, 17
 running wireshark on ustb10
 xauth extract - `xauth list |tail -1|sed 's?MIT-MAG.*$??'`|sudo /usr/bin/xauth merge -
 sudo /usr/bin/wireshark -i eth6
 
 
-# Jan. 30th, 17
+Jan. 30th, 17
 fatal: Authentication failed for 'https://:pewang@gitlab.cern.ch:8443/pewang/FLICControl.git/'
 
 What I did to solve it:
@@ -736,7 +736,7 @@ If you run flic_udp or ping_flic to send a message from the blade (ustb10, 192.1
 
 
 
-# Jan 31th, 17
+Jan 31th, 17
 How to install sdcv (dictionary):
 download sdcv rpm package 
 install it using Centos rpm
@@ -797,7 +797,7 @@ Here is a picture.
 
 Note: Sometimes due to the long definition of a particular word text scrolls down too fast for you to read, advanced users can set SDCV_PAGER environment variable to /usr/bin/less. Now, less will be used to display to the dictionary’s article. You may consider adding this to your .bashrc file. Check out manpage for sdcv for more information.
 
-# Feb 9st, 17
+Feb 9st, 17
 O
 LibreO	ffice: jump to the end of the file – short cut:
 Ctrl + End
@@ -816,7 +816,7 @@ linux check hard drive storage:
 df -h <directory>
 
 
-# Feb. 10th, 2017
+Feb. 10th, 2017
 Firefox open new tab shortcut:
 Ctrl + t(tab)
 
@@ -826,16 +826,16 @@ htons function in socket programming:
 htons is host-to-network short
 
 
-# Feb. 13th, 2017
+Feb. 13th, 2017
 Linux check distribution:
 $ cat /etc/*-release
 
-# Feb. 15th, 2017
+Feb. 15th, 2017
 Git pull branches:
 git pull origin treeDevelopment 
 
 
-# Feb. 17th, 2017
+Feb. 17th, 2017
 
 Emacs indent with comment:
     After typing /*, hit M-j, the default binding for indent-new-comment-line (and the default binding for c-indent-new-comment-line in c-mode). If it is the first comment line the closing closing characters */ will be auto-inserted.
@@ -890,7 +890,7 @@ Or, in emacs-speak, for your specific example of adding a:
 M-< M-x replace-regexp RET $ RET a RET
 
 
-# Feb. 20th, 2017
+Feb. 20th, 2017
 When SSB_XOFF is 1, it means that SSB is not sending data to FLIC.
 
            XOFF       CHANNEL0       CHANNEL1       CHANNEL2       CHANNEL3
@@ -913,7 +913,7 @@ When SSB_XOFF is 1, it means that SSB is not sending data to FLIC.
 Reprograme the FPGAs should be able to make it work. The default value is 1. 
 
 
-# Feb. 21th, 2017
+Feb. 21th, 2017
 
 How to remove all .svn directories from my application directories
 
@@ -929,7 +929,7 @@ With Git versions ≥ 1.6.6, you can just do:
 git fetch
 git checkout test
 
-# Feb. 22th, 2017
+Feb. 22th, 2017
 
 How do you merge two Git repositories?
 
@@ -955,18 +955,18 @@ Note: The --allow-unrelated-histories parameter only exists since git >= 2.9.
 ----------end of additional answer--------
 
 
-# Feb. 23th, 2017
+Feb. 23th, 2017
 FlIC Test vector generating:
 1. download the scripts
 $ svn checkout svn+ssh://pewang@svn.cern.ch/reps/atlasoff/Trigger/TrigFTK/TrigFTKSimTools/trunk
 
 
 
-# Feb. 27th, 2017
+Feb. 27th, 2017
 FLIC test vecor generating:
 
 
-# Mar. 3rd, 2017
+Mar. 3rd, 2017
 
 [peilong@charon flic]$ ls ~/Project/FLICControl_svn/trunk/flic/
 firmware  flic_comm.h  FLICController.h  FLIC.h  FLIC_Mon_App.h  FlicMonitoringFIFO.h  FLICSetupTool.h  LUTs  ReadoutModuleFlic.h  StandaloneTools.h
@@ -979,14 +979,14 @@ C linux header file location:
 The system headers are in /usr/include and the headers for user-installed packages are in /usr/local/include.
 
 
-# Mar 4th, 2017
+Mar 4th, 2017
 svn add all changes:
 svn add --force . will add all the files and directories below your current working directory that aren't added yet (and aren't ignored) to your working copy.
 
 A svn ci -m "" will then handle the commit.
 
 
-# Mar 6th, 2017
+Mar 6th, 2017
 ReadoutModule_blade -> raw data to EMON
 ReadoutModule_FLIC -> monitoring fifo -> EMON
 
@@ -1000,12 +1000,12 @@ DijetResonanceAlgo:
 since the xAODAnaHelper is taking the default set-up, there is no need to change the config file now. So I can modify the ResonanceAlgorithm.cxx first 
 
 
-# Mar 7th, 2017
+Mar 7th, 2017
 The further JTAG connector on FLIC monitors FPGA1
 The closer JTAG connector on FLIC minitors management FPGA
 
 
-# Mar 10th, 2017
+Mar 10th, 2017
 ResonanceAlgoithm.cxx : m_eventDetailStr ?   miniTree->AddEvent( m_eventDetailStr );
 ##%%%%%%%%%%%%%%%%%%%%%%%%%% DijetResonanceAlgo %%%%%%%%%%%%%%%%%%%%%%%%%%#                                                                       
     "m_eventDetailStr"            :   "truth pileup shapeEM",
@@ -1017,7 +1017,7 @@ working point -> cuts
 
 
 
-# Mar 20th, 2017 Monday
+Mar 20th, 2017 Monday
 C-a emacs: move to the home of the line
 C-e emacs: move to the end of the line
 
@@ -1031,13 +1031,13 @@ to do the macro: type C-x e e e e
 
 
 
-# Mar 21th, 2017 Tuesday
+Mar 21th, 2017 Tuesday
 /usr/include/sys/types.h
 
 recvfrom returns the number of words received.
 
 
-# Mar 29th, 2017 Wednesday
+Mar 29th, 2017 Wednesday
 Creat soft link to work space:
 ln -s /home/peilong/Project/FLICControl_svn/trunk/standalone/FLICMonitoringSoftware ./link_to_work
 
@@ -1050,12 +1050,12 @@ emacs ShowParenMode
 M-x show-paren-mode RET
 
 
-# Apr 2nd, 2017 Sunday
+Apr 2nd, 2017 Sunday
 how to insert a check mark in Libreoffice
 http://guide2office.com/1418/how-to-add-a-tick-symbol-%E2%9C%93-to-writer-documents-libreoffice-openoffice/
 
 
-# Apr. 17th, 2017 Monday
+Apr. 17th, 2017 Monday
 cp one file to multi files:
    cp file1 file2 ; cp file1 file3
    or
@@ -1064,7 +1064,7 @@ cp one file to multi files:
    tee <file1 file2 file3 >/dev/null
 
 
-# Apr. 20th, 2017 Thursday
+Apr. 20th, 2017 Thursday
 import os
 
 for filename in os.listdir("."):
@@ -1073,7 +1073,7 @@ for filename in os.listdir("."):
 
 
 
-# May 5th, 2017 Friday
+May 5th, 2017 Friday
 
 This will show all directories in /home that contain more than 1000MB. If your version of du doesn't support -m, you can use du -sk and adjust the awk bit to look for more than 1,000,000KB instead...
 
@@ -1081,7 +1081,7 @@ cd /home
 du -sm * | awk '$1 > 1000'
 
 
-# May 9th, 2017
+May 9th, 2017
 Emacs org mode
       how to add new line:
       	  type "|" then type "Tab"
@@ -1096,7 +1096,7 @@ Emacs how to exit shell-mode:
 
 
 
-# May 10th, 2017
+May 10th, 2017
 Dijetlepton MET:
 metFinalClus is reconstructed from cluster
 metFinalTrk is reconstructed only from tracks
@@ -1108,7 +1108,7 @@ run A_RUN_ALL_SIGNAL_test
 output file in inputs file *.log
 
 
-# June 6th, 2017
+June 6th, 2017
 Two directories, same file list, compare all the file in both directories:
 diff -bur folder1/ folder2/
 This will output a recursive diff that ignore spaces, with a unified context:
@@ -1118,7 +1118,7 @@ This will output a recursive diff that ignore spaces, with a unified context:
     r flag means recursive
 
 
-# June 7th, 2017
+June 7th, 2017
 U3/U4 ETH setup for Blade in step "4 Setup Proc board":
 
 == U3 Eth1 ==
@@ -1146,7 +1146,7 @@ write 110f to 6a on U3
 sent 2 tracks per data, interval 2000 to blade
 
 
-# June 30th, 2017
+June 30th, 2017
 
 $T \cdot m$
 This should be used in the notes.
@@ -1156,13 +1156,13 @@ Latex:
 If it is already in the the math mode, like inside \begin{equation*}, then there is no need to type $ \formular $. Otherwise, there will be error.
 
 
-# July 11th, 2017
+July 11th, 2017
 git commit -m ""
 git commit --amend; then type "enter"
 to add bullet in the commit, type "-"
 
 
-# August 9th, 2017
+August 9th, 2017
 
 Clone the repository as normal:
 
@@ -1179,7 +1179,7 @@ To retain any changes made, move them to a new branch:
 git checkout -b 1.1.4-jspooner
 
 
-# August 22, 2017
+August 22, 2017
 
 EVNT-> AOD -> DAOD
 by asking an official request and being produced centrally by ATLAS
@@ -1192,7 +1192,7 @@ mc15_13TeV.410501.PowhegPythia8EvtGen_A14_ttbar_hdamp258p75_nonallhad.merge.DAOD
 410501	
 
 
-# August 24, 2017
+August 24, 2017
 /users/peilongw/Project/MCFilterRun/RootCoreBin/data/FrameworkSub/yields.1lep.13TeV_mc15c.txt
 
 410501		1		1		1		PwPyEG_A14_ttbar_hdamp172p5_nonallhad
@@ -1203,7 +1203,7 @@ mc15_13TeV.410501.PowhegPythia8EvtGen_A14_ttbar_hdamp258p75_nonallhad.merge.DAOD
 410501   831.76             1.0            0.5            ttbar_flavtag            PowhegPythia8EvtGen_A14_ttbar_hdamp172p5_nonallhad
 
 
-# August 25, 2017
+August 25, 2017
 sbatch -a 1-N ./launch_slurm_array.py  
 
 sbatch -a 1-5 ./send2_sim_s2726.py
@@ -1211,7 +1211,7 @@ sbatch -a 1-5 ./send2_sim_s2726.py
 sbatch -a 1-2000 ../send4_re_s2726.py
 
 
-# August 29 2017
+August 29 2017
 
 2 or 3 jobs for sim
 1-2000 X 1
@@ -1230,7 +1230,7 @@ Steve vidyo room: https://vidyoportal.cern.ch/join/CsyejuDMVYmi
 
 
 
-# August 30 2017
+August 30 2017
 
 here are the instructions I had from Amit some time ago
 Sent on:
@@ -1269,7 +1269,7 @@ From:
 francesco
 
 
-# Sep 1. 2017
+Sep 1. 2017
 
 sbatch -a 1-200 ./send4_reco_r7772_medium-mem-1-m.py
 201667
@@ -1298,7 +1298,7 @@ sbatch -a 1851-2000 ./send4_reco_r7772_medium-mem-1-s.py
 
 scancel 201681_[877-1200]
 
-# Sep. 3 2017
+Sep. 3 2017
 
 1851-2000 medium-1-m
 
@@ -1318,7 +1318,7 @@ m-mem-2.py
 Submitted batch job 204249
 
 
-# Sep. 14th 2017
+Sep. 14th 2017
 ll ./*
 recursively list all the files under the directory 
 
@@ -1350,12 +1350,12 @@ CxAODReader:
    - a test see whether Reader works
 
 
-# Sep. 15 2017
+Sep. 15 2017
 list size of a file:
 ll -h DAOD_HIGG5D2.test_1k_142.pool.root
 
 
-# Sep. 17 2017
+Sep. 17 2017
 
 Duties of Run Control Shifter:
 1. Prepare for a run
@@ -1405,7 +1405,7 @@ logout of the tools.
 
 
 
-# Sep. 18, 2017
+Sep. 18, 2017
 Difference between "source *.sh" and "bash *.sh":
 When you call source (or its alias .), you insert the script in the current bash process. So you could read variables set by the script.
 
@@ -1433,12 +1433,12 @@ VHbb analysis:
      
 
 
-# Sep. 19, 2017
+Sep. 19, 2017
 ask sub-group convener what version is used for the paper
 
 
 
-# Sep. 20, 2017
+Sep. 20, 2017
 Post-install: setting PATH - Texlive
 PATH=/usr/local/texlive/2017/bin/x86_64-linux:$PATH
 Where to put it
@@ -1479,7 +1479,7 @@ Click "Initialize"
 As Run Control shifter you will be asked to acknowledge the stop-less removal procedure (pop-up window appearing) Read the message carefully and ASK the Shift Leader to decide what action to take in collaboration with the relevant detector shifter!
 
 
-# Sep. 22, 2017
+Sep. 22, 2017
 Slides for meeting with Steve:
        Brief summary of work done
        Problem met:
@@ -1518,7 +1518,7 @@ Open lab/Intel TBB
 Graduation the end of next year
 
 
-# Sep. 25, 2017
+Sep. 25, 2017
 Fast simulation: Preshower
 
 go through FTK twiki from Carlo
@@ -1534,7 +1534,7 @@ stable data flow prescale -> on cal report Sep. 25 2017
 
 
 
-# Sep. 26, 2017
+Sep. 26, 2017
 
 Production script
 CxAODReader_VHbb version ->  tag on Readme / no instruction on readme
@@ -1623,7 +1623,7 @@ Subscribe for General Fitness Classes:
     Sign up to the mailing list (General Fitness) or  HIIT mailing list
 
 
-# Sep 27, 2017
+Sep 27, 2017
 
 OKS
 FTKMaker
@@ -1674,7 +1674,7 @@ when the particle is not in the center of the pipeline, it has an image charge t
 Remember to be polite when asking and answering questions.
 
 
-# Sep. 28, 2017
+Sep. 28, 2017
 
 ftkcommon: compiling, get it working
 
@@ -1938,7 +1938,7 @@ one can get it by running `root-config --libs`
 [7:59:34 PM] MishaLisovyi: there seem to be no ready function to parse the payload (the header and the trailer are parsed by EventfragmentFTKPacket). But one can copy functionality from https://svnweb.cern.ch/trac/atlastdaq/browser/FTK/ftkdqm/trunk/src/gnamFTKEventFragment.cxx#L36 strating from line 67 onwards
 
 
-# Oct 17 2017
+Oct 17 2017
 flicscope_8x8
 /users/ac.peilongw/flic_repo/FLICControlTesting/standalone/run
 
@@ -1950,7 +1950,7 @@ emacs: compare two files side by side, similar to vim's vimdiff?
 Ediff works similarly: M-x ediff
 
 
-# Oct 18 2017
+Oct 18 2017
 
 Please select an option (0 to Exit):
    1 Power On                      100 Power Off
@@ -2044,7 +2044,7 @@ Please select an option (0 to Exit):
 
 
 
-# Oct 19 2017
+Oct 19 2017
 
 The working copy is revision BASE. The latest copy from the repository is revision HEAD. This will compare your working copy against the HEAD revision:
 
@@ -2063,7 +2063,7 @@ flic_udp_spybuffer -> two FLICs for testing -> sending -> works
 
 
 
-# Oct 20 2017
+Oct 20 2017
 meeting with Steve
 
 1. MC filter
@@ -2091,7 +2091,7 @@ emacs save as: C-x C-w
 
 
 
-# Oct 24 2017
+Oct 24 2017
 
 only track parameter left for decoding check
 
@@ -2099,7 +2099,7 @@ only track parameter left for decoding check
 
 
 
-# Oct 27 2017
+Oct 27 2017
 
 Meeting with Steve:
 
@@ -2116,7 +2116,7 @@ Meeting with Steve:
 3. Muon handler in Framework 2.0
 
 
-# Oct 27 2017
+Oct 27 2017
 
 Meeting with Steve:
 
@@ -2191,7 +2191,7 @@ Three words after Assembly trailer word:
 
 
 
-# Oct. 30 2017
+Oct. 30 2017
 
 emacs view mode:
       M-x view-mode
@@ -2336,7 +2336,7 @@ figure out why stops
 
 
 
-# Oct 31 2017
+Oct 31 2017
 
 Latex variable -> thesis
 
@@ -2390,7 +2390,7 @@ Summary of commands used in test at P1:
    1.  <attr name="usePseudoData" type="bool">1</attr>
 
 
-# Nov. 1 2017
+Nov. 1 2017
 
 software transition test:
 init -> shutdown good
@@ -2486,7 +2486,7 @@ constants in VME segment -> no problem
 
 
 
-# Nov 2. 2017
+Nov 2. 2017
 
 first test the release at Lab4 and then test at P1:
 /DC=org/DC=cilogon/C=US/O=Southern Methodist University/CN=Peilong Wang A44121
@@ -2503,7 +2503,7 @@ nightly release:
 
 
 
-# Nov. 3 2017
+Nov. 3 2017
      Run control desk shift:
      	 1. after change the "Segments and Resources", commit and reload to change in the database
 	 2. if there are some new *.data.xml files appear when you commit and reload, ask shifter leader whether we should reload these new changed files
@@ -2523,13 +2523,13 @@ test SSB with empty packet with data
 
 
 
-# Nov. 4 2017
+Nov. 4 2017
 
 Slides for FTK meeting: ~ 10 pages
 
 
 
-# Nov. 8 2017
+Nov. 8 2017
 
 Give the finger = flip somebody off
 
@@ -2537,7 +2537,7 @@ unzip file.zip -d destination_folder
 
 
 
-# Nov. 14 2017
+Nov. 14 2017
 
 Flyspell enables on-the-fly spell checking in Emacs:
 M-x flyspell-mode
@@ -2553,22 +2553,22 @@ M-x flyspell-mode
 ./other/lineno.sty:\ProvidesPackage{lineno} 
 
 
-# Nov. 15 2017
+Nov. 15 2017
 
 1. Thesis topic, committee member
 2. Motivation: VHbb not yet observed - higgs production and decay
 
 
-# Nov. 21 2017
+Nov. 21 2017
 Jean-Christophe -> reading list
 
 
-# Nov. 28 2017
+Nov. 28 2017
 show absolute path:
 $ pwd -P
 
 
-# Nov. 29 2017
+Nov. 29 2017
 under MPI (processes created), creat multi-threads.
 
 2 sockets, each socket has a CPU and a memeory, each CPU has several cores. Between two CPUs, there are connections.
@@ -2576,7 +2576,7 @@ under MPI (processes created), creat multi-threads.
 sheng ming de yi yi shi shen me?
 
 
-# Nov. 30 2017
+Nov. 30 2017
 
 What are you interested in?
 
@@ -2584,14 +2584,14 @@ what is M-week?
 
 
 
-# Dec. 1 2017
+Dec. 1 2017
 lxplus add permissiono to any one recursively in one directory:
  recursively for anyone : find . -type d -print -exec fs setacl {} system:anyuser rl \; 
 
 hist_0Lep_ttbar_2tag2jet_0ptv_SR_mBB_Nominal
 
 
-# Dec. 5 2017
+Dec. 5 2017
 FLIC test setup at Argonne:
      1. check out CERN SVN repo
      1. OKS data editor, TBE, 
@@ -2601,7 +2601,7 @@ way to solve the bugs for FLIC_MON_APP:
 Delete anything related to flicNamed.h and m_flicNamed
 
 
-# Dec. 6 2017
+Dec. 6 2017
 
 list all the partition:
 [pewang@pc-tbed-pub-01 flic_test]$ ipc_ls -P -l
@@ -2625,7 +2625,7 @@ lepton:
     LeptonTransVec.SetPtEtaPhiM(readNtuple->Lepton_Pt->at(0),0.0,readNtuple->Lepton_Phi->at(0),readNtuple->Lepton_Mass->at(0));
 
 
-# Dec. 8 2017
+Dec. 8 2017
 
      TLorentzVector MET_Vec
      MET_Vec.SetPtEtaPhiM(readNtuple->MET,0.0,readNtuple->MET_Phi,0.0);
@@ -2640,7 +2640,7 @@ lepton:
 
 
 
-# Dec. 12 2017
+Dec. 12 2017
 
 jet - ECAL:
 1. setup RootCore
@@ -2655,7 +2655,7 @@ jet - ECAL:
 
 
 
-# Dec. 13 2017
+Dec. 13 2017
 
 /afs/cern.ch/user/p/pewang/public/Project/jet_prj/MyPackage/Root/CaloTowerPerformanceAnalysis.cxx: In member function ‘virtual EL::StatusCode CaloTowerPerformanceAnalysis::execute()’:
 /afs/cern.ch/user/p/pewang/public/Project/jet_prj/MyPackage/Root/CaloTowerPerformanceAnalysis.cxx:95:34: error: ‘antikt_algorithm’ was not declared in this scope
@@ -2663,10 +2663,10 @@ jet - ECAL:
                                   ^
 
 
-# Jan 16. 2018
+Jan 16. 2018
 
 
-# January 22th, 2018
+January 22th, 2018
 
 
  MVATree.cxx			:
@@ -2691,7 +2691,7 @@ user.abell.mc15_13TeV.410525.PowhegHerwig7EvtGen_H7UE_tt_hdamp258p75_nonallhad.e
 
 
 
-# January 23, 2018
+January 23, 2018
 
 void TH1::Sumw2
 
@@ -2792,7 +2792,7 @@ Obtaining Tickets with kinit
   http://web.mit.edu/kerberos/krb5-1.4/krb5-1.4.3/doc/krb5-user/Obtaining-Tickets-with-kinit.html
 
 
-# Jan. 29, 2018
+Jan. 29, 2018
 
 kill a process by name:
      pkill firefox
@@ -2805,12 +2805,12 @@ merge all the eps file into one pdf file:
       gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -sOutputFile=alloutput.pdf *.eps
 
 
-# Jan. 30, 2018
+Jan. 30, 2018
 
 seaborn - python plot package
 
 
-# Feb. 1, 2018
+Feb. 1, 2018
 
 =========================================================================
 svn branch:
@@ -2906,7 +2906,7 @@ C-u 4 C-x TAB	indent a region
 
 
 
-# Feb. 2 2018
+Feb. 2 2018
 
 
 20180205
@@ -2958,18 +2958,18 @@ bsub -q 1nd NtupleToHist 1 /afs/cern.ch/user/p/pewang/public/Project/VHbbTruthAn
 Job <142698536> is submitted to queue <1nd>.
 
 
-# February 14, 2018
+February 14, 2018
 
 how to rebin in ROOT TBrowser:
     You can also rebin your histogram via the editor, from the canvas menu View->Editor, then click on the histogram and select the “Binning” tab.
 
     
-# February 19, 2018
+February 19, 2018
 How do I parse command line arguments in Bash?
     https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash
 
 
-# Feb. 20, 2018
+Feb. 20, 2018
 Removing:
  libgpod                                             x86_64                                           0.8.3-14.el7                                           @epel                                           898 k
 Removing for dependencies:
@@ -2983,14 +2983,14 @@ Required package `deferred-0.3.1' is unavailable
 
 
 
-# Feb. 22, 2018
+Feb. 22, 2018
      what is mTW? float mTW = WTransVec.M()
      	     dYWH? float dYWH = std::fabs( (lepton + neu_tlv).Rapidity() - (b_jet1 + b_jet2).Rapidity() );
      
      once a year travel for conference in SMU
 
 
-# Feb. 23, 2018
+Feb. 23, 2018
      
 1. source /cvmfs/atlas.cern.ch/repo/sw/tdaq/tdaq/tdaq-07-01-00/installed/setup.sh tdaq-07-01-00 x86_64-slc6-gcc62-opt
 
@@ -3005,12 +3005,12 @@ Required package `deferred-0.3.1' is unavailable
 6. setup_daq -p dummy -d dummy.data.xml 
 
 
-# Feb. 26, 2018
+Feb. 26, 2018
 
 plots on cern personal homepage
 
 
-# Feb. 28, 2018
+Feb. 28, 2018
 
 git some commands:
 …or create a new repository on the command line
@@ -3030,7 +3030,7 @@ You can initialize this repository with code from a Subversion, Mercurial, or TF
 
 
 
-# Mar. 5, 2018
+Mar. 5, 2018
 
 FTK Lab4 test:
 [pewang@lxplus041 ~]$ ssh pc-tbed-pub.cern.ch -CY
@@ -3043,7 +3043,7 @@ DF-IM settings -> Lab4
       manual
       on-call training slides
 
-# Mar. 8, 2018
+Mar. 8, 2018
 >>> a = [1,2,3,4,5]
 >>> b = [x**2 for x in a]
 >>> list1 = [3.33333333333333333, 5.2333333333333333, 4.55555555555555555]
@@ -3054,7 +3054,7 @@ DF-IM settings -> Lab4
 <listreverseiterator object at 0x857ad0>
 
 
-# Mar. 9th, 2017
+Mar. 9th, 2017
 Log into the testbed: ssh -YX pc-tbed-ftk-01.cern.ch
 you need to use this: /tbed/oks/tdaq-07-01-00/FTK/FTK-02-00-11/ftk/setup_partition_lab4_tdaq7_nightly.sh
 
@@ -3064,4 +3064,4 @@ what's the difference among nightly, nightly-dev, and nightly-head?
 -nightly, It's whatever the package managers put into tag collector.  In principle it should be ready to go into a release, but I wouldn't call it stable.
 
 
-# Mar. 14th, 2017
+Mar. 14th, 2017
