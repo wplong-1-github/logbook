@@ -9,7 +9,7 @@ I also added the logbook and PhD thesis git repository.
 
 
 # Thu 27 OCT 16
-eosLocation=root://eosatlas.cern.ch//eos/atlas/unpledged/group-tokyo/users/yenari/20160708/HIGG2D4_13TeV/CxAOD_00-24-07/ttbar/group.phys-higgs.mc15_13TeV.410000.PwPyEG_P2012_ttbar_hdamp172p5_nonallhad.s2608.HIGG2D4.24-7_CxAOD.root/
+> eosLocation=root://eosatlas.cern.ch//eos/atlas/unpledged/group-tokyo/users/yenari/20160708/HIGG2D4_13TeV/CxAOD_00-24-07/ttbar/group.phys-higgs.mc15_13TeV.410000.PwPyEG_P2012_ttbar_hdamp172p5_nonallhad.s2608.HIGG2D4.24-7_CxAOD.root/
 ```
 cat filename.txt | xargs -i xrdcp ${eosLocation}{} /scratch/users/peilongw
 ```
@@ -23,17 +23,17 @@ find . -name "*DiskListLocal.cxx"
 ```
 
 # Wed 2 Nov 16
-yum check-update
+## yum check-update
     This command allows you to determine whether any updates are available for your installed packages. yum returns a list of all package updates from all repositories if any are available. 
 
-yum update package_name
+## yum update package_name
     Used to update the specified packages to the latest available version. If no packages are specified, then yum will attempt to update all installed packages.
     If the --obsoletes option is used (i.e. yum --obsoletes package_name), yum will process obsolete packages. As such, packages that are obsoleted across updates will be removed and replaced accordingly. 
 
-It makes no difference whether double or single quotes are used when creating an alias.
+## It makes no difference whether double or single quotes are used when creating an alias.
     alias ll='ls -al'
 
-RPM package install:
+## RPM package install:
 ```
 rpm -ivh package_name.rpm
 ```
@@ -45,19 +45,19 @@ rpm -ivh package_name.rpm
 
 
 # Thu 3 Nov 16
-Eventloop: to speed compiling:
+## Eventloop: to speed compiling:
 ```
 rc find_packages --restrict=FrameworkExe
 rc compile
 ```
 
 # Tue 8 Nov 16
-Emacs remote load files:
+## Emacs remote load files:
 ```
 /ssh:user@remotehost:/etc
 ```
 
-Use grep recursively
+## Use grep recursively
 
 You can search recursively i.e. read all files under each directory for a string “192.168.1.5”
 $ grep -r "192.168.1.5" /etc/
@@ -67,10 +67,10 @@ $ grep -R "192.168.1.5" /etc/
 
 
 # Nov 8, 16
-CSCOPE source browsing tool
+## CSCOPE source browsing tool
 
 
-逆向工程：C++ source code to UML
+## 逆向工程：C++ source code to UML
 1. Rational Rose 2003
 2. Visual C++
 3. and so on.
@@ -79,16 +79,17 @@ CSCOPE source browsing tool
 
 # Nov 15, 16
 
-> /users/peilongw/Project/CxAOD/CxAODReader/CxAODReader
+## /users/peilongw/Project/CxAOD/CxAODReader/CxAODReader
 
 BookFillHist overload:
+```
 	void BookFillHist(const string& name, int nbinsx, float xlow, float xup, float value, float weight=1);
 	void BookFillHist(const string& name, int nbinsx, float* xbins, float value, float weight=1);
   	void BookFillHist(const string& name, int nbinsx, float xlow, float xup, int nbinsy, float ylow, float yup, float xvalue, float yvalue, float weigh\
 t=1);
 	void BookFillHist(const string& name, int nbinsx, float* xbins, int nbinsy, float* ybins, float xvalue,  float yvalue, float weight=1);
-
-> /users/peilongw/Project/CxAOD/CxAODReader_VHbb/Root/AnalysisReader_VHbb2Lep.cxx:
+```
+## /users/peilongw/Project/CxAOD/CxAODReader_VHbb/Root/AnalysisReader_VHbb2Lep.cxx:
 
 > Vector name: HVec_gsc.M()
 > HVec_gsc=mergedH.vec_gsc;
@@ -99,13 +100,13 @@ The name of the Pt(j1) vs Mbb plot: GSCMbbVSPtJ1
 
 # Nov 17, 16
 
-yum how to check installed package:
+## yum how to check installed package:
 
-yum list installed
+### yum list installed
     Lists all packages installed on your system. The rightmost column in the output lists the repository from which the package was retrieved. 
 
 
-How to unpack .tar.gz
+## How to unpack .tar.gz
 ```
 tar -xvzf community_images.tar.gz
 ```
@@ -116,12 +117,12 @@ To explain a little further, tar collected all the files into one package, commu
     x: tar can collect files or extract them. x does the latter.
     v: makes tar talk a lot. Verbose output shows you all the files being extracted.
 
-eosLocation=root://eosatlas.cern.ch//eos/atlas/unpledged/group-tokyo/users/yenari/20160708/HIGG2D4_13TeV/CxAOD_00-24-07/ZHll125/group.phys-higgs.mc15_13TeV.341102.Py8EG_A14NNPDF23LO_ZllH125_bb.s2608.HIGG2D4.24-7_CxAOD.root/
+## eosLocation=root://eosatlas.cern.ch//eos/atlas/unpledged/group-tokyo/users/yenari/20160708/HIGG2D4_13TeV/CxAOD_00-24-07/ZHll125/group.phys-higgs.mc15_13TeV.341102.Py8EG_A14NNPDF23LO_ZllH125_bb.s2608.HIGG2D4.24-7_CxAOD.root/
 ```
 cat filename_ZHll125.txt | xargs -i xrdcp ${eosLocation}{} /scratch/users/peilongw
 ```
 
-linux check folder size
+## linux check folder size
 ```du -sh *```
 
 
@@ -130,20 +131,20 @@ prepare to install local ROOT tomorrow
 
 
 # Nov 18, 16
-Emacs jump to the end of the file:
+## Emacs jump to the end of the file:
 M->: Go the end of the file
 M-x package-list-...
 
 Type i before the package name for mark
 Tyep x for install
 
-emacs iedit mode:
+## emacs iedit mode:
 move on the variables
 type C-c ; to start
 tyrpe C-x ; to exit
 
 
-Working on GitLab:
+## Working on GitLab:
 Command line instructions
 Git global setup # non global -> just remove --global
 ```
@@ -169,7 +170,7 @@ git commit
 git push -u origin master
 ```
 
-ROOT file:
+## ROOT file:
 How to read histgram from ROOT file
 ```
   TFile *f1 = new TFile("./submitDir/hist-mc15_13TeV.342619.aMcAtNloHerwigppEvtGen_UEEE5_CTEQ6L1_CT10ME_
@@ -181,23 +182,25 @@ hh_4b.merge.DAOD_EXOT8.e4419_s2608_r6869_r6282_p2438.root");
 ```
 
 ## C++ code naming convention:
-file name must be lower case, underline is used to seperate words, such as my_useful_class.cc
-class name must capitalize the First word, no underline included, such as MyExcitingClass
-variable name must be lower case, underline is used to seperate words, such as string table_name, -- class data member follow the same naming rule
+
+>
+> file name must be lower case, underline is used to seperate words, such as my_useful_class.cc
+> class name must capitalize the First word, no underline included, such as MyExcitingClass
+> variable name must be lower case, underline is used to seperate words, such as string table_name, -- class data member follow the same naming rule
 constant variable name: adding a "c" in front of the variables, such as const int cDaysInAWeek = 7;
 function name: common function -> no underline, capitialize the first word, such as AddTableEntry() DeleteUrl() OpenFileOrDie()
 	       set function & get function in the class -> the name should be corresponed to the variable name, such as:
+```
+        class MyClass {
+  		      public:
+		   	...
+		   	int num_entries() const { return num_entries_; }
+        	  	void set_num_entries(int num_entries) { num_entries_ = num_entries; }
 
-	       	  >  class MyClass {
-  		  >    public:
-		  > 	...
-		  > 	int num_entries() const { return num_entries_; }
-        	  > 	void set_num_entries(int num_entries) { num_entries_ = num_entries; }
-
-    		  >    private:
-		  > 	int num_entries_;
-		  > };
-
+    		      private:
+		   	int num_entries_;
+		   };
+```
 
 ## Linux file naming convention:
 . is used to separate a filetype extension, e.g. foo.txt.
@@ -211,72 +214,76 @@ So if I understand your example, backup-part2-random or backup_part2_random woul
 - file => lowercase
 - space => '_' --Peilong's comment--|| "_" used to connect/seperate two close meaning words, such as "x86_64"  || version treated as 1 word, seperated by "."
 - manually version control file => '-' as separator --Peilong's comment--|| "-" used to seperate words, such as kernel version 3.10.0-327.36.3.el7.x86_64 || directory generally follows the same rule as the file, but directory can use Uppercase if necessary.
-\u@\h> ls -1
-ANOTHER_FOLDER
-WORKS
----> end of added on Nov 20, 16
+> \u@\h> ls -1
+> ANOTHER_FOLDER
+> WORKS
+> ---> end of added on Nov 20, 16
 
 
-ROOT CERN interactive mode:
-how to filter needed file?
+## ROOT CERN interactive mode:
+### how to filter needed file?
+```
 TFile *f1 = new TFile("/home/peilong/Downloads/ttbar/hist-ttbar.root")
 f1->ls()
-
-ROOT plot two histogram together:
+```
+### ROOT plot two histogram together:
+```
   ttbar_2tag2pjet_0_500ptv_SR_GSCMbbVSPtJ1->Draw();
   ttbar_2tag2pjet_0_500ptv_mBBcr_GSCMbbVSPtJ1->Draw("same");
+```
 
+> TCanvas::TCanvas(const char *name, const char *title, Int_t form) : TPad(), fDoubleBuffer(0)
+>   222 {
+>   223    fPainter = 0;
+>   224    fUseGL = gStyle->GetCanvasPreferGL();
+>   225 
+>   226    Constructor(name, title, form);
+>   227 }
+>   228 
+>   229 ////////////////////////////////////////////////////////////////////////////////
+>   230 /// Create a new canvas with a predefined size form.
+>   231 /// If form < 0  the menubar is not shown.
+>   232 ///
+>   233 /// - form = 1    700x500 at 10,10 (set by TStyle::SetCanvasDefH,W,X,Y)
+>   234 /// - form = 2    500x500 at 20,20
+>   235 /// - form = 3    500x500 at 30,30
+>   236 /// - form = 4    500x500 at 40,40
+>   237 /// - form = 5    500x500 at 50,50
 
-TCanvas::TCanvas(const char *name, const char *title, Int_t form) : TPad(), fDoubleBuffer(0)
-  222 {
-  223    fPainter = 0;
-  224    fUseGL = gStyle->GetCanvasPreferGL();
-  225 
-  226    Constructor(name, title, form);
-  227 }
-  228 
-  229 ////////////////////////////////////////////////////////////////////////////////
-  230 /// Create a new canvas with a predefined size form.
-  231 /// If form < 0  the menubar is not shown.
-  232 ///
-  233 /// - form = 1    700x500 at 10,10 (set by TStyle::SetCanvasDefH,W,X,Y)
-  234 /// - form = 2    500x500 at 20,20
-  235 /// - form = 3    500x500 at 30,30
-  236 /// - form = 4    500x500 at 40,40
-  237 /// - form = 5    500x500 at 50,50
-
-
+```
 yum repoinfo
-
 yum repolist 
-
-Install the EPEL repository on CentOS and Red Hat
+```
+## Install the EPEL repository on CentOS and Red Hat
 
 You install the EPEL repository by downloading the appropriate RPM package for your system and installing it. The following instructions use the 64-bit packages that work with Rackspace Cloud Servers instances.
 
-CentOS Extras repository
+## CentOS Extras repository
 
 The CentOS Extras repository includes a package to install EPEL, and is enabled by default. To install the EPEL package, run the following command:
-
+```
 sudo yum install epel-release
-
+```
 
 
 # Nov 19, 16
-
+```
 latex newlog.tex
 xdvi newlog.dvi
-
+```
 or 
+```
 pdflatex newlog.tex
-
+```
 Taken from China
 kinds of tea and souvenir
 tea and snacker for talking
 
 
-/users/peilongw/Project/CxAOD/CxAODReader_VHbb/Root/AnalysisReader_VHbb2Lep.cxx:
-What does Mbb mean: m_etree->get<float>("GSCMbb")
+> /users/peilongw/Project/CxAOD/CxAODReader_VHbb/Root/AnalysisReader_VHbb2Lep.cxx:
+What does Mbb mean: 
+```
+m_etree->get<float>("GSCMbb")
 m_etree->SetBranchAndValue<float>("GSCMbb", HVec_gsc.M(), -99);
 
 if ( m_physicsMeta.regime == PhysicsMetadata::Regime::resolved ) {
@@ -286,18 +293,18 @@ HVec_gsc=mergedH.vec_gsc;
 }
 
 TLorentzVector HVec_gsc;
+```
 
 
-
-What does pT(j1) mean: m_etree->get<float>("GSCMbbJ1Pt")
+What does pT(j1) mean: ```m_etree->get<float>("GSCMbbJ1Pt")```
 
 
 
 # Nov 20, 16
-Display full date in task bar -- CentOS
+## Display full date in task bar -- CentOS
 gnome-tweak-tool used to have settings for that in previous versions.
 
-Title of the figure: Y vs. X
+## Title of the figure: Y vs. X
 A vs. B = "A when B is ..." implying that A is on the vertical and B is on the horizontal if vertical is dependent 
 
 
@@ -780,7 +787,7 @@ On Fedora
 $ su -c “yum install sdcv”
 On Mac OS X
 Mac OS comes with a great GUI based dictionary, but cli enthusiasts will enjoy sdcv.
-Please install Macports and then open Finder, Go to Application Folder > Utilities Folder and launch terminal and type
+Please install Macports and then open Finder, Go to Application Folder > Utilities Folder and launch terminal and type
 $sudo port install sdcv
 Step 2. Download Dictionary Files
 Now that we have installed sdcv, we need to download dictionary files from the net. 
@@ -798,8 +805,8 @@ $sudo tar -xvjf downloaded.tar.bz2 -C $HOME/.stardict/dic
 Note: Unfortunately you need to repeat this process for every user that needs access to these dictionary files.
 Step 4. Enjoy sdcv
 Searching for definition
-$ sdcv Linux                         (looks for linux in the dictionary.)
-$ sdcv                                  (invoes sdcv in the interactive mode, press Control-D to quit).
+$ sdcv Linux                         (looks for linux in the dictionary.)
+$ sdcv                                  (invoes sdcv in the interactive mode, press Control-D to quit).
 In earlier article we covered how to use espeak, now you can combine sdcv and espeak together. Sdcv to look for definition and espeak for pronunciation.
 $ sdcv Linux && espeak Linux
 Here is a picture.
@@ -3074,3 +3081,4 @@ what's the difference among nightly, nightly-dev, and nightly-head?
 
 
 # Mar. 14th, 2017
+
