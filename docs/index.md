@@ -10,16 +10,17 @@ I also added the logbook and PhD thesis git repository.
 
 # Thu 27 OCT 16
 eosLocation=root://eosatlas.cern.ch//eos/atlas/unpledged/group-tokyo/users/yenari/20160708/HIGG2D4_13TeV/CxAOD_00-24-07/ttbar/group.phys-higgs.mc15_13TeV.410000.PwPyEG_P2012_ttbar_hdamp172p5_nonallhad.s2608.HIGG2D4.24-7_CxAOD.root/
-
+```
 cat filename.txt | xargs -i xrdcp ${eosLocation}{} /scratch/users/peilongw
-
+```
 --------------
 xargs command is designed to construct argument lists and invoke other utility. xargs reads items from the standard input or pipes, delimited by blanks or newlines, and executes the command one or more times with any initial-arguments followed by items read from standard input. Blank lines on the standard input are ignored.
 
 
 # Fri 28 OCT 16
+```
 find . -name "*DiskListLocal.cxx"
-
+```
 
 # Wed 2 Nov 16
 yum check-update
@@ -33,8 +34,9 @@ It makes no difference whether double or single quotes are used when creating an
     alias ll='ls -al'
 
 RPM package install:
+```
 rpm -ivh package_name.rpm
-
+```
 -i: install
 -U: Upgrade
 -v: installation details
@@ -44,15 +46,16 @@ rpm -ivh package_name.rpm
 
 # Thu 3 Nov 16
 Eventloop: to speed compiling:
-
+```
 rc find_packages --restrict=FrameworkExe
 rc compile
-
+```
 
 # Tue 8 Nov 16
 Emacs remote load files:
+```
 /ssh:user@remotehost:/etc
-
+```
 
 Use grep recursively
 
@@ -75,7 +78,9 @@ CSCOPE source browsing tool
 
 
 # Nov 15, 16
-/users/peilongw/Project/CxAOD/CxAODReader/CxAODReader
+
+> /users/peilongw/Project/CxAOD/CxAODReader/CxAODReader
+
 BookFillHist overload:
 	void BookFillHist(const string& name, int nbinsx, float xlow, float xup, float value, float weight=1);
 	void BookFillHist(const string& name, int nbinsx, float* xbins, float value, float weight=1);
@@ -83,11 +88,11 @@ BookFillHist overload:
 t=1);
 	void BookFillHist(const string& name, int nbinsx, float* xbins, int nbinsy, float* ybins, float xvalue,  float yvalue, float weight=1);
 
-/users/peilongw/Project/CxAOD/CxAODReader_VHbb/Root/AnalysisReader_VHbb2Lep.cxx:
+> /users/peilongw/Project/CxAOD/CxAODReader_VHbb/Root/AnalysisReader_VHbb2Lep.cxx:
 
-Vector name: HVec_gsc.M()
-HVec_gsc=mergedH.vec_gsc;
-HVec_gsc=resolvedH.vec_gsc;
+> Vector name: HVec_gsc.M()
+> HVec_gsc=mergedH.vec_gsc;
+> HVec_gsc=resolvedH.vec_gsc;
    
 The name of the Pt(j1) vs Mbb plot: GSCMbbVSPtJ1
 
@@ -101,7 +106,9 @@ yum list installed
 
 
 How to unpack .tar.gz
+```
 tar -xvzf community_images.tar.gz
+```
 To explain a little further, tar collected all the files into one package, community_images.tar. The gzip program applied compression, hence the gz extension. So the command does a couple things:
 
     f: this must be the last flag of the command, and the tar file must be immediately after. It tells tar the name and path of the compressed file.
@@ -110,12 +117,12 @@ To explain a little further, tar collected all the files into one package, commu
     v: makes tar talk a lot. Verbose output shows you all the files being extracted.
 
 eosLocation=root://eosatlas.cern.ch//eos/atlas/unpledged/group-tokyo/users/yenari/20160708/HIGG2D4_13TeV/CxAOD_00-24-07/ZHll125/group.phys-higgs.mc15_13TeV.341102.Py8EG_A14NNPDF23LO_ZllH125_bb.s2608.HIGG2D4.24-7_CxAOD.root/
-
+```
 cat filename_ZHll125.txt | xargs -i xrdcp ${eosLocation}{} /scratch/users/peilongw
-
+```
 
 linux check folder size
-du -sh *
+```du -sh *```
 
 
 prepare to install local ROOT tomorrow
@@ -139,61 +146,63 @@ tyrpe C-x ; to exit
 Working on GitLab:
 Command line instructions
 Git global setup # non global -> just remove --global
-
+```
 git config --global user.name "Peilong Wang"
 git config --global user.email "peilong.wang@cern.ch"
-
+```
 Create a new repository
-
+```
 git clone https://gitlab.cern.ch/pewang/HbbAnalysis.git
 cd HbbAnalysis
 touch README.md
 git add README.md
 git commit -m "add README"
 git push -u origin master
-
+```
 Existing folder or Git repository
-
+```
 cd existing_folder
 git init
 git remote add origin https://gitlab.cern.ch/pewang/HbbAnalysis.git
 git add .
 git commit
 git push -u origin master
-
+```
 
 ROOT file:
 How to read histgram from ROOT file
+```
   TFile *f1 = new TFile("./submitDir/hist-mc15_13TeV.342619.aMcAtNloHerwigppEvtGen_UEEE5_CTEQ6L1_CT10ME_
 hh_4b.merge.DAOD_EXOT8.e4419_s2608_r6869_r6282_p2438.root");
   /*
   f1->ls();
 
   TH1F *bPT = (TH1F*)f1->Get("h4_bEnergy");
+```
 
-
-C++ code naming convention:
+## C++ code naming convention:
 file name must be lower case, underline is used to seperate words, such as my_useful_class.cc
 class name must capitalize the First word, no underline included, such as MyExcitingClass
 variable name must be lower case, underline is used to seperate words, such as string table_name, -- class data member follow the same naming rule
 constant variable name: adding a "c" in front of the variables, such as const int cDaysInAWeek = 7;
 function name: common function -> no underline, capitialize the first word, such as AddTableEntry() DeleteUrl() OpenFileOrDie()
 	       set function & get function in the class -> the name should be corresponed to the variable name, such as:
-	       	   class MyClass {
-  		     public:
-			...
-			int num_entries() const { return num_entries_; }
-        		void set_num_entries(int num_entries) { num_entries_ = num_entries; }
 
-    		     private:
-			int num_entries_;
-		  };
+	       	  >  class MyClass {
+  		  >    public:
+		  > 	...
+		  > 	int num_entries() const { return num_entries_; }
+        	  > 	void set_num_entries(int num_entries) { num_entries_ = num_entries; }
+
+    		  >    private:
+		  > 	int num_entries_;
+		  > };
 
 
-Linux file naming convention:
+## Linux file naming convention:
 . is used to separate a filetype extension, e.g. foo.txt.
 
-- or _ is used to separate logical words, e.g. my-big-file.txt or sometimes my_big_file.txt. - is better because you don't have to press the Shift key, others prefer _ because it looks more like a space.
+*-* or *_* is used to separate logical words, e.g. my-big-file.txt or sometimes my_big_file.txt. - is better because you don't have to press the Shift key, others prefer _ because it looks more like a space.
 
 So if I understand your example, backup-part2-random or backup_part2_random would be closest to the normal Unix convention.
 
