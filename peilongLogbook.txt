@@ -3062,3 +3062,6 @@ what's the difference among nightly, nightly-dev, and nightly-head?
 -head is the trunk of the packages
 -dev is the branches with the spybuffer publishing work
 -nightly, It's whatever the package managers put into tag collector.  In principle it should be ready to go into a release, but I wouldn't call it stable.
+
+
+Mar. 14th, 2017
