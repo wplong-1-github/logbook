@@ -3064,4 +3064,6 @@ what's the difference among nightly, nightly-dev, and nightly-head?
 -nightly, It's whatever the package managers put into tag collector.  In principle it should be ready to go into a release, but I wouldn't call it stable.
 
 
-Mar. 14th, 2017
+Mar. 20th, 2017
+untar file:
+tar -xvf yourfile.tar
