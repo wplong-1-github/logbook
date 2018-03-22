@@ -3067,3 +3067,21 @@ what's the difference among nightly, nightly-dev, and nightly-head?
 Mar. 20th, 2017
 untar file:
 tar -xvf yourfile.tar
+
+Mar. 22th, 2017
+user.abell.mc15_13TeV.410225.aMcAtNloPythia8EvtGen_A14N23LO_ttbar_nonallhad.evgen.EVNT.e5465.VHbb.BETA_v01.04_EXT0
+user.abell.mc15_13TeV.410501.PowhegPythia8EvtGen_A14_ttbar_hdamp258p75_nonallhad.evgen.EVNT.e5458.VHbb.BETA_v01.04_EXT0
+user.abell.mc15_13TeV.410511.PowhegPythia8EvtGen_ttbar_hdamp517p5_nonallhad.evgen.EVNT.e5556.VHbb.BETA_v01.04_EXT0
+user.abell.mc15_13TeV.410512.PowhegPythia8EvtGen_ttbar_hdamp258p75_nonallhad.evgen.EVNT.e5556.VHbb.BETA_v01.04_EXT0
+user.abell.mc15_13TeV.410525.PowhegHerwig7EvtGen_H7UE_tt_hdamp258p75_nonallhad.evgen.EVNT.e5903.VHbb.BETA_v01.04_EXT0
+
+
+new sample:
+group.phys-higgs.mc15_13TeV.410441.aMcAtNloPythia8EvtGen_ttbar_SingleLep.evgen.EVNT.e6407.VHbb.BETA_v07_ttbar_1_Lep
+group.phys-higgs.mc15_13TeV.410442.aMcAtNloPythia8EvtGen_A14N23LO_ttbar_dil.evgen.EVNT.e6407.VHbb.BETA_v07_ttbar_1_Lep
+group.phys-higgs.mc15_13TeV.410470.PhPy8EG_A14_ttbar_hdamp258p75_nonallhad.evgen.EVNT.e6337.VHbb.BETA_v07_ttbarmc15_1_Lep
+group.phys-higgs.mc15_13TeV.410472.PhPy8EG_A14_ttbar_hdamp258p75_dil.evgen.EVNT.e6348.VHbb.BETA_v07_ttbarmc15_1_Lep
+group.phys-higgs.mc15_13TeV.410480.PhPy8EG_A14_ttbar_hdamp517p5_SingleLep.evgen.EVNT.e6454.VHbb.BETA_v07_ttbarmc15_1_Lep
+group.phys-higgs.mc15_13TeV.410482.PhPy8EG_A14_ttbar_hdamp517p5_dil.evgen.EVNT.e6454.VHbb.BETA_v07_ttbarmc15_1_Lep
+group.phys-higgs.mc15_13TeV.410557.PowhegHerwig7EvtGen_704_SingleLep.evgen.EVNT.e6366.VHbb.BETA_v07_ttbarmc15_1_Lep
+group.phys-higgs.mc15_13TeV.410558.PowhegHerwig7EvtGen_hdamp258p75_704_dil.evgen.EVNT.e6366.VHbb.BETA_v07_ttbarmc15_1_Lep
