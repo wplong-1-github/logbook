@@ -3090,3 +3090,13 @@ group.phys-higgs.mc15_13TeV.410558.PowhegHerwig7EvtGen_hdamp258p75_704_dil.evgen
 Mar. 28th, 2018
 
 There's no free lunch.
+
+
+Mar. 29th, 2018
+
+Switch between tabs in gnome-terminal with keyboard?
+       Try using alt+"tab number" for Linux with gnome.
+       Ctrl+Page Down (forward) and Ctrl+Page Up (backward).
+
+beamer latex row background color:
+       \rowcolor{LRed} a & b & c \\
