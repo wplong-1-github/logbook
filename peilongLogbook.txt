@@ -3100,3 +3100,13 @@ Switch between tabs in gnome-terminal with keyboard?
 
 beamer latex row background color:
        \rowcolor{LRed} a & b & c \\
+
+
+Apr. 04th, 2018
+
+ubiquitous adj.- seeming to be everywhere
+manifest v.- to show a feeling, attitude etc. Eg. Lizzy manifested signs of severe depression.
+disrepute n.- a situation in which people no longer admire or trust someone or something.
+sneak adj.- doing things very secretly and quickly, so that people do not notice you or cannot stop you
+full-fledged adj.- completely developed, trained, or established
+
