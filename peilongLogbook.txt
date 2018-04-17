@@ -3133,3 +3133,32 @@ Comparison
 Apr. 13th, 2018
 
 demographic adj.- relating to the population and groups of people in it
+
+
+Apr. 17th, 2018
+
+python loop two list (same number of events) together:
+       If you just want to loop simultaneously, use:
+       for i, j in zip(range(x), range(y)):
+       	   # Stuff...
+
+	   x = [1, 2, 3]
+	   y = [4, 5, 6]
+
+	   for i, j in zip(x, y):
+	   print i + " / " + j
+
+	   will output
+
+	   1 / 4
+	   2 / 5
+	   3 / 6
+
+
+Right-align text in Emacs:
+	    align-regexp can do this. Mark the region, and then use:
+	    C-u M-x align-regexp RET \(\s-+[0-9]*\)[0-9] RET -1 RET 4 RET y
+
+
+beamer smaller tables:
+       Use \small or \tiny after the \begin{table}
