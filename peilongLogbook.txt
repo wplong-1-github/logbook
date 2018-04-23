@@ -3175,3 +3175,9 @@ element-wise product in python:
 	     a * b
 	     [[1*5,2*6], [3*7,4*8]], equaling
 	     [[5,12], [21,32]]
+
+
+Apr. 23th, 2018
+
+Where does the CENTOS mount "lxplus"?
+
