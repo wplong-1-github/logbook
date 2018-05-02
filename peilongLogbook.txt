@@ -3181,3 +3181,89 @@ Apr. 23th, 2018
 
 Where does the CENTOS mount "lxplus"?
 
+May 2th, 2018
+
+Version - NtupleToHist:
+
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	url = ssh://git@gitlab.cern.ch:7999/atlas-physics/higgs/hbb/VHbbTruthFramework_NtupleToHist.git
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+
+
+
+Command line instructions
+Git global setup
+
+git config --global user.name "Peilong Wang"
+git config --global user.email "peilong.wang@cern.ch"
+
+Create a new repository
+
+git clone https://:@gitlab.cern.ch:8443/pewang/NtupleToHist_ttbar.git
+cd NtupleToHist_ttbar
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+
+Existing folder
+
+cd existing_folder
+git init
+git remote add origin https://:@gitlab.cern.ch:8443/pewang/NtupleToHist_ttbar.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+
+Existing Git repository
+
+cd existing_repo
+git remote rename origin old-origin
+git remote add origin https://:@gitlab.cern.ch:8443/pewang/NtupleToHist_ttbar.git
+git push -u origin --all
+git push -u origin --tags
+
+
+
+git tags:
+
+git checkout master
+
+# Lightweight tag
+git tag my_lightweight_tag
+
+# Annotated tag
+git tag -a v1.0 -m ‘Version 1.0’
+git tag
+
+git push origin --tags
+
+
+
+
+git overide local:
+I think this is the right way:
+git fetch --all
+Then, you have two options:
+git reset --hard origin/master
+OR If you are on some other branch:
+git reset --hard origin/<branch_name>
+
+
+
+What are the differences between git pull and git fetch?
+In the simplest terms, git pull does a git fetch followed by a git merge.
+
+You can do a git fetch at any time to update your remote-tracking branches under refs/remotes/<remote>/.
+
+This operation never changes any of your own local branches under refs/heads, and is safe to do without changing your working copy. I have even heard of people running git fetch periodically in a cron job in the background (although I wouldn't recommend doing this).
+
+A git pull is what you would do to bring a local branch up-to-date with its remote version, while also updating your other remote-tracking branches.
