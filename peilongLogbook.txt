@@ -3283,3 +3283,9 @@ May 4th, 2018
 
 To extract a .tgz file with tar you need to use,
 tar -xvzf /path/to/yourfile.tgz
+
+
+May 7th, 2018
+
+source /cvmfs/atlas.cern.ch/repo/sw/tdaq/tdaq/tdaq-07-01-00/installed/setup.sh tdaq-07-01-00 x86_64-slc6-gcc62-opt
+
