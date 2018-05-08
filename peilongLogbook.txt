@@ -3289,3 +3289,9 @@ May 7th, 2018
 
 source /cvmfs/atlas.cern.ch/repo/sw/tdaq/tdaq/tdaq-07-01-00/installed/setup.sh tdaq-07-01-00 x86_64-slc6-gcc62-opt
 
+
+May 8th, 2018
+
+how to mirror a project in gitlab:
+https://docs.gitlab.com/ee/workflow/repository_mirroring.html
+use this format: https://username:password@gitlab.com/grou/project.git
