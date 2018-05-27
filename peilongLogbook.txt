@@ -3295,3 +3295,18 @@ May 8th, 2018
 how to mirror a project in gitlab:
 https://docs.gitlab.com/ee/workflow/repository_mirroring.html
 use this format: https://username:password@gitlab.com/grou/project.git
+
+
+May 27th, 2018
+
+BOA bill:
+     4/30 $19.30 -> 19.05 CHF
+     3/30 $10.42 
+     3/28 $25.76 
+
+Salt bill:
+10.04 - 09.05 CHF 15.9
+10.03 - 09.04 CHF 29
+10.02 - 09.03 CHF 9.95
+10.01 - 09.02 CHF 14.35
+10.12 - 09.01 CHF 18.35
