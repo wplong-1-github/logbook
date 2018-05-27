@@ -3310,3 +3310,25 @@ Salt bill:
 10.02 - 09.03 CHF 9.95
 10.01 - 09.02 CHF 14.35
 10.12 - 09.01 CHF 18.35
+
+
+name(mBB, pTV, etc.)
+get one category from all samples
+    change the name of each histogram to be proper name
+put each category into a list
+collect all the categories into a list of list
+    make a dictonary for the name of each category
+calculate acceptance uncertainty
+    get the yield of each histogram
+    calculate the acceptance
+add relevant category together
+    based on the dictionary of each category
+    return a new hListList
+calculate shape uncertainty
+    using makeComparisonHistogram
+    optimize makeComparisonHistogram and its dependent functions
+    using more dictionary instead of a lot of returns
+    optimize the selection criteria (2tag 2jet 75 ptv and so on) -- you have to know what you want to do.
+    (having a lot of functions doing small things right)
+
+    
