@@ -3343,3 +3343,23 @@ emacs go to the next parentheses:
   C-M-b     backward-sexp  Move backward over a balanced expression
   C-M-k     kill-sexp  Kill balanced expression forward
   C-M-SPC   mark-sexp  Put the mark at the end of the sexp.
+
+
+
+May 30th, 2018
+# big picture of the analysis
+# hdamp: energy radiation cut/limit
+# simulation more likely to ATLAS data
+# undeline event: parton 
+# pion
+# low radiation sample what raidate
+
+
+
+# flat distribution 
+# rebins
+# whether creating a peak or not
+# why double ratio
+# 
+# talk to Steve about the strategy of the ttbar modeling process
+
