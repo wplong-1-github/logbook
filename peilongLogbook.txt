@@ -3363,3 +3363,15 @@ May 30th, 2018
 # 
 # talk to Steve about the strategy of the ttbar modeling process
 
+
+
+June 5th, 2018
+
+list all the file today:
+ls -al --time-style=+%D | grep $(date +%D)
+
+
+how to remove all files that created n minutes ago in linux:
+find . -type f -cmin -1
+find . -type f -cmin -1 -delete
+
