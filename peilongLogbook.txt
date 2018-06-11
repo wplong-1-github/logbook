@@ -3375,3 +3375,7 @@ how to remove all files that created n minutes ago in linux:
 find . -type f -cmin -1
 find . -type f -cmin -1 -delete
 
+
+June 11th, 2018
+
+git log --graph --oneline --decorate --all
