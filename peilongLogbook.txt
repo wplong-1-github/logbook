@@ -3379,3 +3379,14 @@ find . -type f -cmin -1 -delete
 June 11th, 2018
 
 git log --graph --oneline --decorate --all
+
+
+
+June 13th, 2018
+du -sk /afs/cern.ch/user/f/ftk/inst/
+[ac.peilongw@ustb17 inst]$ rsync -av --progress pewang@lxplus.cern.ch:/afs/cern.ch/user/f/ftk/inst/ .
+
+
+emacs:
+	C-Z
+	fg
