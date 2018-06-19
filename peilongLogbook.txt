@@ -3390,3 +3390,10 @@ du -sk /afs/cern.ch/user/f/ftk/inst/
 emacs:
 	C-Z
 	fg
+
+
+June 19th, 2018
+
+kill in pipeline:
+
+ps aux | grep peilong | grep evince | awk '{ print $2 }' | xargs kill
