@@ -3394,6 +3394,8 @@ emacs:
 
 June 19th, 2018
 
-kill in pipeline:
-
+kill evince windows in pipeline:
 ps aux | grep peilong | grep evince | awk '{ print $2 }' | xargs kill
+
+Copy the content/file to all subdirectory in a directory using terminal:
+find . -type d -exec cp index.php {} \;
