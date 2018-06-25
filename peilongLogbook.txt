@@ -3386,6 +3386,8 @@ June 13th, 2018
 du -sk /afs/cern.ch/user/f/ftk/inst/
 [ac.peilongw@ustb17 inst]$ rsync -av --progress pewang@lxplus.cern.ch:/afs/cern.ch/user/f/ftk/inst/ .
 
+recommend that you use the printenv command:
+printenv
 
 emacs:
 	C-Z
@@ -3443,3 +3445,19 @@ after rebase you can force push the local changes on feature branch to remote
 git push origin peilong-master --force
 
 cmake --build . -- -j4
+
+
+
+June 22th, 2018
+
+FLIC Test:
+cd flic_partition_test_20180507/flic_partition_ustb
+source ../../flic_partition_test_20180612/setup_ftk_anl_top.sh
+oks_dump -f ./ftk/partitions/FTK.data.xml
+
+
+FTK-RCD_flic.data.xml
+ <rel name="RunsOn">"Computer" "pc-argonne-01.argonne.usa"</rel>
+FTK.data.xml
+ <rel name="DefaultHost">"Computer" "ustb17.hep.anl.gov"</rel>
+
