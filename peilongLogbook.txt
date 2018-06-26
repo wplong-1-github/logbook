@@ -3461,3 +3461,12 @@ FTK-RCD_flic.data.xml
 FTK.data.xml
  <rel name="DefaultHost">"Computer" "ustb17.hep.anl.gov"</rel>
 
+
+
+June 26th, 2018
+
+size of the directory:
+     du
+size of the disk space taken:
+     df
+for more, please use the man page
