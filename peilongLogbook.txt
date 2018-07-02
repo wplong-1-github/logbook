@@ -3470,3 +3470,10 @@ size of the directory:
 size of the disk space taken:
      df
 for more, please use the man page
+
+
+
+July 2nd, 2081
+
+list directory by size
+[pewang@lxplus053 ~]$ du -hs * | sort -hr
