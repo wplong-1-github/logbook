@@ -3473,7 +3473,18 @@ for more, please use the man page
 
 
 
-July 2nd, 2081
+July 2nd, 2018
 
 list directory by size
 [pewang@lxplus053 ~]$ du -hs * | sort -hr
+
+
+July 5th, 2018
+
+Crop an image on Linux:
+
+ImageMagick has a number of programs in the package. One of them, display, will render an image on the screen and provide easy access to a lot of the Imagemagick suite.
+
+$ display your_original_image.jpg
+
+Then left-mouse click in display window to bring up the ImageMagick command window. To crop the image, left-mouse click on "Transform" and then select "Crop" by left-mouse clicking. Then on your image, left-mouse click and drag over the area you wish to keep. Release the mouse button to select the area. Then select "Crop" to actually modify the displayed image. To save this modified image, select "File" and then "Save...". A window with familiar controls will pop-up and allow you to save your cropped image.
