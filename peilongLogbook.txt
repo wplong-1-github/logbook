@@ -3488,3 +3488,18 @@ ImageMagick has a number of programs in the package. One of them, display, will 
 $ display your_original_image.jpg
 
 Then left-mouse click in display window to bring up the ImageMagick command window. To crop the image, left-mouse click on "Transform" and then select "Crop" by left-mouse clicking. Then on your image, left-mouse click and drag over the area you wish to keep. Release the mouse button to select the area. Then select "Crop" to actually modify the displayed image. To save this modified image, select "File" and then "Save...". A window with familiar controls will pop-up and allow you to save your cropped image.
+
+
+July 9th, 2018
+
+Take a screenshot in CENTOS:
+
+    PrintScreen -- Takes a screenshot of your entire desktop and saves it to the Pictures folder.
+    Alt + PrintScreen -- Saves a screenshot of the focused window to the Pictures Folder
+    Shift + PrintScreen -- Lets you select an area of the screen, and saves to the Pictures Folder
+    Ctrl + PrintScreen -- Takes a screenshot of your entire desktop and copies it to the clipboard.
+    Ctrl + Alt + PrintScreen -- copies a screenshot of the focused window to the clipboard.
+    Ctrl + Shift + PrintScreen -- Lets you select an area of the screen, and copies it to the clipboard.
+    Ctrl + Shift + Alt + R -- Records a Screencast) of your entire desktop and saves it to your Videos folder.
+
+These shortcuts also can be changed in the GNOME keyboard settings if your keyboard does not have a PrintScreen key.
