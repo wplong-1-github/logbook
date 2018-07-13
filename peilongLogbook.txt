@@ -3503,3 +3503,9 @@ Take a screenshot in CENTOS:
     Ctrl + Shift + Alt + R -- Records a Screencast) of your entire desktop and saves it to your Videos folder.
 
 These shortcuts also can be changed in the GNOME keyboard settings if your keyboard does not have a PrintScreen key.
+
+
+July 13th, 2018
+
+git diff:
+git diff - Show changes between commits, commit and working tree, etc
