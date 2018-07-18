@@ -3509,3 +3509,9 @@ July 13th, 2018
 
 git diff:
 git diff - Show changes between commits, commit and working tree, etc
+
+
+July 18th, 2018
+
+xdg-open: open the .png and .jpg figures
+
