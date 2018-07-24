@@ -3515,3 +3515,12 @@ July 18th, 2018
 
 xdg-open: open the .png and .jpg figures
 
+
+July 24th, 2018
+
+ps -efw | grep Jun22 | awk '{ print $2 }' | xargs kill
+
+ps -u  | awk '{print $2}' | xargs -i grep Threads /proc/'{}'/status | grep Threads | awk '{TOTAL += $2} END {print TOTAL}'
+
+Check linux memeory:
+vmstat -s
