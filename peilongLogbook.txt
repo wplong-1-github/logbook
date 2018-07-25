@@ -3499,7 +3499,9 @@ Take a screenshot in CENTOS:
     Shift + PrintScreen -- Lets you select an area of the screen, and saves to the Pictures Folder
     Ctrl + PrintScreen -- Takes a screenshot of your entire desktop and copies it to the clipboard.
     Ctrl + Alt + PrintScreen -- copies a screenshot of the focused window to the clipboard.
+
     Ctrl + Shift + PrintScreen -- Lets you select an area of the screen, and copies it to the clipboard.
+
     Ctrl + Shift + Alt + R -- Records a Screencast) of your entire desktop and saves it to your Videos folder.
 
 These shortcuts also can be changed in the GNOME keyboard settings if your keyboard does not have a PrintScreen key.
@@ -3524,3 +3526,17 @@ ps -u  | awk '{print $2}' | xargs -i grep Threads /proc/'{}'/status | grep Threa
 
 Check linux memeory:
 vmstat -s
+
+
+July 25th, 2018
+
+<  <rel name="Disabled" num="2">
+<   "Segment" "HLT"
+<   "Segment" "ROS-Segment-1-emulated-dc"
+<  </rel>
+---
+>  <rel name="Disabled" num="0"></rel>
+
+
+Stable CxAODMaker tag (ICHEP): r31-10
+CxAODReader tag (ICHEP): ask Yanhui
