@@ -3540,3 +3540,16 @@ July 25th, 2018
 
 Stable CxAODMaker tag (ICHEP): r31-10
 CxAODReader tag (ICHEP): ask Yanhui
+
+
+July 31th, 2018
+
+bad  mc16_13TeV.410470.PhPy8EG_A14_ttbar_hdamp258p75_nonallhad.deriv.DAOD_HIGG5D2.e6337_e5984_s3126_r10201_r10210_p3371/
+bad  mc16_13TeV.410470.PhPy8EG_A14_ttbar_hdamp258p75_nonallhad.deriv.DAOD_HIGG5D2.e6337_e5984_s3126_r9364_r9315_p3371/
+bad  mc16_13TeV.410501.PowhegPythia8EvtGen_A14_ttbar_hdamp258p75_nonallhad.deriv.DAOD_HIGG5D2.e5458_s3126_r9364_r9315_p3371/ 
+bad  mc16_13TeV.302346.MadGraphPythia8EvtGen_A14NNPDF23LO_HVT_Agv1_VcWH_lvqq_m1000.deriv.DAOD_HIGG5D2.e4069_e5984_s3126_r9364_r9315_p3374/"
+
+bad  mc16_13TeV.410470.PhPy8EG_A14_ttbar_hdamp258p75_nonallhad.merge.AOD.e6337_e5984_s3126_r10201_r10210/"
+bad  mc16_13TeV.410470.PhPy8EG_A14_ttbar_hdamp258p75_nonallhad.merge.AOD.e6337_e5984_s3126_r9364_r9315/
+
+good mc15_13TeV.341102.Pythia8EvtGen_A14NNPDF23LO_ZllH125_bb.merge.AOD.e3885_s2608_s2183_r6869_r6282/
