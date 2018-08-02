@@ -3553,3 +3553,9 @@ bad  mc16_13TeV.410470.PhPy8EG_A14_ttbar_hdamp258p75_nonallhad.merge.AOD.e6337_e
 bad  mc16_13TeV.410470.PhPy8EG_A14_ttbar_hdamp258p75_nonallhad.merge.AOD.e6337_e5984_s3126_r9364_r9315/
 
 good mc15_13TeV.341102.Pythia8EvtGen_A14NNPDF23LO_ZllH125_bb.merge.AOD.e3885_s2608_s2183_r6869_r6282/
+
+
+August 2nd, 2018
+
+ls /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.38/InstallArea/x86_64-slc6-gcc62-opt/src/PhysicsAnalysis/D3PDTools/AnaAlgorithm/AnaAlgorithm
+grep -r "retrieve" /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.38/InstallArea/x86_64-slc6-gcc62-opt/src/PhysicsAnalysis/D3PDTools/AnaAlgorithm/ --color
