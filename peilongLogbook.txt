@@ -3521,7 +3521,7 @@ xdg-open: open the .png and .jpg figures
 July 24th, 2018
 
 ps -efw | grep Jun22 | awk '{ print $2 }' | xargs kill
-
+ps -efw | grep pmglauncher | awk '{ print $2 }' | xargs kill
 ps -u  | awk '{print $2}' | xargs -i grep Threads /proc/'{}'/status | grep Threads | awk '{TOTAL += $2} END {print TOTAL}'
 
 Check linux memeory:
@@ -3559,3 +3559,59 @@ August 2nd, 2018
 
 ls /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.38/InstallArea/x86_64-slc6-gcc62-opt/src/PhysicsAnalysis/D3PDTools/AnaAlgorithm/AnaAlgorithm
 grep -r "retrieve" /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.38/InstallArea/x86_64-slc6-gcc62-opt/src/PhysicsAnalysis/D3PDTools/AnaAlgorithm/ --color
+
+
+
+Aug. 28th, 2018
+
+# running daq dummy partition on _ustb17_
+
+## setup
+```
+source /cvmfs/atlas.cern.ch/repo/sw/tdaq/tdaq/tdaq-07-01-00/installed/setup.sh tdaq-07-01-00 x86_64-slc6-gcc62-opt
+pm_part_hlt.py -p dummy
+touch ipc_root.ref; TDAQ_IPC_INIT_REF=file:${PWD}/ipc_root.ref
+```
+
+then change the location of the log files in dummy.data.xml.
+
+```
+ <attr name="LogRoot" type="string">"/tmp/ac.peilongw/logs/${TDAQ_VERSION}"</attr>
+ <attr name="WorkingDirectory" type="string">"/tmp/ac.peilongw/logs"</attr>
+```
+```
+setup_daq -p dummy -d dummy.data.xml
+```
+
+
+## VNC through SSH tunnel
+connect to ustb17 through SSH
+```
+ssh -tCY -L 5901:localhost:5901 ac.peilongw@alogin.hep.anl.gov ssh -tCY -L 5901:localhost:5901 ac.peilongw@nathan ssh -tCY -L 5901:localhost:5901 ac.peilongw@ustb17
+```
+the port number is 5901 because the VNCserver we started has the default port number of 5901. It can be checked with the command later after start VNC server "ps -aux | grep p\
+eilongw | grep vnc"
+
+in the terminal of ustb17, start vncserver by
+```
+vncserver
+```
+on the local machine (my laptop in this case), start the VNC viewer and connect to "localhost:5901".
+
+To kill vnc sessions:
+```
+vncserver -kill :1
+vncserver -kill :2
+```
+more on https://superuser.com/questions/549386/what-is-the-correct-way-to-kill-a-vncsession-in-linux
+
+VNC athentication: sometimes like 123456
+
+
+
+
+TDAQ IGUI:
+Green: working
+Yellow:
+Red: error
+
