@@ -3703,3 +3703,5 @@ G4complex G4VXTRenergyLoss::OneInterfaceXTRdEdx( G4double energy,
                                            G4double varAngle )                  
 
 
+Oct. 10th, 2018
+
