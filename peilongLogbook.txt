@@ -3705,3 +3705,8 @@ G4complex G4VXTRenergyLoss::OneInterfaceXTRdEdx( G4double energy,
 
 Oct. 10th, 2018
 
+FLIC free partition so that other people can access to it:
+      rmgr_free_partition_resources
+
+check whether PMG is running well:
+      ps -u tdaqsw
