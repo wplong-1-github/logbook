@@ -3710,3 +3710,9 @@ FLIC free partition so that other people can access to it:
 
 check whether PMG is running well:
       ps -u tdaqsw
+
+
+Oct. 25th, 2018
+
+emacs jump to matching brace:
+      C-M-f (forward-sexp) and C-M-b (backward-sexp) will skip over one set of balanced parentheses
