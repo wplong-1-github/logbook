@@ -3725,3 +3725,8 @@ Most modes support imenu. M-ximenu will let you jump to a function definition (e
 There is also speedbar, which displays the imenu information (and other things) graphically.
 
 If you want to get an overview of your file, try M-xoccur". Given a regex, it will create a new buffer with each match in the current buffer. You can search for "(defun" to get an overview of the functions the current file implements. Clicking on the result will move you to that position in the file.
+
+Jan. 23th, 2019
+
+Flyspell check entire document upon opening:
+M-x flyspell-buffer
