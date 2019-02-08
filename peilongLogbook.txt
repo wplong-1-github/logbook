@@ -3730,3 +3730,8 @@ Jan. 23th, 2019
 
 Flyspell check entire document upon opening:
 M-x flyspell-buffer
+
+
+Feb. 08th, 2019
+convert a lot of png images to pdf:
+	for filename in *.png ; do convert "$filename" "${filename%.png}.pdf" ; done
