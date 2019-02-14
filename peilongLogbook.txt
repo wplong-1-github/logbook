@@ -3735,3 +3735,10 @@ M-x flyspell-buffer
 Feb. 08th, 2019
 convert a lot of png images to pdf:
 	for filename in *.png ; do convert "$filename" "${filename%.png}.pdf" ; done
+
+
+Feb. 14th, 2019
+VHbb analysis:
+     use direct tagging except the following case
+     	 we use truth tagging, for V+jets C filter, V+jets L filter and WW and ggWW
+	 in L and C we do not have enough stats, that is why we use truth tagging
