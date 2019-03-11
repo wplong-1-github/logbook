@@ -3742,3 +3742,14 @@ VHbb analysis:
      use direct tagging except the following case
      	 we use truth tagging, for V+jets C filter, V+jets L filter and WW and ggWW
 	 in L and C we do not have enough stats, that is why we use truth tagging
+
+Mar. 10th, 2019
+WSMaker:
+## Operation 201902 - replace 1-lep ttbar in limit histograms
+Create your own inputConfig files, in this case - SMVH_20190205_MVA_mc16ad_peilong.txt
+```
+SplitInputs -v SMVH_20190205_MVA_mc16ad_peilong -r Run2 -inDir /eos/atlas/atlascerngroupdisk/phys-higgs/HSG5/Run2/Summer2018/v31-10/
+```
+```
+SplitInputs -v ttbar_20190207_MVA_mc16ad_peilong -r Run2 -inDir /afs/cern.ch/work/p/pewang/public/CxAODReader_reproduceICHEP2018_20181130/CxAODFramework_tag_r31-22_1/run/
+```
