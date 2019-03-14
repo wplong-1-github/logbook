@@ -3753,3 +3753,15 @@ SplitInputs -v SMVH_20190205_MVA_mc16ad_peilong -r Run2 -inDir /eos/atlas/atlasc
 ```
 SplitInputs -v ttbar_20190207_MVA_mc16ad_peilong -r Run2 -inDir /afs/cern.ch/work/p/pewang/public/CxAODReader_reproduceICHEP2018_20181130/CxAODFramework_tag_r31-22_1/run/
 ```
+Reproduce ICHEP
+```
+SplitInputs -r Run2 -v SMVHVZ_Summer18_MVA_mc16ad_v07_fixed2_peilong_20190312
+```
+ # -inDir /afs/cern.ch/work/p/pewang/public/CxAODReader_reproduceICHEP2018_20181130/CxAODFramework_tag_r31-22_1/run/
+
+
+May I ask a technical question? So in the inputConfigs files for WSMaker, the ICHEP one has the format like this "
+CoreRegions
+OneLepton v31-10/OneLep/LimitHistograms.VH.lvbb.13TeV.mc16ad.LAL.v06.root  mvaR21,mvadibosonR21". Is it necessary to put "CoreRegions" and "mvaR21,mvadibosonR21"? I didn't put them in the config files I created.
+
+Answer: "mvaR21,mvadibosonR21" will let WSMaker only fit MVA distribution.
