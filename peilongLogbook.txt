@@ -3743,6 +3743,7 @@ VHbb analysis:
      	 we use truth tagging, for V+jets C filter, V+jets L filter and WW and ggWW
 	 in L and C we do not have enough stats, that is why we use truth tagging
 
+
 Mar. 10th, 2019
 WSMaker:
 ## Operation 201902 - replace 1-lep ttbar in limit histograms
@@ -3765,3 +3766,16 @@ CoreRegions
 OneLepton v31-10/OneLep/LimitHistograms.VH.lvbb.13TeV.mc16ad.LAL.v06.root  mvaR21,mvadibosonR21". Is it necessary to put "CoreRegions" and "mvaR21,mvadibosonR21"? I didn't put them in the config files I created.
 
 Answer: "mvaR21,mvadibosonR21" will let WSMaker only fit MVA distribution.
+
+
+Mar. 17th, 2019
+
+The saftest way to ensure consistent code is to make a completely fresh checkout of the r32-11 tag of the CxAODFramework. I used Adrian’s script to only get the CxAODBootstrap_VHbb package:
+
+source /afs/cern.ch/user/a/abuzatu/work/public/BuzatuAll/BuzatuATLAS/CxAODFramework/getMaster.sh r32-11 CxAODFramework_tag_r32-11 0 0
+
+Then I modified CxAODBootstrap_VHbb/bootstrap/packages_VHbb_git.txt. I commented out CxAODMaker and CxAODMaker_VHbb and switched all instances of „origin/master“ to „r32-11“. You can find my version of packages_VHbb_git.txt in /afs/cern.ch/user/e/eschopf/public/forMVANtuples. I then proceeded to check out the packages via:
+
+source CxAODBootstrap_VHbb/bootstrap/setup.sh r32-11 branch
+
+and then compiled the framework by hand. In case you never did that I copied the necessary commands into /afs/cern.ch/user/e/eschopf/public/forMVANtuples/compileByHand.sh
