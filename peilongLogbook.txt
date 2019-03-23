@@ -3779,3 +3779,7 @@ Then I modified CxAODBootstrap_VHbb/bootstrap/packages_VHbb_git.txt. I commented
 source CxAODBootstrap_VHbb/bootstrap/setup.sh r32-11 branch
 
 and then compiled the framework by hand. In case you never did that I copied the necessary commands into /afs/cern.ch/user/e/eschopf/public/forMVANtuples/compileByHand.sh
+
+
+Mar. 22th, 2019
+CENT os screenshot: Press. ⇧ Shift + PrtScn to select what you capture. ... 
