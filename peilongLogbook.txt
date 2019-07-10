@@ -3784,6 +3784,12 @@ and then compiled the framework by hand. In case you never did that I copied the
 Mar. 22th, 2019
 CENT os screenshot: Press. ⇧ Shift + PrtScn to select what you capture. ... 
 
+
 June 6, 2019
 fly-spell check all words:
 After running flyspell-mode, run flyspell-buffer.
+
+
+July 9, 2019
+Open directory from command line: xdg-open .
+Using the correct color profile for your screen
