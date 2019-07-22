@@ -3793,3 +3793,30 @@ After running flyspell-mode, run flyspell-buffer.
 July 9, 2019
 Open directory from command line: xdg-open .
 Using the correct color profile for your screen
+
+July 22, 2019
+run KCU105 at SLAC:
+    1. make sure your computer is on slac network event slac visitor network
+    2. program KCU 105 clock 0 - run minicom on linx - switch the USB cable to UART:
+       sudo minicom -s
+       select "Serial port setup"
+       then - Serial Device: /dev/ttyUSB0
+       	      Hardware Flow Control: No
+	      Software Flow Control: No
+       select "Exit" (not "Exit from minicom")
+       press "enter" key to refresh
+       input "1" to "Set Programmable Clocks"
+       then "1" to "Set KCU105  Si570    User Clock Frequency"
+       then input Si570 frequency "128"
+       then "Read KCU105 Si570    User Clock Frequency" to make sure
+       Ctrl-a z for help then "Quit with no reset.Q"
+    3. running vivado:
+       source /home/peilong/tools/Vivado/2019.1/settings64.sh
+       # the directory that you installed vivado
+       # /opt/Xilinx/Vivado/2018.3/settings64.sh
+       export LM_LICENSE_FILE=2100@rdlic1:2100@rdlic2:2100@rdlic3
+       switch the USB cable to JTAG
+       run "vivado" in command
+       "Open Hardware Manager"
+       "Open target" "Autoconnect"
+       
