@@ -3820,3 +3820,9 @@ run KCU105 at SLAC:
        "Open Hardware Manager"
        "Open target" "Autoconnect"
        
+
+Aug 6, 2019
+Install Vivado:
+	download x.bin files
+	chmod 755 x.bin
+	./x.bin
