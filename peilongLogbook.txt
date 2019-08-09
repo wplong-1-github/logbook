@@ -3823,6 +3823,15 @@ run KCU105 at SLAC:
 
 Aug 6, 2019
 Install Vivado:
+	Method 1:
 	download x.bin files
 	chmod 755 x.bin
 	./x.bin
+	Method 2:
+	download the full install package
+	unzip and run the install script
+
+Install driver for the JTAG:
+	the install files are in the vivado install dir
+	run data/xicom/cable_drivers/lin64/install_script/install_drivers/install_drivers
+
