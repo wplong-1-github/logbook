@@ -3835,3 +3835,6 @@ Install driver for the JTAG:
 	the install files are in the vivado install dir
 	run data/xicom/cable_drivers/lin64/install_script/install_drivers/install_drivers
 
+
+Aug 18, 2019
+compared dell L30U keyboard vs Y-U 0003 del5 keyboard, find that L30U actually performs better since the key when pressing is not that hard as the Y-U keyboard. of course, the thinkpad keyboard is the best so far. So the desicion is simply that I'm going to use the L30U keyboard. I hope that I'm not wasting time on the stupid keyboard choice. I already spent at least 30 minutes on this. So probably should not spend more time, as the time is really valued.
