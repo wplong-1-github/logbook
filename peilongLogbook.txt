@@ -3838,3 +3838,48 @@ Install driver for the JTAG:
 
 Aug 18, 2019
 compared dell L30U keyboard vs Y-U 0003 del5 keyboard, find that L30U actually performs better since the key when pressing is not that hard as the Y-U keyboard. of course, the thinkpad keyboard is the best so far. So the desicion is simply that I'm going to use the L30U keyboard. I hope that I'm not wasting time on the stupid keyboard choice. I already spent at least 30 minutes on this. So probably should not spend more time, as the time is really valued.
+
+
+Nov 20, 2019
+# command to run scan
+./scanConsole_Oct26  -r configs/controller/HSIO2_FEB_rogueCfg.json -c configs/connectivity/example_rd53a_setup.json  -s configs/scans/rd53a/std_digitalscan.json -p
+
+# config file for hardware: configs/controller/HSIO2_FEB_rogueCfg.json
+{
+"ctrlCfg" : {
+"type": "rogue",
+"cfg" : {
+"type": 1, 
+# which port
+"port": 2, 
+# which lane is enabled, 15 is ffff, 4 lanes are enabled
+"enableMask" : 15,
+"connection": "axis:///dev/axi_stream_dma_2",
+"enableDebug" : true,
+"firmwareTrigger" : true,
+# speed for data: 0 means 1.28 Gbps; 1 means 640 Mbps
+"selectRate" : 0,
+"sleepTime" : 0,
+"batchSize" : 40000,
+"batchTimer" : 10000,
+"pllFile" : "configs/other/Si5345-RevD-Registers-160MHz.csv",
+"forcePllConfig" : false,
+"doDataTransmissionCheck" : true,
+"doTrigHeaderCheck" : true,
+"dlyCMD" : false,
+"invCMD" : false,
+"linkDlyCtrlMode" : 0,
+"lockingCntCfg" : 16382,
+"eyeScanCfg" : 80
+}      
+}
+}
+
+
+# config file for RD53A: configs/connectivity/example_rd53a_setup.json
+
+# config file for this scan: configs/scans/rd53a/std_digitalscan.json
+
+
+
+RD53B differential, linear and synchronize scan
