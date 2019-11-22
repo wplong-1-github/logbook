@@ -3883,3 +3883,12 @@ Nov 20, 2019
 
 
 RD53B differential, linear and synchronize scan
+
+
+
+Nov. 21, 2019
+compile server addr: rddev111.slac.stanford.edu
+stable version software: https://gitlab.cern.ch/YARR/YARR/tree/devel_rogue_v0p2
+how to run YARR: https://twiki.cern.ch/twiki/bin/viewauth/Atlas/RCEGen3SDK#Running_YARR_on_HSIO2_and_ZCU102
+Firmware: https://github.com/slaclab/atlas-rd53-fmc-dev
+ZCU102 firmware: https://github.com/slaclab/atlas-rd53-fmc-dev/tree/master/firmware/targets/AtlasRd53FmcXilinxZcu102
