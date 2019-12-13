@@ -3892,3 +3892,17 @@ stable version software: https://gitlab.cern.ch/YARR/YARR/tree/devel_rogue_v0p2
 how to run YARR: https://twiki.cern.ch/twiki/bin/viewauth/Atlas/RCEGen3SDK#Running_YARR_on_HSIO2_and_ZCU102
 Firmware: https://github.com/slaclab/atlas-rd53-fmc-dev
 ZCU102 firmware: https://github.com/slaclab/atlas-rd53-fmc-dev/tree/master/firmware/targets/AtlasRd53FmcXilinxZcu102
+
+change RD53A from 1.28 Gbps to 640 Mbps:
+CdrSelClock: 0 -> 1, in RD53A config
+OutputActiveLanes: 15 -> 1, in RD53A config
+
+
+change FMC firmware from 1.28 to 640 Mbps:
+slectrate: 0 -> 1,
+
+digital scan: 
+4 lane, 1.28 Gbps, frequency 75000
+1 lane, 1.28 Gbps, frequency 15000
+1 lane, 640 Mbps, frequency 8000
+
