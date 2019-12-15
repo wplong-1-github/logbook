@@ -3906,3 +3906,13 @@ digital scan:
 1 lane, 1.28 Gbps, frequency 15000
 1 lane, 640 Mbps, frequency 8000
 
+
+Dec. 14, 2019
+Eigentune variations
+The eigentune method provides a statistically robust way of defining a set of independent uncertainties in the tune parameter space. The eigentune uncertainties cover variations of the ISR/FSR/MPI and colour reconnection parameters. The recommendation is to use the eigenvariations of the A14 tune. There are in total 10 up and down variations that envelop the following observables:
+
+    VAR1: corresponds to variations of parameters that are used in the modelling of the UE/MPI and affect the UE activity and inclusive jet shapes
+    VAR2: corresponds to variations of parameters used in the initial and final state showers and affect the jet shapes/substructure
+    VAR3a: variations of MPI and I/FSR parameters affecting the description of the gap fraction in ttbar events
+    VAR3b: variations of the I/FSR parameters affecting the description of the jet 3/2 ratio
+    VAR3c: variation of the strong coupling in the initial state shower affecting the description of the ttbar gap fraction, the dijet decorrelation and the Z-boson transverse momentum 
