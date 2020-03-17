@@ -3916,3 +3916,31 @@ The eigentune method provides a statistically robust way of defining a set of in
     VAR3a: variations of MPI and I/FSR parameters affecting the description of the gap fraction in ttbar events
     VAR3b: variations of the I/FSR parameters affecting the description of the jet 3/2 ratio
     VAR3c: variation of the strong coupling in the initial state shower affecting the description of the ttbar gap fraction, the dijet decorrelation and the Z-boson transverse momentum 
+
+
+Mar. 16th, 2020
+How can I setup two or more ssh tunnels through two or more machines ?
+
+At some point you may need to tunnel through multiple ssh tunnels through multiple machines. This is quite easy to do as long as you have ssh access to every machine you want to tunnel through. In this example we will be tunneling from a desktop machine through a machine called host1 and then to a machine called host2 which will then access the internet. Something like so:
+
+Firefox desktop -> host1 -> host2 -> internet
+
+First, make sure you went through the beginning on this page and know how to get firefox to proxy through a SOCKS5 proxy on localhost port 8080. Then run the following ssh command on the desktop running Firefox. This will setup an encrypted ssh tunnel to host1 from the "Firefox desktop".
+
+desktop$ ssh -C2qTnN username@host1 -L 8080:localhost:8080
+
+Now, you need to ssh to host1 directly. Once you are on host1 run the following. This will collect any data from the first tunnel originating from the "Firefox desktop" to host1 and tunnel that data to host2.
+
+host1$ ssh -C2qTnN -D 8080 username@host2
+
+So, how does this setup work? Firefox on the desktop will initiate a SOCKS5 connection to localhost port 8080 on the desktop machine. Since a ssh tunnel is listening on localhost:8080 it will ssh tunnel the traffic to host1 which will forward this traffic to host1's localhost:8080. On host1 the second ssh command will tunnel all traffic it receives on localhost:8080 from the desktop machine to host2. On host2 the traffic will then be able to go out to the internet at large. If you have DNS SOCKS5 resolution on as well then all web traffic _and_ dns queries will goto host2 through both tunnels. From the view of the internet all queries originating from the "Firefox desktop" will look like they come from host2. Nice and anonymous.
+
+What if I need to tunnel through more then two machines? Then just keep repeating "ssh -C2qTnN username@host1 -L 8080:localhost:8080" command for each incremental host. Once you decide you very last host you want the data to access the internet with then use the "ssh -C2qTnN -D 8080 username@host2" command.
+
+To make sure you tunnel is working correctly using a site like ipchicken.com to see what ip address you are coming from. In the case of our example above ipchicken should report the ip address of host2.
+
+
+burn iso to USB:
+sudo fdisk -l
+sudo dd bs=4M if=CentOS-7-x86_64-DVD-1708.iso of=/dev/sdb status=progress
+sometimes add "conv=fdatasync" to "dd"
