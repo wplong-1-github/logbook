@@ -3944,3 +3944,10 @@ burn iso to USB:
 sudo fdisk -l
 sudo dd bs=4M if=CentOS-7-x86_64-DVD-1708.iso of=/dev/sdb status=progress
 sometimes add "conv=fdatasync" to "dd"
+
+
+20210216
+webapp
+https://stackoverflow.com/questions/46698134/how-to-post-the-output-result-on-the-same-page-in-flask-app
+https://stackoverflow.com/questions/37211791/flask-post-to-the-same-page
+https://flask.palletsprojects.com/en/1.1.x/quickstart/
