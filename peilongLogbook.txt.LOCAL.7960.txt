@@ -3946,10 +3946,6 @@ sudo dd bs=4M if=CentOS-7-x86_64-DVD-1708.iso of=/dev/sdb status=progress
 sometimes add "conv=fdatasync" to "dd"
 
 
-20210215:
-	use os.system("rm " + file) to remove file
-
-
 20210216
 webapp
 https://stackoverflow.com/questions/46698134/how-to-post-the-output-result-on-the-same-page-in-flask-app
@@ -3986,8 +3982,3 @@ Emacs tells you that a package was not found on the remote archive. This is a sy
 20210223
 quantum informaiton
 10.1088/2058-9565/ab0441
-
-
-20210228:
-	Linux webex, use chrome to connect Webex
-	Webex screen sharing: use "share screen" to share terminal window.
