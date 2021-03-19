@@ -3944,3 +3944,13 @@ burn iso to USB:
 sudo fdisk -l
 sudo dd bs=4M if=CentOS-7-x86_64-DVD-1708.iso of=/dev/sdb status=progress
 sometimes add "conv=fdatasync" to "dd"
+
+
+20200215:
+	use os.system("rm " + file) to remove file
+
+
+20210228:
+	Linux webex, use chrome to connect Webex
+	Webex screen sharing: use "share screen" to share terminal window.
+	
