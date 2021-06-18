@@ -3991,3 +3991,10 @@ quantum informaiton
 20210228:
 	Linux webex, use chrome to connect Webex
 	Webex screen sharing: use "share screen" to share terminal window.
+
+
+20210618:
+	CNN courses
+	UNet
+	computer vision
+	
