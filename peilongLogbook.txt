@@ -2534,7 +2534,7 @@ Nov. 8 2017
 Give the finger = flip somebody off
 
 unzip file.zip -d destination_folder
-
+(if only "unzip file.zip", the directory depends on the structure of file.zip. so it is safe to use the -d option to create a directory. -- added on June 28, 2021)
 
 
 Nov. 14 2017
